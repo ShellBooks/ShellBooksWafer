@@ -1,0 +1,35 @@
+<!--pages/library/library.wxml-->
+<view>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+    <block wx:for="{{imgs}}" wx:for-index="index">    
+      <swiper-item>    
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+      </swiper-item>    
+    </block>    
+  </swiper> 
+  <view class="books">
+    <view class='title'>
+      <text>新书上架</text>
+      <view class='arrow'></view> 
+    </view>
+    <scroll-view class="scroll-view" scroll-x>
+      <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
+      <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
+      <view bindtap="toDetails" id="yellow" class="scroll-view-item_H bc_yellow"></view>
+      <view bindtap="toDetails" id="blue" class="scroll-view-item_H bc_blue"></view>
+    </scroll-view>  
+  </view>
+  <view class="books">
+    <view class='title'>
+      <text>好书推荐</text>
+      <view class='arrow'></view> 
+    </view>
+    <scroll-view class="scroll-view" scroll-x>
+      <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
+      <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
+      <view bindtap="toDetails" id="yellow" class="scroll-view-item_H bc_yellow"></view>
+      <view bindtap="toDetails" id="blue" class="scroll-view-item_H bc_blue"></view>
+    </scroll-view>  
+  </view>
+</view>
+

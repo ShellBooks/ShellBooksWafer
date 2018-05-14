@@ -1,0 +1,23 @@
+/* pages/book_detailsy/book_details.wxss */
+.book_details_img{
+  background: green;
+  height: 400rpx;
+  width: 50%;
+  float: left;
+}
+.book_details_main{
+  display: inline-block;
+  width: 100%;
+}
+.book_details_info{
+  height: 400rpx;
+  width: 50%;
+  float: right;
+  margin-top: 20rpx;
+}
+.book_details_text{
+  display: block;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}

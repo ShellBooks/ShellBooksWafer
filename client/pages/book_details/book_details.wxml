@@ -1,0 +1,12 @@
+<view>
+  <view class="book_details_main">
+    <view class='book_details_img'></view>
+    <view class='book_details_info'>
+      <text class='book_details_text'>书本名称</text>
+      <text class='book_details_text'>作者名字</text>
+      <text class='book_details_text'>出版社</text>
+    </view>
+  </view>
+  
+</view>
+

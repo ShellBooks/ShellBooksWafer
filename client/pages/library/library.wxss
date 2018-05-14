@@ -1,0 +1,53 @@
+/* pages/library/library.wxss */   
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.title{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.arrow{
+  width: 30rpx;
+  height: 30rpx;
+  border-top: 4rpx solid #999; 
+  border-right: 4rpx solid #999; 
+  /* position: absolute; */
+  float: right;
+  margin-right: 30rpx; 
+  margin-top: 20rpx;
+  transform: rotate(45deg);
+}
+
+.scroll-view{
+  height: 300rpx;
+  background: #999;
+   width: 100%;
+  white-space: nowrap; 
+}
+
+.scroll-view view{
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+}
+
+#green{
+  background: green;
+}
+
+#red{
+  background: red;
+}
+
+#yellow{
+  background: yellow;
+}
+
+#blue{
+  background: blue;
+}
