@@ -51,3 +51,13 @@
 #blue{
   background: blue;
 }
+
+.search input{
+  width: 90%;
+  display: inline-block;
+}
+
+.search icon{
+  display: inline-block;
+}
+

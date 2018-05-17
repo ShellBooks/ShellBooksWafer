@@ -1,0 +1,6 @@
+/* components/line/line.wxss */
+.line{
+  height: 2rpx;
+  width: 100%;
+  background: #eee;
+}

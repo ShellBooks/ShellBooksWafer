@@ -7,6 +7,12 @@
       <text class='book_details_text'>出版社</text>
     </view>
   </view>
+  <view class="comments">
+    <view class='comments_number'>
+      <text>用户评论{{commentsNum}}</text>
+    </view>
+
+  </view>
   
 </view>
 

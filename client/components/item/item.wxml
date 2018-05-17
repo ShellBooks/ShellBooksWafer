@@ -1,0 +1,5 @@
+<!--item/item.wxml-->
+<view class='item'>
+  <text>{{title}}</text>
+  <view class='arrow' bindtap='onTap'></view> 
+</view>

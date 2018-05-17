@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "贝壳书吧"
+  "navigationBarTitleText": "贝壳书吧",
+  "usingComponents": {
+    "item": "../../components/item/item"
+  }
 }

@@ -101,5 +101,12 @@ Page({
     wx.navigateTo({
       url: '../book_details/book_details',
     })
+  },
+
+  navigateTo: function(e){
+    console.log(e.detail)
+    wx.navigateTo({
+      url: e.detail.url
+    })
   }
 })

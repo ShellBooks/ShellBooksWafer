@@ -1,17 +1,18 @@
 <!--pages/library/library.wxml-->
 <view>
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-    <block wx:for="{{imgs}}" wx:for-index="index">    
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">    
+    <block wx:for="{{imgs}}" wx:key="index">    
       <swiper-item>    
         <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
       </swiper-item>    
     </block>    
   </swiper> 
+  <view class='search'>
+    <input></input>
+    <icon type='search'></icon>
+  </view>
   <view class="books">
-    <view class='title'>
-      <text>新书上架</text>
-      <view class='arrow'></view> 
-    </view>
+    <item title="新书上架" url="../addCgi/addCgi" bindmyevent="navigateTo"></item>
     <scroll-view class="scroll-view" scroll-x>
       <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
       <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
@@ -20,10 +21,7 @@
     </scroll-view>  
   </view>
   <view class="books">
-    <view class='title'>
-      <text>好书推荐</text>
-      <view class='arrow'></view> 
-    </view>
+    <item title="好书推荐"></item>
     <scroll-view class="scroll-view" scroll-x>
       <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
       <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
