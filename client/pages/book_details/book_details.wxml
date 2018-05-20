@@ -12,7 +12,9 @@
     <view class='comments_number'>
       <text>用户评论{{comments.length}}</text>
     </view>
-    <comment ></comment>
+    <block wx:for="{{comments}}" wx:key="index">
+      <comment comment="{{item}}"></comment>
+    </block>
   </view>
   <text wx:else>还没有评论哦~快来添加第一条评论吧！</text>
   

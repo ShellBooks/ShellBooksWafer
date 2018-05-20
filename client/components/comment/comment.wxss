@@ -7,7 +7,12 @@
 .avatar{
   width: 20%;
   height: 100%;
-  display: 
+}
+.userinfo-avatar {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 .main{
   width: 80%;
