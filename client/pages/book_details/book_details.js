@@ -32,6 +32,15 @@ Page({
       success: res => {
         console.log(res)
         let data = res.data.data
+        for(let item in data.comments){
+          let rate = data.comments[item].rate
+          let rateArray = []
+          for(let i = 0; i < 5; ++i){
+            if(i < rate) rateArray.push(true)
+            else rateArray.push(false)
+          }
+          data.comments[item].rate = rateArray
+        }
         this.setData({
           comments: data.comments
         })
