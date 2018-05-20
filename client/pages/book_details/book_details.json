@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "书本详情页",
+  "navigationBarTitleText": "图书详情",
   "usingComponents": {
     "comment": "../../components/comment/comment"
   }

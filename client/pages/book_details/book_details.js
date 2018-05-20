@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    book_id: 0,
+    // 页面标题
+    title: '图书详情', 
+    // 图书id
+    book_id: 6,
+    // 图书评论
     comments: {}
   },
 
@@ -15,6 +19,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: this.data.title
+    })  
     wx.request({
       // 获取图书评论
       url: config.service.getCommentsUrl,
@@ -26,8 +33,9 @@ Page({
         console.log(res)
         let data = res.data.data
         this.setData({
-          comments: data
+          comments: data.comments
         })
+        console.log(data.comments)
       }
     })
   },

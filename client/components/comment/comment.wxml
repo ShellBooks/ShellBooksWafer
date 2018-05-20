@@ -1,12 +1,17 @@
 <!--components/comment/comment.wxml-->
 <view class='comment'>
-  <view class='avatar'></view>
+  <view class='avatar'>
+    <image  class="userinfo-avatar"
+            src="{{comment.avatar_url}}"
+            background-size="cover"
+    ></image>
+  </view>
   <view class='main'>
-    <text class='nickname'>用户名</text>
+    <text class='nickname'>{{comment.nickname}}</text>
     <view class='rate'>
       <image src='../../images/star-full.png'></image>
     </view>
-    <text class='date'>2018-01-06 08:00</text>
-    <text class='content'>浪费了火车硬座上的深夜时光，这本书口碑很好，期望过高，读完觉得差劲。每次看到kindle上某一段有很多人标注的时候真不明白这本书里有哪些字句值得标注出来。</text>
+    <text class='date'>{{comment.date}}</text>
+    <text class='content'>{{comment.content}}</text>
   </view>
 </view>
