@@ -27,7 +27,10 @@ var config = {
         userInfoUrl: `${host}/weapp/userInfo`,
 
         // 获取用户借阅分享图书数
-        userBooksNumUrl: `${host}/weapp/userBooksNum`
+        userBooksNumUrl: `${host}/weapp/userBooksNum`,
+
+        // 获取图书评论
+        getCommentsUrl: `${host}/weapp/getComments`
     }
 };
 

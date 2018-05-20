@@ -40,4 +40,8 @@ router.get('/userInfo', controllers.userInfo)
 // GET 获取用户借书 
 router.get('/userBooksNum', controllers.userBooksNum)
 
+// GET 获取图书评论
+router.get('/getComments', controllers.getComments)
+
+
 module.exports = router

@@ -1,4 +1,5 @@
 // pages/book_details/book_details.js
+var config = require('../../config')
 
 Page({
 
@@ -6,14 +7,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    book_id: 0,
+    comments: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.request({
+      // 获取图书评论
+      url: config.service.getCommentsUrl,
+      method: 'get',
+      data: {
+        bid: this.data.book_id
+      },
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          comments: data
+        })
+      }
+    })
   },
 
   /**
