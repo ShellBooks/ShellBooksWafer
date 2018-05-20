@@ -30,7 +30,10 @@ var config = {
         userBooksNumUrl: `${host}/weapp/userBooksNum`,
 
         // 获取图书评论
-        getCommentsUrl: `${host}/weapp/getComments`
+        getCommentsUrl: `${host}/weapp/getComments`,
+
+        //获取借阅的书
+        getBorrowBookUrl: `${host}/weapp/getBorrowBookUrl`,
     }
 };
 

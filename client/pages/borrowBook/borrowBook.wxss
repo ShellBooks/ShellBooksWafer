@@ -1,0 +1,21 @@
+/* pages/borrowBook/borrowBook.wxss */
+
+.borrow_container{
+  background: red;
+}
+
+.borrow_list{
+  background: blue;
+  width: 400rpx;
+  height: 10rpx;
+  
+}
+
+.borrow_bookitem{
+  display: inline-block;
+  width: 200rpx;
+  height: 20%;
+  margin-top: 10rpx;
+  background-image: url('http://img6.bdstatic.com/img/image/smallpic/PPT1215.jpg');
+}
+

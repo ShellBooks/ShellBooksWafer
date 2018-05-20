@@ -1,43 +1,30 @@
-// pages/me/me.js
-var config = require('../../config')
-
-const app = getApp()
-
+// pages/borrowBook/borrowBook.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    money: 0,
-    borrow: 0,
-    lend: 0
+    user_id: 0,
+    borrowArray: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      console.log(app.globalData.userInfo)
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        money: app.globalData.userInfo.money
-      })
-    }
     wx.request({
-      url: config.service.userBooksNumUrl,
+      // 获取借阅的书
+      url: config.service.getBorrowBookUrl,
       method: 'get',
       data: {
-        uid: this.data.userInfo.uid
+        uid: this.data.user_id
       },
       success: res => {
         console.log(res)
         let data = res.data.data
         this.setData({
-          borrow: data.borrow,
-          lend: data.lend
+          borrowArray: data
         })
       }
     })
@@ -90,11 +77,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  toBorrowList: function () {
-    wx.navigateTo({
-      url: '../borrowBook/borrowBook',
-    })
   }
 })

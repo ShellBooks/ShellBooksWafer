@@ -5,7 +5,8 @@
     "pages/library/library",
     "pages/me/me",
     "pages/book_details/book_details",
-    "components/line/line"
+    "components/line/line",
+    "pages/borrowBook/borrowBook"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
