@@ -7,8 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 图书id
-    book_id: 6,
     // 图书详情
     book_details: {},
     // 图书评论
@@ -19,13 +17,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options)
-     
+    console.log(options.bid)
     wx.request({
       url: config.service.getBookDetailsUrl,
       method: 'get',
       data: {
-        bid: this.data.book_id
+        bid: options.bid
       },
       success: res => {
         console.log(res)
@@ -51,7 +48,7 @@ Page({
       url: config.service.getCommentsUrl,
       method: 'get',
       data: {
-        bid: this.data.book_id
+        bid: options.bid
       },
       success: res => {
         console.log(res)
@@ -66,8 +63,7 @@ Page({
           }
           data[item].rate = rateArray
           // 处理时间格式
-          data[item].date.replace(/T/, " ")
-          console.log(data[item].date)
+          data[item].date = data[item].date.replace("T", " ").replace(".000Z", "")
         }
         
         this.setData({

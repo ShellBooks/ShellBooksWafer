@@ -109,9 +109,10 @@ Page({
     })
   },
 
-  toDetails: function(){
+  toDetails: function(e){
+    let bid = e.currentTarget.dataset.bid
     wx.navigateTo({
-      url: '../book_details/book_details',
+      url: '../book_details/book_details?bid=' +  bid,
     })
   },
 
