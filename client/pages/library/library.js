@@ -15,7 +15,8 @@ Page({
       { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
     ],
     toView: 'red',
-    scrollLeft: 100
+    scrollLeft: 100,
+    new_books: {}
   },
 
   /**
@@ -27,6 +28,10 @@ Page({
       method: 'get',
       success: res => {
         console.log(res)
+        let data = res.data.data
+        this.setData({
+          new_books: data
+        })
       }
     })
   },

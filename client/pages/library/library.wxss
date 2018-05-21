@@ -24,32 +24,28 @@
 }
 
 .scroll-view{
-  height: 300rpx;
-  background: #999;
-   width: 100%;
+  height: 400rpx;
+  /* background: #999; */
+  width: 100%;
   white-space: nowrap; 
 }
 
 .scroll-view view{
   height: 100%;
-  width: 50%;
+  width: 40%;
   display: inline-block;
 }
 
-#green{
-  background: green;
+.scroll-view view image{
+  width: 100%;
+  height: 78%;
 }
 
-#red{
-  background: red;
-}
-
-#yellow{
-  background: yellow;
-}
-
-#blue{
-  background: blue;
+.scroll-view view text{
+  display: block;
+  font-size: 30rpx;
+  width: 100%;
+  text-align: center;
 }
 
 .search input{

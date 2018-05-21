@@ -14,20 +14,26 @@
   <view class="books">
     <item title="新书上架" url="../addCgi/addCgi" bindmyevent="navigateTo"></item>
     <scroll-view class="scroll-view" scroll-x>
-      <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
-      <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
-      <view bindtap="toDetails" id="yellow" class="scroll-view-item_H bc_yellow"></view>
-      <view bindtap="toDetails" id="blue" class="scroll-view-item_H bc_blue"></view>
+      <block wx:for="{{new_books}}" wx:key="index">
+        <view bindtap="toDetails">
+          <image src='{{item.image}}'></image>
+          <text>{{item.bname}}</text>
+          <text>{{item.author}}</text>
+        </view>
+      </block>
     </scroll-view>  
   </view>
   <view class="books">
     <item title="好书推荐"></item>
     <scroll-view class="scroll-view" scroll-x>
-      <view bindtap="toDetails" id="green" class="scroll-view-item_H bc_green"></view>
-      <view bindtap="toDetails" id="red"  class="scroll-view-item_H bc_red"></view>
-      <view bindtap="toDetails" id="yellow" class="scroll-view-item_H bc_yellow"></view>
-      <view bindtap="toDetails" id="blue" class="scroll-view-item_H bc_blue"></view>
-    </scroll-view>  
+      <block wx:for="{{new_books}}" wx:key="index">
+        <view bindtap="toDetails">
+          <image src='{{item.image}}'></image>
+          <text>{{item.bname}}</text>
+          <text>{{item.author}}</text>
+        </view>
+      </block>
+    </scroll-view>   
   </view>
 </view>
 
