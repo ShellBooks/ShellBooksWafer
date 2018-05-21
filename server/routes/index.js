@@ -43,18 +43,6 @@ router.get('/userBooksNum', controllers.userBooksNum)
 // GET 获取图书评论
 router.get('/getComments', controllers.getComments)
 
-// GET 获取借书信息
-router.get('/getBorrowBookUrl', controllers.getBorrowBookUrl)
-<<<<<<< HEAD
-=======
-
-// GET 获取图书详情
-router.get('/getBookDetails', controllers.getBookDetails)
-
-// GET 获取新书上架
-router.get('/getNewBooks', controllers.getNewBooks)
->>>>>>> 5640d25d130703c323c69b7bce257ad8ef0f712f
-
 // GET 获取图书详情
 router.get('/getBookDetails', controllers.getBookDetails)
 
