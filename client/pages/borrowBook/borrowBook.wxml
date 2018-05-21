@@ -1,10 +1,16 @@
 <!--pages/borrowBook/borrowBook.wxml-->
 
 <view class='borrow_container'>
-  <block class='borrow_list' wx:for="{{borrowlist}}">
-    <view class='borrow_bookitem'> {{index}}: </view>
-    <view class='borrow_bookitem'> {{item}} </view>
-  </block>
+  <view class='borrow_view_content'>
+    <block wx:for="{{borrowlist}}">
+      <view class='borrow_bookitem'>
+        <image class='borrow_bookitem_image' src="{{item.image}}"> </image>
+        <view class='borrow_bookitem_bname'> {{item.bname}} </view>
+        <view class='borrow_bookitem_author'> {{item.author}} </view>
+      </view>
+    </block>
+  </view>
+  
 
   
  
