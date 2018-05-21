@@ -8,12 +8,7 @@
   </view>
   <view class='main'>
     <text class='nickname'>{{comment.nickname}}</text>
-    <view class='rate'>
-      <block wx:for="{{comment.rate}}" wx:key="index">
-        <image src='../../images/star-full.png' wx:if="{{item}}"></image>
-        <image src='../../images/star-n.png' wx:else></image>
-      </block>
-    </view>
+    <rate rate="{{comment.rate}}"></rate>
     <text class='date'>{{comment.date}}</text>
     <text class='content'>{{comment.content}}</text>
   </view>

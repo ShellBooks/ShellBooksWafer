@@ -1,5 +1,6 @@
 // pages/library/library.js
 var app = getApp()    
+var config = require('../../config')
 var order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({  
 
@@ -21,7 +22,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url:config.service.getNewBooksUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+      }
+    })
   },
 
   /**

@@ -34,6 +34,12 @@ var config = {
 
         //获取借阅的书
         getBorrowBookUrl: `${host}/weapp/getBorrowBookUrl`,
+
+        // 获取图书详情
+        getBookDetailsUrl: `${host}/weapp/getBookDetails`,
+
+        // 获取新书上架
+        getNewBooksUrl: `${host}/weapp/getNewBooks`
     }
 };
 

@@ -1,8 +1,10 @@
 /* components/comment/comment.wxss */
 .comment{
   width: 100%;
-  height: 400rpx;
+  height: 250rpx;
   display: flex;
+  background: #fff;
+  padding: 20rpx 0;
 }
 .avatar{
   width: 20%;

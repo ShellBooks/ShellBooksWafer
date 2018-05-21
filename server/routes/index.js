@@ -43,5 +43,9 @@ router.get('/userBooksNum', controllers.userBooksNum)
 // GET 获取图书评论
 router.get('/getComments', controllers.getComments)
 
+// GET 获取图书详情
+router.get('/getBookDetails', controllers.getBookDetails)
 
+// GET 获取新书上架
+router.get('/getNewBooks', controllers.getNewBooks)
 module.exports = router

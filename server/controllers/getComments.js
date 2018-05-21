@@ -5,9 +5,7 @@ module.exports = async ctx => {
 
   let comments = await mysql.raw('SELECT avatar_url, nickname, date, rate, content FROM comment, user WHERE comment.uid = user.uid AND bid = ?', [bid])
 
-  ctx.state.data = {
-    comments: comments[0]
-  }
+  ctx.state.data = comments[0]
 
 }
 

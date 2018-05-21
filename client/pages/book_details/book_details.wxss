@@ -1,23 +1,40 @@
 /* pages/book_detailsy/book_details.wxss */
+page{
+  background: #eee;
+}
 .book_details_img{
-  background: green;
-  height: 400rpx;
+  height: 450rpx;
   width: 50%;
   float: left;
+}
+.book_details_img image{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
 }
 .book_details_main{
   display: inline-block;
   width: 100%;
+  background: #fff;
+  padding: 40rpx 0;
 }
 .book_details_info{
   height: 400rpx;
   width: 50%;
   float: right;
-  margin-top: 20rpx;
 }
 .book_details_text{
   display: block;
   width: 100%;
-  margin-top: 10rpx;
+  margin-bottom: 10rpx;
   margin-left: 10rpx;
+  font-size: 30rpx;
+}
+.book_name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.comments_number{
+  margin: 20rpx 0;
 }

@@ -1,0 +1,7 @@
+<!--components/rate/rate.wxml-->
+<view class='rate'>
+  <block wx:for="{{rate}}" wx:key="index">
+    <image src='../../images/star-full.png' wx:if="{{item}}"></image>
+    <image src='../../images/star-n.png' wx:else></image>
+  </block>
+</view>

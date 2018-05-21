@@ -1,10 +1,21 @@
 <view>
   <view class="book_details_main">
-    <view class='book_details_img'></view>
+    <view class='book_details_img'>
+      <image src='{{book_details.image}}'></image>
+    </view>
     <view class='book_details_info'>
-      <text class='book_details_text'>书本名称</text>
-      <text class='book_details_text'>作者名字</text>
-      <text class='book_details_text'>出版社</text>
+      <text class='book_details_text book_name'>{{book_details.bname}}</text>
+      <text class='book_details_text'>作者：{{book_details.author}}</text>
+      <text class='book_details_text'>出版社:{{book_details.publish}}</text>
+      <text class='book_details_text'>定价: {{book_details.price}}</text>
+      <text class='book_details_text'>贝壳: {{book_details.shell}}</text>
+      <text class='book_details_text'>ISBN: {{book_details.ISBN}}</text>
+      <view class='book_details_text'>
+        <text>评分:</text>
+        <rate rate="{{book_details.rate}}"></rate> 
+      </view>
+      
+      
     </view>
   </view>
   

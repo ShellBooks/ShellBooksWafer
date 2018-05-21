@@ -1,0 +1,9 @@
+/* components/rate/rate.wxss */
+.rate{
+  display: inline-block;
+  margin: 0 20rpx;
+}
+.rate image{
+  width: 30rpx;
+  height: 30rpx;
+}

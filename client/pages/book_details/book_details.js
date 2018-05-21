@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 页面标题
-    title: '图书详情', 
     // 图书id
     book_id: 6,
+    // 图书详情
+    book_details: {},
     // 图书评论
     comments: {}
   },
@@ -19,9 +19,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: this.data.title
-    })  
+    // console.log(options)
+     
+    wx.request({
+      url: config.service.getBookDetailsUrl,
+      method: 'get',
+      data: {
+        bid: this.data.book_id
+      },
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        let rate = data.rate
+        let rateArray = []
+        for(let i = 0; i < 5; ++i){
+          if (i < rate) rateArray.push(true)
+          else rateArray.push(false)
+        }
+        data.rate = rateArray
+        this.setData({
+          book_details: data
+        })  
+        // 动态设置页面标题
+        wx.setNavigationBarTitle({
+          title: this.data.book_details.bname
+        })   
+      }
+    })
     wx.request({
       // 获取图书评论
       url: config.service.getCommentsUrl,
@@ -32,19 +56,24 @@ Page({
       success: res => {
         console.log(res)
         let data = res.data.data
-        for(let item in data.comments){
-          let rate = data.comments[item].rate
+        for(let item in data){
+          // 处理评分
+          let rate = data[item].rate
           let rateArray = []
           for(let i = 0; i < 5; ++i){
             if(i < rate) rateArray.push(true)
             else rateArray.push(false)
           }
-          data.comments[item].rate = rateArray
+          data[item].rate = rateArray
+          // 处理时间格式
+          data[item].date.replace(/T/, " ")
+          console.log(data[item].date)
         }
+        
         this.setData({
-          comments: data.comments
+          comments: data
         })
-        console.log(data.comments)
+        console.log(data)
       }
     })
   },
