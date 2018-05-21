@@ -1,12 +1,14 @@
 // pages/borrowBook/borrowBook.js
+var config = require('../../config')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    user_id: 0,
-    borrowArray: []
+    user_id: 9,
+    //返回的图书信息
+    borrowlist: {}
   },
 
   /**
@@ -17,15 +19,17 @@ Page({
       // 获取借阅的书
       url: config.service.getBorrowBookUrl,
       method: 'get',
+      //这里定义传递的参数
       data: {
         uid: this.data.user_id
       },
       success: res => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.data
         this.setData({
-          borrowArray: data
+          borrowlist: data.borrowlist
         })
+        console.log(data.borrowlist)
       }
     })
   },

@@ -1,14 +1,12 @@
 <!--pages/borrowBook/borrowBook.wxml-->
 
 <view class='borrow_container'>
-  <block class='borrow_list' wx:for="{{[1, 2, 3]}}">
+  <block class='borrow_list' wx:for="{{borrowlist}}">
     <view class='borrow_bookitem'> {{index}}: </view>
     <view class='borrow_bookitem'> {{item}} </view>
   </block>
 
-  <block class='borrow_list_1' wx:for="{{borrowArray}}">
-     <view class='borrow_bookitem'> {{item}} </view>
-  </block>
+  
  
 
 </view>
