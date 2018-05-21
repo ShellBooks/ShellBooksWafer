@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user_id: 9,
+    user_id: 12,
     //返回的图书信息
     borrowlist: {}
   },

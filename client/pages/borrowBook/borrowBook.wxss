@@ -1,21 +1,34 @@
 /* pages/borrowBook/borrowBook.wxss */
 
 .borrow_container{
-  background: red;
 }
 
-.borrow_list{
-  background: blue;
-  width: 400rpx;
-  height: 10rpx;
-  
+.borrow_view_content{
+  width: 650rpx;
+  height: 500rpx;
+  margin: 0 auto;
 }
 
 .borrow_bookitem{
   display: inline-block;
+  width: 30%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 30rpx;
+}
+
+.borrow_bookitem_bname{
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.borrow_bookitem_author{
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.borrow_bookitem_image{
   width: 200rpx;
-  height: 20%;
-  margin-top: 10rpx;
-  background-image: url('http://img6.bdstatic.com/img/image/smallpic/PPT1215.jpg');
+  height: 300rpx;
 }
 
