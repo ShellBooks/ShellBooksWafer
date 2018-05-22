@@ -43,6 +43,7 @@ var config = {
 
         // 上传图书信息
         uploadBookInfoUrl: `${host}/weapp/uploadBookInfo`
+
     }
 };
 

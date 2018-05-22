@@ -1,0 +1,34 @@
+<!--pages/verifyName/verifyName.wxml-->
+
+<view>
+  <view class='verify_item'>
+    <text>学号</text>
+    <input bindblur="inputSchId" name='schid'></input>
+  </view>
+  <line></line>
+  <view class='verify_item'>
+    <text>姓名</text>
+    <input bindblur='inputName' name='name'></input>
+  </view>
+  <line></line>
+  <view class='verify_item'>
+    <text>电话号码</text>
+    <input bindblur='inputTel' name='phone'></input>
+  </view>
+  <line></line>
+  <view class='info_item' bindtap='doUpload'>
+      <text>上传校园卡照片</text>
+      <view class='arrow'></view>
+      <view class='isUpload'>
+        <text wx:if="{{image}}">已上传</text>
+        <text wx:else>未上传</text>
+      </view>
+    </view>
+    <view class='preview_img' wx:if="{{image}}">
+      <image
+          src="{{image}}"
+          mode="aspectFit"
+          bindtap="previewImg"
+      ></image>
+    </view>
+</view>

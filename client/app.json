@@ -6,7 +6,9 @@
     "pages/me/me",
     "pages/bookDetails/bookDetails",
     "pages/borrowBook/borrowBook",
-    "pages/shareBook/shareBook"
+    "pages/shareBook/shareBook",
+    "pages/verifyName/verifyName"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

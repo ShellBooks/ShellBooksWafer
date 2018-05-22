@@ -102,5 +102,11 @@ Page({
     wx.navigateTo({
       url: '../shareBook/shareBook',
     })
+  },
+
+  toVerifyPage: function(){
+    wx.navigateTo({
+      url: '../verifyName/verifyName',
+    })
   }
 })

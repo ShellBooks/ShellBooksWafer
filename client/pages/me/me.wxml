@@ -16,6 +16,8 @@
     <item title="当前借书" bindtap="toBorrowList"></item>
     <line></line>
     <item title="我的收藏"></item>
+    <line></line>
+    <item title="实名认证" bindtap="toVerifyPage"></item>
   </view>
   <view class="me_list">
     <item title="我的借书"></item>

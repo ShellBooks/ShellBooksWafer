@@ -1,0 +1,48 @@
+/* pages/verifyName/verifyName.wxss */
+
+.verify_item{
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx 0;
+  font-size: 40rpx;
+}
+
+.verify_item input{
+  width: 70%;
+  height: 96%;
+  float: right;
+  margin-right: 30rpx;
+  border: 1px solid #aaa;
+}
+.verify_item text{
+  width: 20%;
+  height: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: 30rpx; 
+}
+
+.arrow{
+  width: 30rpx;
+  height: 30rpx;
+  border-top: 4rpx solid #999; 
+  border-right: 4rpx solid #999; 
+  /* position: absolute; */
+  float: right;
+  margin-right: 30rpx; 
+  margin-top: 25rpx;
+  transform: rotate(45deg);
+}
+.preview_img{
+  width: 200rpx;
+  height: 300rpx;
+}
+.preview_img image{
+  width: 100%;
+  height: 100%;
+}
+.isUpload{
+  float: right;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
