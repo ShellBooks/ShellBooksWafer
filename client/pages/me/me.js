@@ -97,7 +97,11 @@ Page({
       url: '../borrowBook/borrowBook',
     })
   },
-
+  toShareList: function(){
+    wx.navigateTo({
+      url: '../bookList/bookList?type=share',
+    })
+  },
   toShareBook: function(){
     wx.navigateTo({
       url: '../shareBook/shareBook',

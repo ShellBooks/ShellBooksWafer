@@ -1,5 +1,8 @@
 // pages/book_details/book_details.js
 var config = require('../../config')
+var util = require('../../utils/util.js')
+
+const app = getApp()
 
 Page({
 
@@ -7,6 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 图书 id
+    bid: -1,
     // 图书详情
     book_details: {},
     // 图书评论
@@ -17,23 +22,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.bid)
+    this.setData({
+      bid: options.bid
+    })
     wx.request({
       url: config.service.getBookDetailsUrl,
       method: 'get',
       data: {
-        bid: options.bid
+        bid: this.data.bid
       },
       success: res => {
         console.log(res)
         let data = res.data.data
         let rate = data.rate
-        let rateArray = []
-        for(let i = 0; i < 5; ++i){
-          if (i < rate) rateArray.push(true)
-          else rateArray.push(false)
+        if(rate > 0){
+          let rateArray = []
+          for (let i = 0; i < 5; ++i) {
+            if (i < rate) rateArray.push(true)
+            else rateArray.push(false)
+          }
+          data.rate = rateArray
         }
-        data.rate = rateArray
         this.setData({
           book_details: data
         })  
@@ -48,7 +57,7 @@ Page({
       url: config.service.getCommentsUrl,
       method: 'get',
       data: {
-        bid: options.bid
+        bid: this.data.bid
       },
       success: res => {
         console.log(res)
@@ -121,5 +130,31 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 借阅图书
+  borrowBook: function () {
+    let uid
+    if (app.globalData.userInfo) {
+      uid = app.globalData.userInfo.uid
+    }
+    // 借书日期
+    let date = util.formatTime(new Date(), 1)
+    // 默认归还日期
+    let limit = util.formatTime(new Date(), 2)
+    wx.request({
+      url: config.service.borrowBookUrl,
+      method: 'post',
+      data: {
+        uid: uid,        
+        bid: this.data.bid,
+        date: date,
+        limit: limit,
+        status: 0
+      },
+      success: res => {
+        console.log(res)
+
+      }
+    })
   }
 })

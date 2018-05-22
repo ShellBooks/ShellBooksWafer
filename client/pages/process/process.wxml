@@ -1,3 +1,4 @@
+<!--pages/process/process.wxml-->
 <view>
   <view class="book_details_main">
     <view class='book_details_img'>
@@ -17,16 +18,21 @@
       <text class='book_details_text' wx:else>暂无评分</text>
     </view>
   </view>
-  
-  <view class="comments" wx:if="{{comments.length}}">
-    <view class='comments_number'>
-      <text>用户评论{{comments.length}}</text>
-    </view>
-    <block wx:for="{{comments}}" wx:key="index">
-      <comment comment="{{item}}"></comment>
-    </block>
+  <text class="tag">流程详情</text>
+  <view class='process_info'>
+    <block wx:for="{{process}}" wx:key="index">  
+      <view class='item_info'>  
+        <view class='time_info'>
+          <text>2017-12-11</text>
+          <text>23:16:12</text>  
+        </view>
+        <view class='icon {{0==index?"in":"no_in"}}'></view>  
+        <view class='operation_info'>  
+          <text>{{item}},发往深圳太远客运中转部</text>  
+        </view>  
+        <view class='on'></view>  
+      </view>  
+    </block>  
+     <view class='icon no_in'></view>   
   </view>
-  <text wx:else>还没有评论哦~快来添加第一条评论吧！</text>
-  <button class='borrow_book_btn' bindtap='borrowBook'>立即借书</button>
-</view>
-
+</view> 

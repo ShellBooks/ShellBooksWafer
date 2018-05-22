@@ -2,7 +2,7 @@
 <view>
   <view class='backWall'></view>
   <view>
-    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatar_url}}" background-size="cover"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatar_url}}" background-size="cover"></image>
     <view class="userinfo-nickname">
       <text>{{userInfo.nickname}}</text>  
     </view>
@@ -20,7 +20,7 @@
   <view class="me_list">
     <item title="我的借书"></item>
     <line></line>
-    <item title="我的分享" bindtap="toShareBook"></item>
+    <item title="我的分享" bindtap="toShareList"></item>
   </view>
   <view class="me_list">
     <item title="关于我们"></item>

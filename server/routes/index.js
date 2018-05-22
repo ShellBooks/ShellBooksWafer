@@ -55,4 +55,10 @@ router.get('/getNewBooks', controllers.getNewBooks)
 //  POST 上传图书信息
 router.post('/uploadBookInfo', controllers.uploadBookInfo)
 
+// GET 获取分享图书列表
+router.get('/getShareBook', controllers.getShareBook)
+
+// GET 借阅图书
+router.post('/borrowBook', controllers.borrowBook)
+
 module.exports = router
