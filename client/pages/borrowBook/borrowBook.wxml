@@ -2,7 +2,7 @@
 
 <view class='borrow_container'>
   <view class='borrow_view_content'>
-    <block wx:for="{{borrowlist}}">
+    <block wx:for="{{borrowlist}}" wx:key="index">
       <view class='borrow_bookitem'>
         <image class='borrow_bookitem_image' src="{{item.image}}"> </image>
         <view class='borrow_bookitem_bname'> {{item.bname}} </view>

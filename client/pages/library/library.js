@@ -112,7 +112,7 @@ Page({
   toDetails: function(e){
     let bid = e.currentTarget.dataset.bid
     wx.navigateTo({
-      url: '../book_details/book_details?bid=' +  bid,
+      url: '../bookDetails/bookDetails?bid=' +  bid,
     })
   },
 

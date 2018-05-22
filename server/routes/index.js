@@ -44,7 +44,7 @@ router.get('/userBooksNum', controllers.userBooksNum)
 router.get('/getComments', controllers.getComments)
 
 // GET 获取借书信息
-router.get('/getBorrowBookUrl', controllers.getBorrowBookUrl)
+router.get('/getBorrowBook', controllers.getBorrowBook)
 
 // GET 获取图书详情
 router.get('/getBookDetails', controllers.getBookDetails)

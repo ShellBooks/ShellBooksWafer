@@ -1,4 +1,4 @@
-/* components/line/line.wxss */
+/* components/myline/line.wxss */
 .line{
   height: 4rpx;
   width: 100%;
