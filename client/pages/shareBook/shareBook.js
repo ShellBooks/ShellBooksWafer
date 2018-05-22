@@ -15,9 +15,7 @@ Page({
     publish: '',
     price: '',
     ISBN: '',
-    image: '',
-    rate: 0,
-    status: 0
+    image: ''
   },
 
   /**
@@ -140,46 +138,35 @@ Page({
   },
   uploadBookInfo: function(){
     util.showBusy('正在上传')
-    // 为 Date 对象添加原型
-    Date.prototype.Format = function (fmt) { //author: meizz 
-      var o = {
-        "M+": this.getMonth() + 1, //月份 
-        "d+": this.getDate(), //日 
-        "h+": this.getHours(), //小时 
-        "m+": this.getMinutes(), //分 
-        "s+": this.getSeconds(), //秒 
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
-        "S": this.getMilliseconds() //毫秒 
-      };
-      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-      for (var k in o)
-        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-      return fmt;
-    }
-
-    let book = this.data
+    let uid
     if (app.globalData.userInfo) {
-      book.uid = app.globalData.userInfo.uid
+      uid = app.globalData.userInfo.uid
     }
-    let date = new Date().Format("yyyy-MM-dd hh:mm:ss")
-    console.log(date)
-    book.date = date
-    console.log(book)
+    let date = util.formatTime(new Date())
     wx.request({
       url: config.service.uploadBookInfoUrl,
       method: 'post',
-      data: book,
+      data: {
+        bname: this.data.bname,
+        author: this.data.author,
+        publish: this.data.publish,
+        price: this.data.price,
+        ISBN: this.data.ISBN,
+        image: this.data.image,
+        rate: 0,
+        status: 0,
+        date: date,
+        uid: uid
+      },
       success: res => {
         console.log(res)
-        if(!res.code){
+        if(res.data.code == 0){
           util.showSuccess('上传信息成功')
         } else {
-          util.showModel('上传信息失败')
+          util.showModel('上传信息失败', res.data.error)
         }
       }
     })
-
-    
   },
 
   inputName: function (e) {

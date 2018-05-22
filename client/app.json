@@ -7,8 +7,9 @@
     "pages/bookDetails/bookDetails",
     "pages/borrowBook/borrowBook",
     "pages/shareBook/shareBook",
-    "pages/verifyName/verifyName"
-    
+    "pages/verifyName/verifyName",
+    "pages/bookList/bookList",
+    "pages/process/process"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

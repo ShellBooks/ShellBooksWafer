@@ -3,7 +3,7 @@
 <view class='borrow_container'>
   <view class='borrow_view_content'>
     <block wx:for="{{borrowlist}}" wx:key="index">
-      <view class='borrow_bookitem' bindtap='toDetails' data-bid='{{item.bid}}'>
+      <view class='borrow_bookitem' bindtap="toProcess">
         <image class='borrow_bookitem_image' src="{{item.image}}"> </image>
         <view class='borrow_bookitem_bname'> {{item.bname}} </view>
         <view class='borrow_bookitem_author'> {{item.author}} </view>

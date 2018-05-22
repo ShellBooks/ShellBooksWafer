@@ -1,0 +1,97 @@
+/* pages/process/process.wxss */
+page{
+  background: #eee;
+}
+.book_details_img{
+  height: 450rpx;
+  width: 50%;
+  float: left;
+}
+.book_details_img image{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.book_details_main{
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  padding: 40rpx 0;
+}
+.book_details_info{
+  height: 400rpx;
+  width: 50%;
+  float: right;
+}
+.book_details_text{
+  display: block;
+  width: 100%;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}
+.book_name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.tag{
+  display: block;
+  margin: 20rpx 0;
+}
+.process_info{
+  background: #fff;
+  padding-top: 40rpx;
+}
+.time_info{
+  font-size: 28rpx;  
+  color: #666;
+  position: absolute;
+  left: 20rpx;
+}
+.time_info text{
+  display: block;
+  width: 180rpx;
+  text-align: center;
+}
+
+.item_info{
+  position: relative;
+  height: 150rpx;
+}
+  
+.operation_info{  
+  position: absolute;   
+  left: 250rpx;   
+  font-size: 28rpx;  
+  color: #666;
+}  
+.icon{  
+  width: 20rpx;  
+  height: 20rpx;  
+  background: white;  
+  border-radius: 50%;  
+  position: absolute;
+  left: 200rpx;
+}  
+.in{  
+  border: 1rpx solid #66ccff;  
+  animation: my_animation 2s infinite;  
+}  
+@keyframes my_animation{  
+    100% {    
+    transform: scale(2);    
+    background-color: transparent;    
+    }    
+}  
+.no_in{  
+  border: 1rpx solid #d0d0d0;  
+}  
+.on{  
+  background: #d0d0d0;  
+  height: 100rpx;  
+  width: 1px;  
+  margin-left: 210rpx; 
+  position: relative;
+  top: 40rpx;
+}  

@@ -1,0 +1,30 @@
+/* pages/bookList/bookList.wxss */
+.view_content{
+  width: 650rpx;
+  height: 500rpx;
+  margin: 0 auto;
+}
+
+.bookitem{
+  display: inline-block;
+  width: 30%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 30rpx;
+}
+
+.bookitem_bname{
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.bookitem_author{
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.bookitem_image{
+  width: 200rpx;
+  height: 300rpx;
+}
+

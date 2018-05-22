@@ -32,7 +32,7 @@ var config = {
         // 获取图书评论
         getCommentsUrl: `${host}/weapp/getComments`,
 
-        //获取借阅的书
+        // 获取借阅的书
         getBorrowBookUrl: `${host}/weapp/getBorrowBook`,
 
         // 获取图书详情
@@ -42,8 +42,13 @@ var config = {
         getNewBooksUrl: `${host}/weapp/getNewBooks`,
 
         // 上传图书信息
-        uploadBookInfoUrl: `${host}/weapp/uploadBookInfo`
+        uploadBookInfoUrl: `${host}/weapp/uploadBookInfo`,
 
+        // 获取分享图书列表
+        getShareBookUrl: `${host}/weapp/getShareBook`,
+
+        // 借阅图书
+        borrowBookUrl: `${host}/weapp/borrowBook`,
     }
 };
 
