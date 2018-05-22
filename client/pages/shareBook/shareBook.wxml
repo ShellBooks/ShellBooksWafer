@@ -1,2 +1,46 @@
 <!--pages/shareBook/shareBook.wxml-->
-<text>pages/shareBook/shareBook.wxml</text>
+<view>
+  <view class="book_info">
+    <view class='info_item'>
+      <text>书名</text>
+      <input bindblur="inputName" name="bname"></input>
+    </view>
+    <line></line>
+    <view class='info_item'>
+      <text>作者</text>
+      <input bindblur="inputAuthor"></input>
+    </view>
+    <line></line>
+    <view class='info_item'>
+      <text>出版社</text>
+      <input bindblur="inputPublish"></input>
+    </view>
+    <line></line>
+    <view class='info_item'>
+      <text>定价</text>
+      <input bindblur="inputPrice"></input>
+    </view>
+    <line></line>
+    <view class='info_item'>
+      <text>ISBN</text>
+      <input bindblur="inputISBN"></input>
+    </view>
+    <!-- <button bindtap='doubanBookInfo'>尝试填充信息</button> -->
+    <view class='info_item' bindtap="doUpload">
+      <text>封面</text>
+      <view class='arrow'></view>
+      <view class='isUpload'>
+        <text wx:if="{{image}}">已上传</text>
+        <text wx:else>未上传</text>
+      </view>
+    </view>
+    <view class='preview_img' wx:if="{{image}}">
+      <image
+          src="{{image}}"
+          mode="aspectFit"
+          bindtap="previewImg"
+      ></image>
+    </view>
+  </view>
+  <button class="upload_book_btn" bindtap='uploadBookInfo'>上传图书信息</button>
+</view>

@@ -39,7 +39,10 @@ var config = {
         getBookDetailsUrl: `${host}/weapp/getBookDetails`,
 
         // 获取新书上架
-        getNewBooksUrl: `${host}/weapp/getNewBooks`
+        getNewBooksUrl: `${host}/weapp/getNewBooks`,
+
+        // 上传图书信息
+        uploadBookInfoUrl: `${host}/weapp/uploadBookInfo`
     }
 };
 

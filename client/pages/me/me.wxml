@@ -9,7 +9,7 @@
     <view class="info">
       <text>{{money}}贝壳</text>
       <text>{{borrow}}借书</text>
-      <text>{{lend}}分享</text>
+      <text>{{share}}分享</text>
     </view>
   </view>
   <view class="me_list">
@@ -20,7 +20,7 @@
   <view class="me_list">
     <item title="我的借书"></item>
     <line></line>
-    <item title="我的分享"></item>
+    <item title="我的分享" bindtap="toShareBook"></item>
   </view>
   <view class="me_list">
     <item title="关于我们"></item>

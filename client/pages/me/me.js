@@ -12,7 +12,7 @@ Page({
     userInfo: {},
     money: 0,
     borrow: 0,
-    lend: 0
+    share: 0
   },
 
   /**
@@ -37,7 +37,7 @@ Page({
         let data = res.data.data
         this.setData({
           borrow: data.borrow,
-          lend: data.lend
+          share: data.share
         })
       }
     })
@@ -95,6 +95,12 @@ Page({
   toBorrowList: function () {
     wx.navigateTo({
       url: '../borrowBook/borrowBook',
+    })
+  },
+
+  toShareBook: function(){
+    wx.navigateTo({
+      url: '../shareBook/shareBook',
     })
   }
 })

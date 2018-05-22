@@ -51,4 +51,8 @@ router.get('/getBookDetails', controllers.getBookDetails)
 
 // GET 获取新书上架
 router.get('/getNewBooks', controllers.getNewBooks)
+
+//  POST 上传图书信息
+router.post('/uploadBookInfo', controllers.uploadBookInfo)
+
 module.exports = router
