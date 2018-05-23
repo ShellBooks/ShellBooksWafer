@@ -61,4 +61,7 @@ router.get('/getShareBook', controllers.getShareBook)
 // GET 借阅图书
 router.post('/borrowBook', controllers.borrowBook)
 
+// GET 获取流程信息
+router.get('/getProcess', controllers.getProcess)
+
 module.exports = router

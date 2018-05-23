@@ -24,7 +24,7 @@ Page({
         uid: this.data.user_id
       },
       success: res => {
-        //console.log(res)
+        console.log(res)
         let data = res.data.data
         this.setData({
           borrowlist: data.borrowlist

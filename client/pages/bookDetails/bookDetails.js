@@ -137,23 +137,23 @@ Page({
     if (app.globalData.userInfo) {
       uid = app.globalData.userInfo.uid
     }
-    // 借书日期
-    let date = util.formatTime(new Date(), 1)
-    // 默认归还日期
-    let limit = util.formatTime(new Date(), 2)
+    let date = util.formatTime(new Date())
     wx.request({
       url: config.service.borrowBookUrl,
       method: 'post',
       data: {
         uid: uid,        
         bid: this.data.bid,
+        // type = 1 借书 type = 0 分享
+        type: 1, 
         date: date,
-        limit: limit,
-        status: 0
+        info: '借书请求已提交'
       },
       success: res => {
         console.log(res)
-
+        wx.navigateTo({
+          url: '../process/process?bid=' + this.data.bid + '&type=' + 1,
+        })
       }
     })
   }

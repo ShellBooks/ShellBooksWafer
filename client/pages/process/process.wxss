@@ -1,7 +1,4 @@
 /* pages/process/process.wxss */
-page{
-  background: #eee;
-}
 .book_details_img{
   height: 450rpx;
   width: 50%;
@@ -37,7 +34,8 @@ page{
 }
 .tag{
   display: block;
-  margin: 20rpx 0;
+  padding: 20rpx 0;
+  background: #eee;
 }
 .process_info{
   background: #fff;

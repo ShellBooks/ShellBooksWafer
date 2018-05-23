@@ -1,11 +1,22 @@
 const { mysql } = require('../qcloud')
 
 module.exports = async ctx => {
-  let borrow = ctx.request.body
+  let process = ctx.request.body
+  let borrow = {
+    uid: process.uid,
+    bid: process.bid,
+    status: 0
+  }
+  
+  let pres = await mysql("process").insert(process)
+  let bres = await mysql("borrow").insert(borrow)
 
-  let res = await mysql("borrow").insert(borrow)
-
-  ctx.state.data = res
+  if(pres && bres){
+    ctx.state.data = "borrow success"
+  } else {
+    ctx.state.code = -1
+    ctx.state.data = "borrow error"
+  }
 
 }
 

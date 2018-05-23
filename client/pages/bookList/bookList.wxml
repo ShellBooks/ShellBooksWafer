@@ -2,12 +2,15 @@
 <view>
   <view class='view_content'>
     <block wx:for="{{booklist}}" wx:key="index">
-      <view class='bookitem'>
+      <view class='bookitem' bindtap="toProcess" data-bid="{{item.bid}}">
         <image class='bookitem_image' src="{{item.image}}"> </image>
         <view class='bookitem_bname'> {{item.bname}} </view>
         <view class='bookitem_author'> {{item.author}} </view>
       </view>
     </block>
+    <navigator url='../shareBook/shareBook' wx:if="{{type == 0}}">
+      <image src='../../images/ADD.png'></image>
+    </navigator>
   </view>
 </view>
   

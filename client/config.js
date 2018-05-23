@@ -49,6 +49,9 @@ var config = {
 
         // 借阅图书
         borrowBookUrl: `${host}/weapp/borrowBook`,
+
+        // 获取流程信息
+        getProcessUrl: `${host}/weapp/getProcess`,
     }
 };
 

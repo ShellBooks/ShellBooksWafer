@@ -3,29 +3,29 @@
   <view class="book_info">
     <view class='info_item'>
       <text>书名</text>
-      <input bindblur="inputName" name="bname"></input>
+      <input bindblur="inputName" value="{{bname}}"></input>
     </view>
     <line></line>
     <view class='info_item'>
       <text>作者</text>
-      <input bindblur="inputAuthor"></input>
+      <input bindblur="inputAuthor" value="{{author}}"></input>
     </view>
     <line></line>
     <view class='info_item'>
       <text>出版社</text>
-      <input bindblur="inputPublish"></input>
+      <input bindblur="inputPublish" value="{{publish}}"></input>
     </view>
     <line></line>
     <view class='info_item'>
       <text>定价</text>
-      <input bindblur="inputPrice"></input>
+      <input bindblur="inputPrice" value="{{price}}"></input>
     </view>
     <line></line>
     <view class='info_item'>
       <text>ISBN</text>
-      <input bindblur="inputISBN"></input>
+      <input bindblur="inputISBN" value="{{ISBN}}"></input>
     </view>
-    <!-- <button bindtap='doubanBookInfo'>尝试填充信息</button> -->
+    <button bindtap='doubanBookInfo'>尝试填充信息</button> 
     <view class='info_item' bindtap="doUpload">
       <text>封面</text>
       <view class='arrow'></view>

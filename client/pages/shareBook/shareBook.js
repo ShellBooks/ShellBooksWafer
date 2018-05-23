@@ -122,19 +122,31 @@ Page({
       urls: [this.data.image]
     })
   },
-
+  // 豆瓣API获取图书信息
   doubanBookInfo: function(e){
-    // console.log(e)
-    // wx.request({
-    //   url: 'https://api.douban.com/v2/book/isbn/:' + this.data.isbn,
-    //   header: {
-    //     "Content-Type": "json"
-    //   },
-    //   method: 'get',
-    //   success: res => {
-    //     console.log(res)
-    //   }
-    // })
+    console.log(e)
+    wx.request({
+      url: 'https://douban.uieee.com/v2/book/isbn/' + this.data.ISBN,
+      header: {
+        "Content-Type": "json"
+      },
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let author = res.data.author
+        let image = res.data.image
+        let price = res.data.price.replace("元", "")
+        let publish = res.data.publisher
+        let bname = res.data.title
+        this.setData({
+          bname: bname,
+          author: author,
+          publish: publish,
+          price: price,
+          image: image
+        })
+      }
+    })
   },
   uploadBookInfo: function(){
     util.showBusy('正在上传')
@@ -143,6 +155,7 @@ Page({
       uid = app.globalData.userInfo.uid
     }
     let date = util.formatTime(new Date())
+    console.log(date)
     wx.request({
       url: config.service.uploadBookInfoUrl,
       method: 'post',
@@ -162,6 +175,10 @@ Page({
         console.log(res)
         if(res.data.code == 0){
           util.showSuccess('上传信息成功')
+          let bid = res.data.data
+          wx.redirectTo({
+            url: '../process/process?bid=' + bid + '&type=' + 0,
+          })
         } else {
           util.showModel('上传信息失败', res.data.error)
         }

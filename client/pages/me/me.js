@@ -92,21 +92,26 @@ Page({
   
   },
 
+  // toBorrowList: function () {
+  //   wx.navigateTo({
+  //     url: '../borrowBook/borrowBook',
+  //   })
+  // },
   toBorrowList: function () {
     wx.navigateTo({
-      url: '../borrowBook/borrowBook',
+      url: '../bookList/bookList?type=1',
     })
   },
   toShareList: function(){
     wx.navigateTo({
-      url: '../bookList/bookList?type=share',
+      url: '../bookList/bookList?type=0',
     })
   },
-  toShareBook: function(){
-    wx.navigateTo({
-      url: '../shareBook/shareBook',
-    })
-  },
+  // toShareBook: function(){
+  //   wx.navigateTo({
+  //     url: '../shareBook/shareBook',
+  //   })
+  // },
 
   toVerifyPage: function(){
     wx.navigateTo({
