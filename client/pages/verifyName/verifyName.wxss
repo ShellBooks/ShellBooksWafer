@@ -46,3 +46,8 @@
   font-size: 30rpx;
   margin-right: 20rpx;
 }
+.upload_book_btn{
+  top: 550rpx;
+  color: #fff;
+  font-size: 32rpx;
+}

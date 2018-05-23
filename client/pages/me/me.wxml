@@ -18,11 +18,13 @@
     <item title="我的收藏"></item>
     <line></line>
     <item title="实名认证" bindtap="toVerifyPage"></item>
+    <line></line>
   </view>
   <view class="me_list">
     <item title="借阅记录"></item>
     <line></line>
     <item title="我的分享" bindtap="toShareList"></item>
+    <line></line>
   </view>
   <view class="me_list">
     <item title="关于我们"></item>

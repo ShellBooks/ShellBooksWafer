@@ -31,5 +31,5 @@
           bindtap="previewImg">
       </image>
   </view>
-  <button class="upload_book_btn" bindtap='uploadVerify'>上传个人信息</button>
+  <button class="upload_book_btn" bindtap='uploadVerify' style="background:url('../../images/button.png');background-size:100%">上传个人信息</button>
 </view>
