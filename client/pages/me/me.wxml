@@ -20,7 +20,7 @@
     <item title="实名认证" bindtap="toVerifyPage"></item>
   </view>
   <view class="me_list">
-    <item title="我的借书"></item>
+    <item title="借阅记录"></item>
     <line></line>
     <item title="我的分享" bindtap="toShareList"></item>
   </view>

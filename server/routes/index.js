@@ -64,4 +64,7 @@ router.post('/borrowBook', controllers.borrowBook)
 // GET 获取流程信息
 router.get('/getProcess', controllers.getProcess)
 
+//POST 上传实名认证
+router.post('/uploadVerifyName', controllers.uploadVerifyName)
+
 module.exports = router

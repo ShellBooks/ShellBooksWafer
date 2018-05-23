@@ -52,6 +52,10 @@ var config = {
 
         // 获取流程信息
         getProcessUrl: `${host}/weapp/getProcess`,
+
+        //上传实名认证
+        uploadVerifyNameUrl: `${host}/weapp/uploadVerifyName`
+
     }
 };
 
