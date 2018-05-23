@@ -5,17 +5,17 @@ module.exports = async ctx => {
   let schid = ctx.request.body.schid
   let name = ctx.request.body.name
   let phone = ctx.request.body.phone
-  let image = ctx.request.body.image
+  let cardimg = ctx.request.body.cardimg
   let uid = ctx.request.body.uid
+  let isVerified = 1
   
-  let res = await mysql("borrow").where({ uid }).update({ status: 400 })
+  let res = await mysql("user").where({ uid }).update({ name, phone, cardimg, isVerified})
 
   if (res) {
-    ctx.state.code= -2
-    ctx.state.data = "upload success"
+    ctx.state.data = "verify success"
   } else {
     ctx.state.code = -1
-    ctx.state.date = "upload error"
+    ctx.state.date = "verify error"
   }
 
   

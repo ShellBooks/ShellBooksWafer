@@ -98,7 +98,7 @@ Page({
             res = JSON.parse(res.data)
             console.log(res)
             that.setData({
-              image: res.data.imgUrl
+              cardimg: res.data.imgUrl
             })
           },
 
@@ -117,8 +117,8 @@ Page({
   // 预览图片
   previewImg: function () {
     wx.previewImage({
-      current: this.data.image,
-      urls: [this.data.image]
+      current: this.data.cardimg,
+      urls: [this.data.cardimg]
     })
   },
 
@@ -136,7 +136,7 @@ Page({
         schid: this.data.schid,
         name: this.data.name,
         phone: this.data.phone,
-        image: this.data.image,
+        cardimg: this.data.cardimg,
         uid: uid
       },
       success: res => {

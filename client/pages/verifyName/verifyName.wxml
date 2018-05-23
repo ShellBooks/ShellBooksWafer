@@ -20,13 +20,13 @@
       <text>上传校园卡照片</text>
       <view class='arrow'></view>
       <view class='isUpload'>
-        <text wx:if="{{image}}">已上传</text>
+        <text wx:if="{{cardimg}}">已上传</text>
         <text wx:else>未上传</text>
       </view>
   </view>
-  <view class='preview_img' wx:if="{{image}}">
+  <view class='preview_img' wx:if="{{cardimg}}">
       <image
-          src="{{image}}"
+          src="{{cardimg}}"
           mode="aspectFit"
           bindtap="previewImg">
       </image>
