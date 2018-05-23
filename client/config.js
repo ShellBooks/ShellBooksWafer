@@ -49,6 +49,9 @@ var config = {
 
         // 借阅图书
         borrowBookUrl: `${host}/weapp/borrowBook`,
+
+        //上传实名认证
+        uploadVerifyNameUrl: `${host}/weapp/uploadVerifyName`
     }
 };
 

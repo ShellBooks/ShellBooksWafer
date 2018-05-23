@@ -61,4 +61,7 @@ router.get('/getShareBook', controllers.getShareBook)
 // GET 借阅图书
 router.post('/borrowBook', controllers.borrowBook)
 
+//POST 上传实名认证
+router.post('/uploadVerifyName', controllers.uploadVerifyName)
+
 module.exports = router
