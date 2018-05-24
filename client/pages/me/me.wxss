@@ -20,7 +20,7 @@ page{
     0 1px 2px 1px #efefef;
 }
 .userinfo-nickname {
-  color: #aaa;
+  /* color: #aaa; */
   margin-top: 140rpx;
   margin-left: 20rpx;
 }
@@ -30,4 +30,13 @@ page{
 .me_list{
   margin: 20rpx 0;
 }
-
+.gender{
+  width: 24rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}
+.verify{
+  width: 100rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}

@@ -1,0 +1,6 @@
+<!--pages/searchResult/searchResult.wxml-->
+<view class='searchRes'>
+  <block wx:for="{{res}}" wx:key="index">
+    <view>{{item.bname}}</view>
+  </block>
+</view>

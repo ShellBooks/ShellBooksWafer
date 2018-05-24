@@ -54,7 +54,10 @@ var config = {
         getProcessUrl: `${host}/weapp/getProcess`,
 
         //上传实名认证
-        uploadVerifyNameUrl: `${host}/weapp/uploadVerifyName`
+        uploadVerifyNameUrl: `${host}/weapp/uploadVerifyName`,
+
+        // 搜索图书
+        searchBookUrl: `${host}/weapp/searchBook`
 
     }
 };

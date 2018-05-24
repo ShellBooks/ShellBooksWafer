@@ -1,6 +1,9 @@
 // pages/library/library.js
-var app = getApp()    
 var config = require('../../config')
+// var util = require('../../utils/util.js')
+
+var app = getApp()    
+
 var order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({  
 
@@ -16,7 +19,9 @@ Page({
     ],
     toView: 'red',
     scrollLeft: 100,
-    new_books: {}
+    new_books: {},
+    inputShowed: false,
+    inputVal: ""
   },
 
   /**
@@ -121,5 +126,39 @@ Page({
     wx.navigateTo({
       url: e.detail.url
     })
+  },
+
+  searchBook: function(){
+    if(!this.data.inputVal){
+      // 如果搜素内容为空 不操作
+      this.hideInput()
+    } else {
+      wx.navigateTo({
+        url: '../searchResult/searchResult?query=' + this.data.inputVal,
+      })
+    }
+  },
+
+  // WEUI SearchBar
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   }
 })

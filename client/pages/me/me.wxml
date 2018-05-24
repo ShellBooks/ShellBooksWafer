@@ -4,7 +4,11 @@
   <view>
     <image class="userinfo-avatar" src="{{userInfo.avatar_url}}" background-size="cover"></image>
     <view class="userinfo-nickname">
-      <text>{{userInfo.nickname}}</text>  
+      <text>{{userInfo.nickname}}</text>
+      <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
+      <image class='gender' src='../../images/girl.png' wx:else></image>
+      <image class='verify' src='../../images/verified.png' wx:if="{userInfo.verified"></image>
+      <image  class='verify' src='../../images/unverified.png' wx:else></image>
     </view>
     <view class="info">
       <text>{{money}}贝壳</text>

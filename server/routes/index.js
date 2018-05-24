@@ -67,4 +67,8 @@ router.get('/getProcess', controllers.getProcess)
 //POST 上传实名认证
 router.post('/uploadVerifyName', controllers.uploadVerifyName)
 
+// GET 搜索图书
+router.get('/searchBook', controllers.searchBook)
+
+
 module.exports = router
