@@ -92,4 +92,8 @@
   margin-left: 210rpx; 
   position: relative;
   top: 40rpx;
-}  
+} 
+
+.review_btn::after{
+  border: none;
+}
