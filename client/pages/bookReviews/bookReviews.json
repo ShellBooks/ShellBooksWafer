@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "发表评论",
+  "usingComponents":{
+    "rate": "../../components/rate/rate"
+  }
+}

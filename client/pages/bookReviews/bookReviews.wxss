@@ -1,1 +1,22 @@
 /* pages/bookReviews/bookReviews.wxss */
+
+page{
+  background-color: #f5f5f5;
+}
+.review_content{
+  background: #fff;
+  width: 100%;
+  padding:30rpx 0;
+}
+text{
+  color: #4d4d4d;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.review_input{
+  margin: 0 20rpx;
+  border: 1rpx solid #999999;
+}
+.review_btn::after{
+  border: none;
+}

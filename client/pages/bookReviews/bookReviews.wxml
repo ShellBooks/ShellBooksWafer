@@ -1,2 +1,12 @@
 <!--pages/bookReviews/bookReviews.wxml-->
-<text>pages/bookReviews/bookReviews.wxml</text>
+<view>
+  <view class='review_content'>
+    <text>请点击评论星星:</text>
+    <rate rate="{{[true,true,true,true,true]}}"></rate>
+    <view>
+      <textarea class='review_input' placeholder='请输入你的评论'></textarea>
+    </view>
+  </view>
+
+  <button class='review_btn' style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 550rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">发表评论</button>
+</view>
