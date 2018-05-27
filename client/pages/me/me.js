@@ -117,5 +117,11 @@ Page({
     wx.navigateTo({
       url: '../verifyName/verifyName',
     })
+  },
+
+  toRecordList: function(){
+    wx.navigateTo({
+      url: '../bookList/bookList?type=2',
+    })
   }
 })

@@ -25,7 +25,7 @@
     <line></line>
   </view>
   <view class="me_list">
-    <item title="借阅记录"></item>
+    <item title="借阅记录" bindtap="toRecordList"></item>
     <line></line>
     <item title="我的分享" bindtap="toShareList"></item>
     <line></line>

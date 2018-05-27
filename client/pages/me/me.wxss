@@ -1,7 +1,7 @@
 /* pages/me/me.wxss */
 
 page{
-  background: #fff;
+  background: #f5f5f5;
 }
 .backWall{
   background: #1a7bae;

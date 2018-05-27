@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "图书列表",
+  "navigationBarTitleText": "历史记录",
   "usingComponents": {
     "rate": "../../components/rate/rate"
   }
