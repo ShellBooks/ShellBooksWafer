@@ -6,7 +6,7 @@ module.exports = async ctx => {
   let likelist = await mysql.raw('SELECT `like`.bid, bname, author, image FROM `like`, book WHERE `like`.bid = book.bid AND `like`.uid = ?', [uid])
 
   ctx.state.data = {
-    likelist: likelist
+    likelist: likelist[0]
   }
 
 }
