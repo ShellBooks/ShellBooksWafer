@@ -124,29 +124,37 @@ Page({
   },
   // 豆瓣API获取图书信息
   doubanBookInfo: function(e){
-    console.log(e)
-    wx.request({
-      url: 'https://douban.uieee.com/v2/book/isbn/' + this.data.ISBN,
-      header: {
-        "Content-Type": "json"
-      },
-      method: 'get',
+    wx.scanCode({
       success: res => {
-        console.log(res)
-        let author = res.data.author
-        let image = res.data.image
-        let price = res.data.price.replace("元", "")
-        let publish = res.data.publisher
-        let bname = res.data.title
-        this.setData({
-          bname: bname,
-          author: author,
-          publish: publish,
-          price: price,
-          image: image
+        console.log(res.result)
+        let ISBN = res.result
+        wx.request({
+          url: 'https://douban.uieee.com/v2/book/isbn/' + ISBN,
+          header: {
+            "Content-Type": "json"
+          },
+          method: 'get',
+          success: res => {
+            console.log(res)
+            let author = res.data.author
+            let image = res.data.image
+            let price = res.data.price.replace("元", "")
+            let publish = res.data.publisher
+            let bname = res.data.title
+            this.setData({
+              bname: bname,
+              author: author,
+              publish: publish,
+              price: price,
+              image: image,
+              ISBN: ISBN
+            })
+          }
         })
       }
     })
+    console.log(e)
+    
   },
   uploadBookInfo: function(){
     util.showBusy('正在上传')

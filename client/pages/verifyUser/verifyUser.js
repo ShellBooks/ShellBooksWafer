@@ -91,8 +91,8 @@ Page({
         console.log(res)
         if(res.data.code == 0){
           util.showSuccess(res.data.data)
-          wx.navigateBack({
-            delta: 0
+          wx.redirectTo({
+            url: 'verifyUser',
           })
         } else if(res.data.code == -1){
           util.showModel(res.data.data)
