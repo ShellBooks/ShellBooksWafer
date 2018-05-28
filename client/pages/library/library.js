@@ -21,13 +21,15 @@ Page({
     scrollLeft: 100,
     new_books: {},
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    recommendation: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 新书上架
     wx.request({
       url:config.service.getNewBooksUrl,
       method: 'get',
@@ -36,6 +38,21 @@ Page({
         let data = res.data.data
         this.setData({
           new_books: data
+        })
+      }
+    })
+    // 推荐列表
+    wx.request({
+      url: config.service.recommendUrl,
+      method: 'get',
+      data: {
+        uid: 6
+      },
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          recommendation: data
         })
       }
     })
@@ -161,4 +178,5 @@ Page({
       inputVal: e.detail.value
     });
   }
+
 })

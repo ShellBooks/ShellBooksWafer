@@ -70,5 +70,9 @@ router.post('/uploadVerifyName', controllers.uploadVerifyName)
 // GET 搜索图书
 router.get('/searchBook', controllers.searchBook)
 
+// GET 图书推荐
+router.get('/recommend', controllers.recommend)
+
+
 
 module.exports = router

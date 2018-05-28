@@ -57,7 +57,10 @@ var config = {
         uploadVerifyNameUrl: `${host}/weapp/uploadVerifyName`,
 
         // 搜索图书
-        searchBookUrl: `${host}/weapp/searchBook`
+        searchBookUrl: `${host}/weapp/searchBook`,
+
+        // 推荐图书
+        recommendUrl: `${host}/weapp/recommend`
 
     }
 };

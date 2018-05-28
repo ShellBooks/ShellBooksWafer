@@ -50,7 +50,7 @@
   <view class="books">
     <item title="好书推荐"></item>
     <scroll-view class="scroll-view" scroll-x>
-      <block wx:for="{{new_books}}" wx:key="index">
+      <block wx:for="{{recommendation}}" wx:key="index">
         <view bindtap="toDetails" data-bid="{{item.bid}}">
           <image src='{{item.image}}'></image>
           <text>{{item.bname}}</text>

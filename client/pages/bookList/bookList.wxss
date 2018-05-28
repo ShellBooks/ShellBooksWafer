@@ -33,13 +33,14 @@
 navigator{
   width: 30%;
   height: 450rpx;
+  display: inline-block;
 }
 
 navigator image{
   width: 180rpx;
   height: 180rpx;
   margin: 0 auto;
-  padding-top: 135rpx;
+  padding-top: 80rpx;
   display: block;
 }
 
