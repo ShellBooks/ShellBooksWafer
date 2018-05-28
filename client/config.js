@@ -59,6 +59,9 @@ var config = {
         // 搜索图书
         searchBookUrl: `${host}/weapp/searchBook`,
 
+        //上传评论
+        uploadCommentUrl: `${host}/weapp/uploadComment`
+
 
     }
 };
