@@ -52,7 +52,7 @@ router.get('/getBookDetails', controllers.getBookDetails)
 // GET 获取新书上架
 router.get('/getNewBooks', controllers.getNewBooks)
 
-//  POST 上传图书信息
+// POST 上传图书信息
 router.post('/uploadBookInfo', controllers.uploadBookInfo)
 
 // GET 获取分享图书列表
@@ -64,15 +64,16 @@ router.post('/borrowBook', controllers.borrowBook)
 // GET 获取流程信息
 router.get('/getProcess', controllers.getProcess)
 
-//POST 上传实名认证
+// POST 上传实名认证
 router.post('/uploadVerifyName', controllers.uploadVerifyName)
 
 // GET 搜索图书
 router.get('/searchBook', controllers.searchBook)
 
+// POST 上传评论
+router.post('/uploadComment', controllers.uploadComment)
+
 // GET 图书推荐
 router.get('/recommend', controllers.recommend)
-
-
 
 module.exports = router

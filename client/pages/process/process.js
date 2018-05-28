@@ -129,10 +129,10 @@ Page({
 
   //跳转到评论页面
   toReview: function () {
-    let bid = this.bid
+    let bid = this.data.bid
     let uid = app.globalData.userInfo.uid
     wx.navigateTo({
-      url: '../bookReviews/bookReviews'
+      url: '../bookReviews/bookReviews?bid=' +bid
     })
   }
 })

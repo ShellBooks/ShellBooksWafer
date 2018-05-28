@@ -68,6 +68,28 @@ Page({
           })
         }
       })
+    } else if (this.data.type == 2) {
+      // type = 2 借阅记录
+      wx.setNavigationBarTitle({
+        title: '借阅记录'
+      })
+      wx.request({
+        // 获取借阅的书
+        url: config.service.getBorrowBookUrl,
+        method: 'get',
+        //这里定义传递的参数
+        data: {
+          uid: uid
+        },
+        success: res => {
+          //console.log(res)
+          let data = res.data.data
+          this.setData({
+            booklist: data.borrowlist
+          })
+          console.log(data.borrowlist)
+        }
+      })
     }
   },
 

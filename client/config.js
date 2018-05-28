@@ -59,8 +59,12 @@ var config = {
         // 搜索图书
         searchBookUrl: `${host}/weapp/searchBook`,
 
+        //上传评论
+        uploadCommentUrl: `${host}/weapp/uploadComment`,
+
         // 推荐图书
         recommendUrl: `${host}/weapp/recommend`
+
 
     }
 };
