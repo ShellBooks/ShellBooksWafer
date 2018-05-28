@@ -70,6 +70,7 @@ Page({
       })
     } else if (this.data.type == 2) {
       // type = 2 借阅记录
+      //注意！！！！借阅记录中使用的后台和borrow一样，因为还没有做分类
       wx.setNavigationBarTitle({
         title: '借阅记录'
       })
@@ -88,6 +89,33 @@ Page({
             booklist: data.borrowlist
           })
           console.log(data.borrowlist)
+        }
+      })
+    } else if (this.data.type == 3) {
+      // type = 3 收藏
+      wx.setNavigationBarTitle({
+        title: '我的收藏'
+      })
+      wx.request({
+        // 获取收藏的书
+        url: config.service.getLikeBookUrl,
+        method: 'get',
+        data: {
+          uid: uid
+        },
+        success: res => {
+          console.log(res)
+          let data = res.data.data
+          if(data.likelist){
+            this.setData({
+              booklist: data.likelist
+            })
+          }
+          else{
+            console.log('have some problem')
+          }
+          
+          console.log(data.likelist)
         }
       })
     }

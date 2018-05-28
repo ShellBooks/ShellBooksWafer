@@ -65,6 +65,9 @@ var config = {
         // 推荐图书
         recommendUrl: `${host}/weapp/recommend`,
 
+        // 显示收藏
+        getLikeBookUrl: `${host}/weapp/getLikeBook`,
+
         // 判断是否为管理员
         isAdminUrl: `${host}/weapp/isAdmin`,
 

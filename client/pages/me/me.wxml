@@ -19,7 +19,7 @@
   <view class="me_list">
     <item title="当前借书" bindtap="toBorrowList"></item>
     <line></line>
-    <item title="我的收藏"></item>
+    <item title="我的收藏" bindtap="toLikeList"></item>
     <line></line>
     <item title="实名认证" bindtap="toVerifyPage"></item>
     <line></line>

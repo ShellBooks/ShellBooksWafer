@@ -141,6 +141,12 @@ Page({
     })
   },
 
+  toLikeList: function(){
+    wx.navigateTo({
+      url: '../bookList/bookList?type=3',
+    })
+  },
+  
   toVerifyUser: function(){
     wx.navigateTo({
       url: '../verifyUser/verifyUser',

@@ -8,15 +8,26 @@ page{
   width: 100%;
   padding:30rpx 0;
 }
-text{
-  color: #4d4d4d;
-  margin-left: 20rpx;
-  font-size: 30rpx;
-}
 .review_input{
-  margin: 0 20rpx;
+  margin: 20rpx 20rpx;
   border: 1rpx solid #999999;
 }
 .review_btn::after{
   border: none;
+}
+.review_text{
+  display: inline-block;
+  color: #4d4d4d;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+.review_rate{
+  display: inline-block;
+}
+.review_star_img{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 10rpx;
 }

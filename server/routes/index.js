@@ -85,5 +85,8 @@ router.get('/usersReadyForVerify', controllers.usersReadyForVerify)
 // POST 管理员通过用户审核
 router.post('/passUserVerify', controllers.passUserVerify)
 
+//GET 图书收藏
+router.get('/getLikeBook', controllers.getLikeBook)
+
 
 module.exports = router
