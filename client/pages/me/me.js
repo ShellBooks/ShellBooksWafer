@@ -123,5 +123,11 @@ Page({
     wx.navigateTo({
       url: '../bookList/bookList?type=2',
     })
+  },
+
+  toLikeList: function(){
+    wx.navigateTo({
+      url: '../bookList/bookList?type=3',
+    })
   }
 })

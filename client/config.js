@@ -63,7 +63,10 @@ var config = {
         uploadCommentUrl: `${host}/weapp/uploadComment`,
 
         // 推荐图书
-        recommendUrl: `${host}/weapp/recommend`
+        recommendUrl: `${host}/weapp/recommend`,
+
+        // 显示收藏
+        getLikeBookUrl: `${host}/weapp/getLikeBook`
 
 
     }

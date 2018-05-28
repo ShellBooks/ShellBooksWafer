@@ -76,4 +76,7 @@ router.post('/uploadComment', controllers.uploadComment)
 // GET 图书推荐
 router.get('/recommend', controllers.recommend)
 
+//GET 图书收藏
+router.get('/getLikeBook', controllers.getLikeBook)
+
 module.exports = router
