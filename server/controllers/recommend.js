@@ -86,6 +86,7 @@ module.exports = async ctx => {
   }
 
   ctx.state.data = recommendation
+  
   // -----------------------------------------------------
 
   // 皮尔森相关系数

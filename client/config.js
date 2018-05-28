@@ -63,8 +63,16 @@ var config = {
         uploadCommentUrl: `${host}/weapp/uploadComment`,
 
         // 推荐图书
-        recommendUrl: `${host}/weapp/recommend`
+        recommendUrl: `${host}/weapp/recommend`,
 
+        // 判断是否为管理员
+        isAdminUrl: `${host}/weapp/isAdmin`,
+
+        // 管理员用户审核
+        usersReadyForVerifyUrl: `${host}/weapp/usersReadyForVerify`,
+
+        // 管理员通过用户审核
+        passUserVerifyUrl: `${host}/weapp/passUserVerify`,
 
     }
 };

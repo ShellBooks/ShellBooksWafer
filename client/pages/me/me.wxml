@@ -7,7 +7,7 @@
       <text>{{userInfo.nickname}}</text>
       <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
       <image class='gender' src='../../images/girl.png' wx:else></image>
-      <image class='verify' src='../../images/verified.png' wx:if="{userInfo.verified"></image>
+      <image class='verify' src='../../images/verified.png' wx:if="{{userInfo.isVerified == 1}}"></image>
       <image  class='verify' src='../../images/unverified.png' wx:else></image>
     </view>
     <view class="info">
@@ -32,5 +32,15 @@
   </view>
   <view class="me_list">
     <item title="关于我们"></item>
+  </view>
+  <view wx:if="{{isAdmin}}">
+    <text>管理员专区</text>
+    <item title="用户审核" bindtap="toVerifyUser"></item>
+    <line></line>
+    <item title="图书分享"></item>
+    <line></line>
+    <item title="图书借阅"></item>
+    <line></line>
+    <item title="活动上传"></item>
   </view>
 </view>

@@ -76,4 +76,14 @@ router.post('/uploadComment', controllers.uploadComment)
 // GET 图书推荐
 router.get('/recommend', controllers.recommend)
 
+// GET 判断是否为管理员
+router.get('/isAdmin', controllers.isAdmin)
+
+// GET 管理员用户审核
+router.get('/usersReadyForVerify', controllers.usersReadyForVerify)
+
+// POST 管理员通过用户审核
+router.post('/passUserVerify', controllers.passUserVerify)
+
+
 module.exports = router

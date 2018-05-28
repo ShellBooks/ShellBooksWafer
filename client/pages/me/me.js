@@ -12,7 +12,8 @@ Page({
     userInfo: {},
     money: 0,
     borrow: 0,
-    share: 0
+    share: 0,
+    isAdmin: false
   },
 
   /**
@@ -39,6 +40,21 @@ Page({
           borrow: data.borrow,
           share: data.share
         })
+      }
+    })
+    wx.request({
+      url: config.service.isAdminUrl,
+      method: 'get',
+      data: {
+        uid: this.data.userInfo.uid
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.code == 0 && res.data.data == "Admin"){
+          this.setData({
+            isAdmin: true
+          })
+        }
       }
     })
   },
@@ -122,6 +138,12 @@ Page({
   toRecordList: function(){
     wx.navigateTo({
       url: '../bookList/bookList?type=2',
+    })
+  },
+
+  toVerifyUser: function(){
+    wx.navigateTo({
+      url: '../verifyUser/verifyUser',
     })
   }
 })
