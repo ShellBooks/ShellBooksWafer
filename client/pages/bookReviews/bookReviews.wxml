@@ -1,10 +1,56 @@
 <!--pages/bookReviews/bookReviews.wxml-->
 <view>
   <view class='review_content'>
-    <text>请点击评论星星:</text>
-    <rate rate="{{[true,true,true,true,true]}}"></rate>
     <view>
-      <textarea class='review_input'  bindblur="inputReview" value="{{publish}}" placeholder='请输入你的评论'></textarea>
+      <text class='review_text'>请点击评论星星:</text>
+      <view class='review_rate' wx:if="{{rate == 0}}">
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
+      </view>
+       <view class='review_rate' wx:if="{{rate == 1}}" bindtap='clickStar'>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
+      </view>
+      <view class='review_rate' wx:if="{{rate == 2}}" bindtap='clickStar'>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
+      </view>
+      <view class='review_rate' wx:if="{{rate == 3}}" bindtap='clickStar'>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
+      </view>
+      <view class='review_rate' wx:if="{{rate == 4}}" bindtap='clickStar'>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
+      </view>
+      <view class='review_rate' wx:if="{{rate == 5}}" bindtap='clickStar'>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarFour'></image>
+        <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarFive'></image>
+      </view> 
+      <!-- <image src='../../images/star-n.png' wx:else></image> -->
+      <!-- <rate rate="{{[true,true,true,true,true]}}"></rate> -->
+    </view>
+    <view>
+      <textarea class='review_input'  bindinput="inputReview" value="{{publish}}" placeholder='请输入你的评论'>
+      </textarea>
     </view>
   </view>
 

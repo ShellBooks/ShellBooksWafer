@@ -12,7 +12,8 @@ Page({
   data: {
     bid: '',
     rate: null,
-    content: ''
+    content: '',
+    rate: 0
   },
 
   /**
@@ -20,8 +21,9 @@ Page({
    */
   onLoad: function (options) {
     //通过传入options来获取bid
+    //一开始设定rate是0
     this.setData({
-      bid: options.bid
+      bid: options.bid,
     })
   },
 
@@ -117,5 +119,40 @@ Page({
   //获取输入框中的内容
   inputReview: function(e){
     this.data.content = e.detail.value;
-  }
+  },
+
+  //点击星星事件1
+  clickStarOne: function(){
+    this.setData({
+      rate: 1
+    })
+  },
+
+  //点击星星事件2
+  clickStarTwo: function () {
+    this.setData({
+      rate: 2
+    })
+  },
+
+  //点击星星事件3
+  clickStarThree: function () {
+    this.setData({
+      rate: 3
+    })
+  },
+
+  //点击星星事件4
+  clickStarFour: function () {
+    this.setData({
+      rate: 4
+    })
+  },
+
+  //点击星星事件5
+  clickStarFive: function () {
+    this.setData({
+      rate: 5
+    })
+  },
 })
