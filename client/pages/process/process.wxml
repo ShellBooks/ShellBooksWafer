@@ -40,6 +40,10 @@
      <view class='icon no_in'></view>   
   </view>
   <navigator url='../bookReviews/bookReviews' wx:if="{{type == 2}}">
-         <button class="review_btn"  bindtap="toReview" style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 350rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">立即评论</button>   
+         <!-- <button class="review_btn"  bindtap="toReview" style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 350rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">立即评论</button>    -->
+     <!-- <btn class="review_btn_posi" bindtap="toReview" title="立即评论"></btn>    -->
+     <view class='bottom_btn' bindtap="toReview">
+        <text class='btn_text'>立刻评论</text>
+     </view>
   </navigator>
 </view> 
