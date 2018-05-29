@@ -77,6 +77,11 @@ var config = {
         // 管理员通过用户审核
         passUserVerifyUrl: `${host}/weapp/passUserVerify`,
 
+        // 管理员审核图书
+        booksReadyForVerifyUrl: `${host}/weapp/booksReadyForVerify`,
+
+        // 管理员通过图书审核
+        passBookVerifyUrl: `${host}/weapp/passBookVerify`,
     }
 };
 

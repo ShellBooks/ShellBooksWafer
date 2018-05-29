@@ -1,34 +1,18 @@
-// pages/searchResult/searchResult.js
-var config = require('../../config')
-
+// pages/verifyBorrow/verifyBorrow.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    res: []
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.query)
-    wx.request({
-      url: config.service.searchBookUrl,
-      method: 'get',
-      data: {
-        query: options.query
-      },
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        this.setData({
-          res: data,
-        })
-      }
-    })
+  
   },
 
   /**
@@ -78,13 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  toDetails: function(e){
-    let bid = e.currentTarget.dataset.bid
-    // 跳转到图书详情
-    wx.navigateTo({
-      url: '../bookDetails/bookDetails?bid=' + bid,
-    })
   }
 })

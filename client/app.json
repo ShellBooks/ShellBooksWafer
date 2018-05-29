@@ -12,7 +12,9 @@
     "pages/process/process",
     "pages/searchResult/searchResult",
     "pages/bookReviews/bookReviews",
-    "pages/verifyUser/verifyUser"
+    "pages/verifyUser/verifyUser",
+    "pages/verifyBook/verifyBook",
+    "pages/verifyBorrow/verifyBorrow"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

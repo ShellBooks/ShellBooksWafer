@@ -1,6 +1,14 @@
 <!--pages/searchResult/searchResult.wxml-->
 <view class='searchRes'>
   <block wx:for="{{res}}" wx:key="index">
-    <view>{{item.bname}}</view>
+    <view class='searchItem' bindtap='toDetails' data-bid="{{item.bid}}">
+      <view class='bookimg'>
+        <image src='{{item.image}}'></image>
+      </view>
+      <view class='bookinfo'>
+        <text class='bookname'>{{item.bname}}</text>
+        <text>{{item.author}}</text>
+      </view>
+    </view>
   </block>
 </view>

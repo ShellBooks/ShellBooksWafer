@@ -1,5 +1,5 @@
-/* pages/searchResult/searchResult.wxss */
-.searchItem{
+/* pages/verifyBook/verifyBook.wxss */
+.bookItem{
   margin: 40rpx 20rpx;
 }
 .bookimg{
@@ -23,4 +23,10 @@
 .bookinfo .bookname{
   font-weight: bold;
   font-size: 40rpx;
+}
+.listTitle{
+  margin: 20rpx;
+  display: block;
+  width: 100%;
+  text-align: center;
 }

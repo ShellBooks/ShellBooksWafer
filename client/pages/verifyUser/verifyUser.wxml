@@ -11,7 +11,7 @@
         <text>手机：{{item.phone}}</text>
       </view>
       <view class='pass_btn'>
-        <button bindtap='passVerify' data-uid="{{item.uid}}">审核通过</button>
+        <button bindtap='passInfoVerify' data-uid="{{item.uid}}">审核通过</button>
       </view>
     </view>
   </block>

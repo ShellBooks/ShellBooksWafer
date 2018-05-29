@@ -151,5 +151,17 @@ Page({
     wx.navigateTo({
       url: '../verifyUser/verifyUser',
     })
+  },
+
+  toVerifyBook: function(){
+    wx.navigateTo({
+      url: '../verifyBook/verifyBook',
+    })
+  },
+
+  toVerifyBorrow: function(){
+    wx.navigateTo({
+      url: '../verrifyBorrow/verifyBorrow',
+    })
   }
 })
