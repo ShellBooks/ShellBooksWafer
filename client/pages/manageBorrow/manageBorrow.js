@@ -1,18 +1,31 @@
-// pages/verifyBorrow/verifyBorrow.js
+// pages/manageBorrow/manageBorrow.js
+var config = require('../../config')
+var util = require('../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    borrow: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: config.service.manageBorrowUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          borrow: data
+        })
+      }
+    })
   },
 
   /**

@@ -1,0 +1,20 @@
+<!--pages/manageBorrow/manageBorrow.wxml-->
+<view>
+  <block wx:for="{{borrow}}" wx:key="index">
+    <view class='verifyBorrow'>
+      <view class='borrowImg'>
+        <image src='{{item.image}}'></image>
+      </view>
+      <view class='borrowInfo' bindtap='toDetailsInfo'>
+        <text class='bookname'>{{item.bname}}</text>
+        <text>ISBN：{{item.ISBN}}</text>
+        <text>借阅人：{{item.name}}</text>
+        <text>学号：{{item.schid}}</text>
+        <text>手机：{{item.phone}}</text>
+      </view>
+      <view class='pass_btn'>
+        <button bindtap='passInfoVerify' data-uid="{{item.uid}}">归还图书</button>
+      </view>
+    </view>
+  </block>
+</view>

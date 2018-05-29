@@ -15,6 +15,7 @@
 .bookinfo{
   display: inline-block;
   vertical-align: top;
+  width: 65%;
 }
 .bookinfo text{
   display: block;
@@ -29,4 +30,18 @@
   display: block;
   width: 100%;
   text-align: center;
+}
+.shell{
+  width: 100%;
+}
+.shell text{
+  width: 26%;
+  display: inline-block;
+  vertical-align: top;
+}
+.shell input{
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;  
+  border: 1px solid #aaa;
 }

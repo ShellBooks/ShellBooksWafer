@@ -39,7 +39,7 @@
     <line></line>
     <item title="图书审核" bindtap="toVerifyBook"></item>
     <line></line>
-    <item title="借阅审核" bindtap="toVerifyBorrow"></item>
+    <item title="借阅管理" bindtap="toManageBorrow"></item>
     <line></line>
     <item title="活动上传"></item>
   </view>

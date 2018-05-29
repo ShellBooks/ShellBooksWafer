@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shell: 0,
     realBooks: [],
     booksInfo: []
   },
@@ -88,12 +89,15 @@ Page({
     // type = 0 图书分享
     data.type = 0
     data.date = util.formatTime(new Date())
-    // 提交实体书期限
-    let limit = util.formatTime(new Date())
     if(data.status == 1){
+      // 提交实体书期限 
+      // 259200000 为三天的毫秒数
+      let ms = (new Date()).getTime() + 259200000
+      let limit = util.formatTime(new Date(ms))
       data.info = "图书信息审核成功，请于" + limit + "前将图书提交给管理员"
     } else if (data.status == 2){
-      data.info = "图书审核成功并上架,你将获取" + + "个贝壳，请查收"
+      data.info = "图书审核成功并上架,你将获取" + this.data.shell + "个贝壳，请查收"
+      data.shell = this.data.shell
     }
     wx.request({
       url: config.service.passBookVerifyUrl,
@@ -111,5 +115,9 @@ Page({
         }
       }
     })
+  },
+  // 输入贝壳数 
+  inputShell: function(e){
+    this.data.shell = e.detail.value
   }
 })

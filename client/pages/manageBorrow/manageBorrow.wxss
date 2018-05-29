@@ -1,0 +1,23 @@
+/* pages/manageBorrow/manageBorrow.wxss */
+.verifyBorrow{
+  margin: 40rpx 20rpx;
+}
+.borrowImg{
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20rpx;
+}
+.borrowImg image{
+  width: 100%;
+  height: 300rpx;
+}
+.borrowInfo{
+  display: inline-block;
+  vertical-align: top;
+  width: 65%;
+}
+.borrowInfo text{
+  display: block;
+  font-size: 36rpx;
+}

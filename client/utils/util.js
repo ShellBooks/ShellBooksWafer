@@ -1,11 +1,6 @@
 const formatTime = (date, type = 0) => {
   const year = date.getFullYear()
-  let month
-  if(type == 2){
-    month = date.getMonth() + 2
-  } else {
-    month = date.getMonth() + 1
-  }
+  const month = date.getMonth() + 1
   const day = date.getDate()
   const hour = date.getHours()
   const minute = date.getMinutes()
@@ -13,7 +8,7 @@ const formatTime = (date, type = 0) => {
 
   if(type == 0){
     return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-  } else {
+  } else if(type == 1){
     return [year, month, day].map(formatNumber).join('-')
   }
   

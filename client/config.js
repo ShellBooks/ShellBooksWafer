@@ -82,6 +82,9 @@ var config = {
 
         // 管理员通过图书审核
         passBookVerifyUrl: `${host}/weapp/passBookVerify`,
+
+        // 管理员管理借书请求
+        manageBorrowUrl: `${host}/weapp/manageBorrow`,
     }
 };
 

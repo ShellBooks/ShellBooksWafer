@@ -159,9 +159,9 @@ Page({
     })
   },
 
-  toVerifyBorrow: function(){
+  toManageBorrow: function(){
     wx.navigateTo({
-      url: '../verrifyBorrow/verifyBorrow',
+      url: '../manageBorrow/manageBorrow',
     })
   }
 })
