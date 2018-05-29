@@ -49,3 +49,19 @@
 .upload_book_btn::after{
   border: none;
 }
+
+.bottom_btn{
+  position: relative;
+  top: 550rpx;
+  width: 650rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  background: #009ed8;
+  box-shadow: 2px 6px 10px 2px #a2d5e8; /* 水平，垂直，扩散面积，延展距离，颜色 */
+}
+.btn_text{
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 100rpx;
+}

@@ -31,5 +31,8 @@
           bindtap="previewImg">
       </image>
   </view>
-  <button class="upload_book_btn" bindtap='uploadVerify' style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 550rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">上传个人信息</button>
+  <!-- <button class="upload_book_btn" bindtap='uploadVerify' style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 550rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">上传个人信息</button> -->
+  <view class='bottom_btn' bindtap='uploadVerify'>
+    <text class='btn_text'>发表评论</text>
+  </view>
 </view>
