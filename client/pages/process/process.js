@@ -14,7 +14,9 @@ Page({
     bid: -1,
     // 图书详情
     book_details: {},
-    process: []
+    process: [],
+    //btn文字
+    btn_content: '上传评论'
   },
 
   /**
