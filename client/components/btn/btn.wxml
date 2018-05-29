@@ -1,0 +1,5 @@
+<!--components/btn/btn.wxml-->
+
+<view class='bottom_btn'>
+  <text>{{title}}</text>
+</view>

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "流程详情",
   "usingComponents": {
-    "rate": "../../components/rate/rate"
+    "rate": "../../components/rate/rate",
+    "btn": "../../components/btn/btn"
   }
 }
