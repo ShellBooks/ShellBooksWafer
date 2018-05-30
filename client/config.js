@@ -88,6 +88,12 @@ var config = {
 
         // 收藏图书
         uploadLikeUrl: `${host}/weapp/uploadLike`,
+
+        // 管理员通过借书请求
+        passBorrowUrl: `${host}/weapp/passBorrow`,
+
+        // 管理员返还图书
+        returnBookUrl: `${host}/weapp/returnBook`,
     }
 };
 

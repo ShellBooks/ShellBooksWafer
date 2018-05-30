@@ -30,7 +30,7 @@
           <text>{{item.day}}</text>
           <text>{{item.time}}</text>  
         </view>
-        <view class='icon {{0==index?"in":"no_in"}}'></view>  
+        <view class='icon {{index == process.length-1 ? "in":"no_in"}}'></view>  
         <view class='operation_info'>  
           <text>{{item.info}}</text>  
         </view>  

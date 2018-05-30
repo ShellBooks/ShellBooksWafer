@@ -100,5 +100,11 @@ router.get('/manageBorrow', controllers.manageBorrow)
 // POST 收藏
 router.post('/uploadLike', controllers.uploadLike)
 
+// POST 管理员通过借书请求
+router.post('/passBorrow', controllers.passBorrow)
+
+// POST 管理员返还图书
+router.post('/returnBook', controllers.returnBook)
+
 
 module.exports = router
