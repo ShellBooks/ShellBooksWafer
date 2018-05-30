@@ -85,6 +85,12 @@ var config = {
 
         // 管理员管理借书请求
         manageBorrowUrl: `${host}/weapp/manageBorrow`,
+
+        // 管理员通过借书请求
+        passBorrowUrl: `${host}/weapp/passBorrow`,
+
+        // 管理员返还图书
+        returnBookUrl: `${host}/weapp/returnBook`,
     }
 };
 

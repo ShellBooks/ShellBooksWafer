@@ -92,7 +92,8 @@ Page({
     if(data.status == 1){
       // 提交实体书期限 
       // 259200000 为三天的毫秒数
-      let ms = (new Date()).getTime() + 259200000
+      const threeDays = 259200000
+      let ms = (new Date()).getTime() + threeDays
       let limit = util.formatTime(new Date(ms))
       data.info = "图书信息审核成功，请于" + limit + "前将图书提交给管理员"
     } else if (data.status == 2){
@@ -111,7 +112,7 @@ Page({
             url: 'verifyBook',
           })
         } else if (res.data.code == -1) {
-          util.showModel(res.data.data)
+          util.showModel("审核失败", res.data.data)
         }
       }
     })
