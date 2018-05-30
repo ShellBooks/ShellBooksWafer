@@ -85,6 +85,9 @@ var config = {
 
         // 管理员管理借书请求
         manageBorrowUrl: `${host}/weapp/manageBorrow`,
+
+        // 收藏图书
+        uploadLikeUrl: `${host}/weapp/uploadLike`,
     }
 };
 

@@ -15,7 +15,9 @@ Page({
     // 图书详情
     book_details: {},
     // 图书评论
-    comments: {}
+    comments: {},
+    //收藏
+    favourite: 0
   },
 
   /**
@@ -156,5 +158,37 @@ Page({
         })
       }
     })
+  },
+
+  //收藏
+  clickLike: function(){
+    let uid
+    if (app.globalData.userInfo) {
+      uid = app.globalData.userInfo.uid
+    }
+    if(this.data.favourite == 0){
+      //收藏该书
+      this.setData({
+        favourite: 1
+      })
+    }else{
+      //取消收藏
+      this.setData({
+        favourite: 0
+      })
+    }
+    wx.request({
+      url: config.service.uploadLikeUrl,
+      method: 'post',
+      data: {
+        uid: uid,
+        bid: this.data.bid,
+        favourite: this.data.favourite
+      },
+      success: res => {
+        console.log(res)
+      }
+    })
+    
   }
 })

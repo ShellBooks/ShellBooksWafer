@@ -15,7 +15,7 @@ module.exports = async ctx => {
     ctx.state.data = "verify success"
   } else {
     ctx.state.code = -1
-    ctx.state.date = "verify error"
+    ctx.state.data = "verify error"
   }
 
   

@@ -97,5 +97,8 @@ router.post('/passBookVerify', controllers.passBookVerify)
 // GET 管理员管理借书请求
 router.get('/manageBorrow', controllers.manageBorrow)
 
+// POST 收藏
+router.post('/uploadLike', controllers.uploadLike)
+
 
 module.exports = router

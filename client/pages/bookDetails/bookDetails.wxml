@@ -1,5 +1,7 @@
 <view>
   <view class="book_details_main">
+    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon.png' wx:if="{{favourite == 0}}"></image>
+    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon_click.png' wx:if="{{favourite == 1}}"></image>
     <view class='book_details_img'>
       <image src='{{book_details.image}}'></image>
     </view>
@@ -16,6 +18,7 @@
       </view>
       <text class='book_details_text' wx:else>暂无评分</text>
     </view>
+    
   </view>
   
   <view class="comments" wx:if="{{comments.length}}">

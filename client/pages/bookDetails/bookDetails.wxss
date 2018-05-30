@@ -43,3 +43,9 @@ page{
    position: fixed;  
     bottom: 0;   
 }
+.book_detail_favourite{
+  width: 52rpx;
+  height: 48rpx;
+  margin-right: 30rpx;
+  float: right;
+}
