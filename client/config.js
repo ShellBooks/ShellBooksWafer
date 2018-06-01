@@ -94,6 +94,9 @@ var config = {
 
         // 管理员返还图书
         returnBookUrl: `${host}/weapp/returnBook`,
+
+        //获取收藏状态
+        getLikeUrl: `${host}/weapp/getLike`,
     }
 };
 

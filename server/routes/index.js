@@ -106,5 +106,8 @@ router.post('/passBorrow', controllers.passBorrow)
 // POST 管理员返还图书
 router.post('/returnBook', controllers.returnBook)
 
+// GET 获取收藏状态
+router.get('/getLike', controllers.getLike)
+
 
 module.exports = router

@@ -24,6 +24,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let uid
+      if (app.globalData.userInfo) {
+        uid = app.globalData.userInfo.uid
+      }
     this.setData({
       bid: options.bid
     })
@@ -81,6 +85,25 @@ Page({
           comments: data
         })
         console.log(data)
+      }
+    })
+
+    wx.request({
+      //获取收藏状态
+      url: config.service.getLikeUrl,
+      method: 'get',
+      data: {
+        uid: uid,
+        bid: this.data.bid
+      },
+      success: res => {
+        console.log(res)
+        let favourite = res.data.data
+        if(favourite != 0){
+          this.setData({
+            favourite: 1
+          })
+        }
       }
     })
   },
