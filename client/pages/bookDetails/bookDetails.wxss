@@ -3,11 +3,11 @@ page{
   background: #eee;
 }
 .book_details_img{
-  height: 400rpx;
+  height: 430rpx;
   width: 35%;
   float: left;
   padding-left: 20rpx;
-  padding-top: 50rpx;
+  padding-top: 58rpx;
 }
 .book_details_img image{
   width: 100%;
@@ -35,12 +35,9 @@ page{
   width: 100%;
   margin-bottom: 10rpx;
   font-size: 30rpx;
-  overflow: hidden;  
-  white-space: nowrap;  
-  text-overflow: ellipsis;  
 }
 .book_name{
-  font-size: 40rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
 .comments_number{
