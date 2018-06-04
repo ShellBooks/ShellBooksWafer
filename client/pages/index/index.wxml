@@ -33,7 +33,7 @@
      <item title="新书上架" url="../bookList/bookList" type="4" bindmyevent="navigateTo"></item> 
     <scroll-view class="scroll-view" scroll-x>
       <block wx:for="{{new_books}}" wx:key="index" wx:for-index="i">
-        <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="i < 7 && i < new_books.length">
+        <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < new_books.length}}">
           <image src='{{item.image}}'></image>
           <text>{{item.bname}}</text>
           <text>{{item.author}}</text>
@@ -45,7 +45,7 @@
     <item title="好书推荐" url="../bookList/bookList" type="5" bindmyevent="navigateTo"></item>
     <scroll-view class="scroll-view" scroll-x>
       <block wx:for="{{recommendation}}" wx:key="index" wx:for-index="i">
-        <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="i < 7 && i < recommendation.length">
+        <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < recommendation.length}}">
           <image src='{{item.image}}'></image>
           <text>{{item.bname}}</text>
           <text>{{item.author}}</text>
