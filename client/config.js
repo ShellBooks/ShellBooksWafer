@@ -102,6 +102,9 @@ var config = {
 
         // 上传活动
         uploadActUrl: `${host}/weapp/uploadAct`,
+
+        // 获取活动
+        getBannerUrl: `${host}/weapp/getBanner`,
     }
 };
 

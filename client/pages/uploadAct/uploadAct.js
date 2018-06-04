@@ -137,6 +137,9 @@ Page({
         let data = res.data.data
         if(data == '上传成功'){
           util.showSuccess(data)
+          wx.redirectTo({
+            url: 'uploadAct',
+          })
         } else {
           util.showModel("", data)
         }

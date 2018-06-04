@@ -1,9 +1,9 @@
 <!--pages/library/library.wxml-->
 <view>
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">    
-    <block wx:for="{{imgs}}" wx:key="index">    
+    <block wx:for="{{banner}}" wx:key="index">    
       <swiper-item>    
-        <image src="{{item.url}}" class="slide-image" mode="aspectFill"/> 
+        <image src="{{item.image}}" class="slide-image" mode="aspectFill"/> 
       </swiper-item>    
     </block>    
   </swiper> 

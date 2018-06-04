@@ -112,5 +112,8 @@ router.get('/getLike', controllers.getLike)
 // POST 上传活动
 router.post('/uploadAct', controllers.uploadAct)
 
+// GET 获取活动
+router.get('/getBanner', controllers.getBanner)
+
 
 module.exports = router

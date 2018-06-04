@@ -11,17 +11,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: [
-      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
-    ],
     // 搜索框参数
     inputShowed: false,
     inputVal: "",
     new_books: [],
-    recommendation: []
+    recommendation: [],
+    banner:[]
   },
 
   /**
@@ -42,6 +37,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.request({
+      url: config.service.getBannerUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          banner: data
+        })
+      }
+    })
     // 新书上架
     wx.request({
       url: config.service.getNewBooksUrl,
