@@ -138,7 +138,7 @@ Page({
             console.log(res)
             let author = res.data.author
             let image = res.data.image
-            let price = res.data.price.replace("元", "")
+            let price = res.data.price.replace("元", "").replace("CNY ","")
             let publish = res.data.publisher
             let bname = res.data.title
             this.setData({

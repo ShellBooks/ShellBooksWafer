@@ -7,39 +7,37 @@
       <text>{{userInfo.nickname}}</text>
       <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
       <image class='gender' src='../../images/girl.png' wx:else></image>
-      <image class='verify' src='../../images/verified.png' wx:if="{{userInfo.isVerified == 1}}"></image>
+      <image class='verify' src='../../images/verified.png' wx:if="{{userMoreInfo.isVerified == 1}}"></image>
       <image  class='verify' src='../../images/unverified.png' wx:else></image>
     </view>
     <view class="info">
-      <text>{{money}}贝壳</text>
-      <text>{{borrow}}借书</text>
-      <text>{{share}}分享</text>
+      <text>贝壳 {{userMoreInfo.money}}</text>
+      <text>借书 {{userMoreInfo.borrow}}</text>
+      <text>分享 {{userMoreInfo.share}}</text>
     </view>
   </view>
   <view class="me_list">
-    <item title="当前借书" bindtap="toBorrowList"></item>
+    <item title="当前借书" url="../bookList/bookList" type="1" bindmyevent="navigateTo"></item>
     <line></line>
-    <item title="我的收藏" bindtap="toLikeList"></item>
+    <item title="我的收藏" url="../bookList/bookList" type="3" bindmyevent="navigateTo"></item>
     <line></line>
     <item title="实名认证" bindtap="toVerifyPage"></item>
-    <line></line>
   </view>
   <view class="me_list">
-    <item title="借阅记录" bindtap="toRecordList"></item>
+    <item title="借阅记录" url="../bookList/bookList" type="2" bindmyevent="navigateTo"></item>
     <line></line>
-    <item title="我的分享" bindtap="toShareList"></item>
-    <line></line>
+    <item title="我的分享" url="../bookList/bookList" type="0" bindmyevent="navigateTo"></item>
   </view>
   <view class="me_list">
     <item title="关于我们"></item>
   </view>
   <view wx:if="{{isAdmin}}">
     <text>管理员专区</text>
-    <item title="用户审核" bindtap="toVerifyUser"></item>
+    <item title="用户审核" url="../verifyUser/verifyUser" bindmyevent="navigateTo"></item>
     <line></line>
-    <item title="图书审核" bindtap="toVerifyBook"></item>
+    <item title="图书审核" url="../verifyBook/verifyBook" bindmyevent="navigateTo"></item>
     <line></line>
-    <item title="借阅管理" bindtap="toManageBorrow"></item>
+    <item title="借阅管理" url="../manageBorrow/manageBorrow" bindmyevent="navigateTo"></item>
     <line></line>
     <item title="活动上传"></item>
   </view>

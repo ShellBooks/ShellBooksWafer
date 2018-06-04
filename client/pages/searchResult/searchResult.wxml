@@ -1,5 +1,5 @@
 <!--pages/searchResult/searchResult.wxml-->
-<view class='searchRes'>
+<view class='searchRes' wx:if="{{res.length}}">
   <block wx:for="{{res}}" wx:key="index">
     <view class='searchItem' bindtap='toDetails' data-bid="{{item.bid}}">
       <view class='bookimg'>
@@ -12,3 +12,4 @@
     </view>
   </block>
 </view>
+<view class='no_data' wx:else>未找到结果</view>

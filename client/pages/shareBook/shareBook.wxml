@@ -25,7 +25,7 @@
       <text>ISBN</text>
       <input bindblur="inputISBN" value="{{ISBN}}"></input>
     </view>
-    <button bindtap='doubanBookInfo'>尝试填充信息</button> 
+    <button bindtap='douban暂无评论 BookInfo'>扫描二维码填充信息</button> 
     <view class='info_item' bindtap="doUpload">
       <text>封面</text>
       <view class='arrow'></view>

@@ -34,11 +34,11 @@ router.post('/message', controllers.message.post)
 
 // ----------------------------------------------
 
-// GET 获取用户信息
+// GET 获取用户基本信息
 router.get('/userInfo', controllers.userInfo)
 
-// GET 获取用户借书 
-router.get('/userBooksNum', controllers.userBooksNum)
+// GET 获取用户更多信息
+router.get('/getUserMoreInfo', controllers.getUserMoreInfo)
 
 // GET 获取图书评论
 router.get('/getComments', controllers.getComments)

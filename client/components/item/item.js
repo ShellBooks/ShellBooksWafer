@@ -11,6 +11,10 @@ Component({
     url: {
       type: String,
       value:''
+    },
+    type: {
+      type: Number,
+      value: -1
     }
   },
 
@@ -26,8 +30,12 @@ Component({
    */
   methods: {
     onTap: function(){
+      let url = this.data.url
+      if(this.data.type != -1){
+        url += '?type=' + this.data.type
+      }
       var myEventDetail = {
-        url: this.data.url
+        url: url
       } // detail对象，提供给事件监听函数
       var myEventOption = {} // 触发事件的选项
       this.triggerEvent('myevent', myEventDetail, myEventOption)

@@ -7,3 +7,9 @@
   align-items: center;
   box-sizing: border-box;
 } 
+.no_data{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 100rpx auto;
+}

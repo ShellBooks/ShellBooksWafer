@@ -1,5 +1,5 @@
 <!--pages/verifyUser/verifyUser.wxml-->
-<view>
+<view wx:if="{{users.length}}">
   <block wx:for="{{users}}" wx:key="index">
     <view class='realUser'>
       <view class='cardimg'>
@@ -16,3 +16,4 @@
     </view>
   </block>
 </view>
+<view class='no_data' wx:else>暂无待审核用户</view>

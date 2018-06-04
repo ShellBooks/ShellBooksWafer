@@ -7,9 +7,9 @@ module.exports = async ctx => {
   let phone = ctx.request.body.phone
   let cardimg = ctx.request.body.cardimg
   let uid = ctx.request.body.uid
-  let isVerified = 1
+  let isVerified = -1
   
-  let res = await mysql("user").where({ uid }).update({ name, phone, cardimg, isVerified})
+  let res = await mysql("user").where({ uid }).update({ name, schid, phone, cardimg, isVerified})
 
   if (res) {
     ctx.state.data = "verify success"

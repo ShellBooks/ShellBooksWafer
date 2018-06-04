@@ -7,11 +7,7 @@
     <view class='book_details_info'>
       <text class='book_details_text book_name'>{{book_details.bname}}</text>
       <text class='book_details_text'>作者：{{book_details.author}}</text>
-      <!-- <text class='book_details_text'>出版社:{{book_details.publish}}</text>
-      <text class='book_details_text'>定价: {{book_details.price}}元</text> -->
-      <text class='book_details_text'>贝壳: {{book_details.shell}}个</text>
-      <!-- <text class='book_details_text'>ISBN: {{book_details.ISBN}}</text> -->
-      <!-- <view wx:if="{{book_details.borrow_date}}"> -->
+       <text class='book_details_text'>贝壳:{{book_details.shell}}个</text> 
         <text class='book_details_text'>借阅日期: {{book_details.borrow_date}}</text>
       <text class='book_details_text'>归还日期: {{book_details.return_date}}</text>
       <!-- </view> -->

@@ -143,6 +143,9 @@ Page({
         console.log(res)
         if (res.data.code == 0) {
           util.showSuccess('上传信息成功')
+          wx.navigateBack({
+            delta:1
+          })
         } else {
           util.showModel('上传信息失败', res.data.error)
         }

@@ -1,11 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/addCgi/addCgi",
-    "pages/library/library",
     "pages/me/me",
     "pages/bookDetails/bookDetails",
-    "pages/borrowBook/borrowBook",
     "pages/shareBook/shareBook",
     "pages/verifyName/verifyName",
     "pages/bookList/bookList",
@@ -29,11 +26,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页"
-      },
-      {
-        "pagePath": "pages/library/library",
-        "text": "图书馆",
+        "text": "主页",
         "iconPath": "images/house.png",
         "selectedIconPath": "images/house-blue.png"
       },

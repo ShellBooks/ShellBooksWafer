@@ -1,5 +1,5 @@
 <!--pages/bookList/bookList.wxml-->
-<view>
+<view wx:if="{{booklist.length}}">
   <view class='view_content'>
     <block wx:for="{{booklist}}" wx:key="index">
       <view class='bookitem' bindtap="toProcess" data-bid="{{item.bid}}">
@@ -13,4 +13,5 @@
     </navigator>
   </view>
 </view>
+<view class='no_data' wx:else>暂无数据</view>
   

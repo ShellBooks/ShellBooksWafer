@@ -2,18 +2,18 @@
 
 <view>
   <view class='verify_item'>
-    <text>学号</text>
-    <input bindblur="inputSchid" name='schid'></input>
-  </view>
-  <line></line>
-  <view class='verify_item'>
     <text>姓名</text>
     <input bindblur='inputName' name='name'></input>
   </view>
   <line></line>
   <view class='verify_item'>
-    <text>电话号码</text>
-    <input bindblur='inputPhone' name='phone'></input>
+    <text>学号</text>
+    <input bindblur="inputSchid" name='schid' type='number'></input>
+  </view>
+  <line></line>
+  <view class='verify_item'>
+    <text>手机</text>
+    <input bindblur='inputPhone' name='phone' type='number'></input>
   </view>
   <line></line>
   <view class='verify_item' bindtap='doUpload'>
@@ -32,7 +32,10 @@
       </image>
   </view>
   <!-- <button class="upload_book_btn" bindtap='uploadVerify' style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 550rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">上传个人信息</button> -->
-  <view class='bottom_btn' bindtap='uploadVerify'>
-    <text class='btn_text'>发表评论</text>
+  <view class='btn_wrap'>
+    <view class='bottom_btn' bindtap='uploadVerify'>
+      <text class='btn_text'>上传个人信息</text>
+    </view>
   </view>
+  
 </view>

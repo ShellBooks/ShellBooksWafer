@@ -4,7 +4,7 @@ module.exports = async ctx => {
   let query = ctx.query.query ? ctx.query.query : ''
   query = '%' + query + '%'
 
-  let res = await mysql("book").whereRaw('bname LIKE ? OR author LIKE ?', [query, query])
+  let res = await mysql("book").whereRaw('status = 2 AND bname LIKE ? OR status = 2 AND author LIKE ?', [query, query])
 
   ctx.state.data = res
 

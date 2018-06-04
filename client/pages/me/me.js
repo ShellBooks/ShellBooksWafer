@@ -1,5 +1,6 @@
 // pages/me/me.js
 var config = require('../../config')
+var util = require('../../utils/util.js')
 
 const app = getApp()
 
@@ -9,54 +10,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isAdmin: false,
     userInfo: {},
-    money: 0,
-    borrow: 0,
-    share: 0,
-    isAdmin: false
+    userMoreInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取用户基本信息
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
-        money: app.globalData.userInfo.money
       })
     }
-    wx.request({
-      url: config.service.userBooksNumUrl,
-      method: 'get',
-      data: {
-        uid: this.data.userInfo.uid
-      },
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        this.setData({
-          borrow: data.borrow,
-          share: data.share
-        })
-      }
-    })
-    wx.request({
-      url: config.service.isAdminUrl,
-      method: 'get',
-      data: {
-        uid: this.data.userInfo.uid
-      },
-      success: res => {
-        console.log(res)
-        if (res.data.code == 0 && res.data.data == "Admin"){
-          this.setData({
-            isAdmin: true
-          })
-        }
-      }
-    })
   },
 
   /**
@@ -70,7 +39,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    // 获取用户更多信息
+    wx.request({
+      url: config.service.getUserMoreInfoUrl,
+      method: 'get',
+      data: {
+        uid: this.data.userInfo.uid
+      },
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          userMoreInfo: data
+        })
+      }
+    })
+    wx.request({
+      url: config.service.isAdminUrl,
+      method: 'get',
+      data: {
+        uid: this.data.userInfo.uid
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.code == 0 && res.data.data == "Admin") {
+          this.setData({
+            isAdmin: true
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -91,7 +89,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
@@ -108,60 +106,27 @@ Page({
   
   },
 
-  // toBorrowList: function () {
-  //   wx.navigateTo({
-  //     url: '../borrowBook/borrowBook',
-  //   })
-  // },
-  toBorrowList: function () {
-    wx.navigateTo({
-      url: '../bookList/bookList?type=1',
-    })
-  },
-  toShareList: function(){
-    wx.navigateTo({
-      url: '../bookList/bookList?type=0',
-    })
-  },
-  // toShareBook: function(){
-  //   wx.navigateTo({
-  //     url: '../shareBook/shareBook',
-  //   })
-  // },
 
   toVerifyPage: function(){
-    wx.navigateTo({
-      url: '../verifyName/verifyName',
-    })
+    if (this.data.userMoreInfo.isVerified == -1){
+      // 待认证
+      util.showModel("", "用户认证已提交，待审核")
+    } else if (this.data.userMoreInfo.isVerified == 1) {
+      // 已认证
+      util.showModel("", "用户已认证") 
+    } else {
+      wx.navigateTo({
+        url: '../verifyName/verifyName',
+      })
+    }
+    
   },
 
-  toRecordList: function(){
+  // 自定义组件 item 跳转事件
+  navigateTo: function (e) {
+    console.log(e.detail)
     wx.navigateTo({
-      url: '../bookList/bookList?type=2',
-    })
-  },
-
-  toLikeList: function(){
-    wx.navigateTo({
-      url: '../bookList/bookList?type=3',
-    })
-  },
-  
-  toVerifyUser: function(){
-    wx.navigateTo({
-      url: '../verifyUser/verifyUser',
-    })
-  },
-
-  toVerifyBook: function(){
-    wx.navigateTo({
-      url: '../verifyBook/verifyBook',
-    })
-  },
-
-  toManageBorrow: function(){
-    wx.navigateTo({
-      url: '../manageBorrow/manageBorrow',
+      url: e.detail.url
     })
   }
 })

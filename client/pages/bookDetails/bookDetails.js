@@ -176,9 +176,14 @@ Page({
       },
       success: res => {
         console.log(res)
-        wx.navigateTo({
-          url: '../process/process?bid=' + this.data.bid + '&type=' + 1,
-        })
+        let data = res.data.data
+        if(data.status == 0){
+          util.showModel("", data.msg)
+        } else {
+          wx.navigateTo({
+            url: '../process/process?bid=' + this.data.bid + '&type=' + 1,
+          })
+        }
       }
     })
   },

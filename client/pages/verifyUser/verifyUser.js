@@ -15,18 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: config.service.usersReadyForVerifyUrl,
-      method: 'get',
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        this.setData({
-          users: data
-        }) 
-        
-      }
-    })
+    
   },
 
   /**
@@ -40,7 +29,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: config.service.usersReadyForVerifyUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          users: data
+        })
+
+      }
+    })
   },
 
   /**
@@ -78,7 +78,7 @@ Page({
   
   },
 
-  passVerify: function(e){
+  passInfoVerify: function(e){
     let uid = e.currentTarget.dataset.uid
     wx.request({
       url: config.service.passUserVerifyUrl,

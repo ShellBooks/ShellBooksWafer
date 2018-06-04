@@ -29,7 +29,7 @@
       <comment comment="{{item}}"></comment>
     </block>
   </view>
-  <text wx:else>还没有评论哦~快来添加第一条评论吧！</text>
+  <text class="nocomment" wx:else>暂无评论</text>
   <button class='borrow_book_btn' bindtap='borrowBook'>立即借书</button>
 </view>
 

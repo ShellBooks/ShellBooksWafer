@@ -49,3 +49,9 @@ page{
   margin-right: 30rpx;
   float: right;
 }
+.nocomment{
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 100rpx 0;
+}

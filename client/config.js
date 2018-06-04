@@ -23,11 +23,13 @@ var config = {
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`,
 
-        // 获取用户信息
+        // ---------------------------------------------------
+
+        // 获取用户基本信息
         userInfoUrl: `${host}/weapp/userInfo`,
 
-        // 获取用户借阅分享图书数
-        userBooksNumUrl: `${host}/weapp/userBooksNum`,
+        // 获取用户更多信息
+        getUserMoreInfoUrl: `${host}/weapp/getUserMoreInfo`,
 
         // 获取图书评论
         getCommentsUrl: `${host}/weapp/getComments`,
