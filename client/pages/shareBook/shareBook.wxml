@@ -18,14 +18,14 @@
     <line></line>
     <view class='info_item'>
       <text>定价</text>
-      <input bindblur="inputPrice" value="{{price}}"></input>
+      <input bindblur="inputPrice" value="{{price}}" type='digit'></input>
     </view>
     <line></line>
     <view class='info_item'>
       <text>ISBN</text>
-      <input bindblur="inputISBN" value="{{ISBN}}"></input>
+      <input bindblur="inputISBN" value="{{ISBN}}" type='digit'></input>
     </view>
-    <button bindtap='douban暂无评论 BookInfo'>扫描二维码填充信息</button> 
+    <button bindtap='doubanBookInfo'>扫描二维码填充信息</button> 
     <view class='info_item' bindtap="doUpload">
       <text>封面</text>
       <view class='arrow'></view>

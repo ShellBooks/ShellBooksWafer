@@ -60,7 +60,6 @@ Page({
     //   console.log(1)
     // }
     let uid = app.globalData.userInfo.uid
-    console.log(uid)
     wx.request({
       url: config.service.recommendUrl,
       method: 'get',
