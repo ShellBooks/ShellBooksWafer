@@ -1,33 +1,49 @@
 /* pages/bookList/bookList.wxss */
 .view_content{
-  width: 650rpx;
+  width: 720rpx;
   height: 500rpx;
   margin: 0 auto;
 }
 
 .bookitem{
   display: inline-block;
-  width: 30%;
+  width: 32%;
   height: 450rpx;
-  margin-left: 10rpx;
-  margin-right: 10rpx;
-  margin-top: 30rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  margin-top: 20rpx;
   vertical-align: top;
 }
 
 .bookitem_bname{
+  width: 95%;
   font-size: 30rpx;
   color: #000000;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
 }
 
 .bookitem_author{
+  width: 95%;
   font-size: 30rpx;
   color: #999999;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;  
 }
 
 .bookitem_image{
-  width: 200rpx;
+  width: 90%;
   height: 300rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  background-size: 100%;
 }
 
 navigator{
@@ -40,9 +56,10 @@ navigator image{
   width: 180rpx;
   height: 180rpx;
   margin: 0 auto;
-  padding-top: 80rpx;
+  padding-top: 150rpx;
   display: block;
 }
+
 
 
 
