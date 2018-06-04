@@ -1,0 +1,76 @@
+/* pages/uploadAct/uploadAct.wxss */
+.active_item{
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx 0;
+  font-size: 40rpx;
+}
+
+.active_item input{
+  width: 70%;
+  height: 96%;
+  float: right;
+  margin-right: 30rpx;
+  border: 1px solid #aaa;
+  display: block;
+}
+.active_item textarea{
+  float: right;
+  margin-right: 30rpx;
+  border: 1px solid #aaa;
+}
+.active_item text{
+  width: 20%;
+  height: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: 30rpx; 
+}
+.arrow{
+  width: 30rpx;
+  height: 30rpx;
+  border-top: 4rpx solid #999; 
+  border-right: 4rpx solid #999; 
+  /* position: absolute; */
+  float: right;
+  margin-right: 30rpx; 
+  margin-top: 25rpx;
+  transform: rotate(45deg);
+}
+.preview_img{
+  width: 200rpx;
+  height: 300rpx;
+}
+.preview_img image{
+  width: 100%;
+  height: 100%;
+}
+.isUpload{
+  float: right;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+.upload_book_btn::after{
+  border: none;
+}
+.bottom_btn{
+  position: relative;
+  top: 50rpx;
+  width: 650rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  background: #009ed8;
+  box-shadow: 2px 6px 10px 2px #a2d5e8; /* 水平，垂直，扩散面积，延展距离，颜色 */
+}
+.btn_text{
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 100rpx;
+}
+.btn_wrap{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200rpx;
+}

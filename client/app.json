@@ -11,7 +11,8 @@
     "pages/bookReviews/bookReviews",
     "pages/verifyUser/verifyUser",
     "pages/verifyBook/verifyBook",
-    "pages/manageBorrow/manageBorrow"
+    "pages/manageBorrow/manageBorrow",
+    "pages/uploadAct/uploadAct"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

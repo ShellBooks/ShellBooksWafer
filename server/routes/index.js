@@ -109,5 +109,8 @@ router.post('/returnBook', controllers.returnBook)
 // GET 获取收藏状态
 router.get('/getLike', controllers.getLike)
 
+// POST 上传活动
+router.post('/uploadAct', controllers.uploadAct)
+
 
 module.exports = router
