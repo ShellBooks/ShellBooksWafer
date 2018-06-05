@@ -65,3 +65,8 @@
 .books{
   margin: 10rpx 0 30rpx 0;
 }
+.author{
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
+}

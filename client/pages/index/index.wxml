@@ -36,7 +36,7 @@
         <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < new_books.length}}">
           <image src='{{item.image}}'></image>
           <text>{{item.bname}}</text>
-          <text>{{item.author}}</text>
+          <text class='author'>{{item.author}}</text>
         </view>
       </block>
     </scroll-view>  
@@ -48,7 +48,7 @@
         <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < recommendation.length}}">
           <image src='{{item.image}}'></image>
           <text>{{item.bname}}</text>
-          <text>{{item.author}}</text>
+          <text class='author'>{{item.author}}</text>
         </view>
       </block>
     </scroll-view>   
