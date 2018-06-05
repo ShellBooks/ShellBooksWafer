@@ -1,7 +1,7 @@
 /* pages/me/me.wxss */
 
 page{
-  background: #f5f5f5;
+  background: #fff;
 }
 .backWall{
   background: #1a7bae;
@@ -30,16 +30,25 @@ page{
   text-align: center;
   width:300rpx;
   margin: 0 auto;
+  font-size: 36rpx;
 }
 
 .info{
+  width: 400rpx;
   margin: 0 auto;
 }
 .info text{
+  font-size: 32rpx;
   margin: 0 20rpx;
+  color: #808080;
 }
 .me_list{
-  margin: 20rpx 0;
+  width: 96%;
+  margin: 20rpx auto;
+  background: #fff;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 .gender{
   width: 24rpx;
@@ -52,8 +61,22 @@ page{
   float: right;
   position: absolute;
   left: 400rpx;
-  top: 16rpx;
+  top: 14rpx;
 }
 .userInfo_up{
   height: 320rpx;
 }
+#me_list_1{
+  height: 250rpx;
+}
+#me_list_2{
+  height: 160rpx;
+}
+.me_admin{
+  display: block;
+  margin-top: 20rpx;
+  text-align: center;
+  color: #808080;
+  font-size: 32rpx;
+}
+

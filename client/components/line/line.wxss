@@ -1,6 +1,7 @@
 /* components/myline/line.wxss */
 .line{
   height: 4rpx;
-  width: 100%;
+  width: 94%;
+  margin: 0 auto;
   background: #eee;
 }
