@@ -1,14 +1,18 @@
 <!--pages/me/me.wxml-->
 <view>
-  <view class='backWall'></view>
-  <view>
+  <view class='userInfo_up'>
+    <view class='backWall'></view>
     <image class="userinfo-avatar" src="{{userInfo.avatar_url}}" background-size="cover"></image>
+  </view>
+  <view class='userinfo_'>
     <view class="userinfo-nickname">
-      <text>{{userInfo.nickname}}</text>
-      <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
-      <image class='gender' src='../../images/girl.png' wx:else></image>
-      <image class='verify' src='../../images/verified.png' wx:if="{{userMoreInfo.isVerified == 1}}"></image>
-      <image  class='verify' src='../../images/unverified.png' wx:else></image>
+      <image class='verify' src='../../images/verify.png' wx:if="{{userMoreInfo.isVerified == 1}}"></image>
+      <image  class='verify' src='../../images/verify.png' wx:else></image>
+      <text class='username'>{{userInfo.nickname}}</text>
+      <!-- <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
+      <image class='gender' src='../../images/girl.png' wx:else></image> -->
+      <!-- <image class='verify' src='../../images/verified.png' wx:if="{{userMoreInfo.isVerified == 1}}"></image>
+      <image  class='verify' src='../../images/unverified.png' wx:else></image> -->
     </view>
     <view class="info">
       <text>贝壳 {{userMoreInfo.money}}</text>

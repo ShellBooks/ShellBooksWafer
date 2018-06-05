@@ -13,5 +13,6 @@
 	"appid": "wx35ebf449c849bc9e",
 	"projectname": "ShellBooksWafer",
 	"libVersion": "2.0.9",
+	"compileType": "miniprogram",
 	"condition": {}
 }
