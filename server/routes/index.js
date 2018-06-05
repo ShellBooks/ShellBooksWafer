@@ -115,5 +115,7 @@ router.post('/uploadAct', controllers.uploadAct)
 // GET 获取活动
 router.get('/getBanner', controllers.getBanner)
 
+// GET 获取借阅详情
+router.get('/getBorrowDetails', controllers.getBorrowDetails)
 
 module.exports = router

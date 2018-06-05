@@ -1,5 +1,6 @@
 // pages/process/process.js
 var config = require('../../config')
+var util = require('../../utils/util.js')
 
 const app = getApp()
 
@@ -29,13 +30,19 @@ Page({
     if (app.globalData.userInfo) {
       uid = app.globalData.userInfo.uid
     }
+    let type
+    if(this.data.type == 1 || this.data.type == 2){
+      type = 1
+    } else {
+      type = 0
+    }
     wx.request({
       url: config.service.getProcessUrl,
       method: 'get',
       data:{
         bid: this.data.bid,
         uid: uid,
-        type: this.data.type
+        type: type
       },
       success: res => {
         console.log(res)
@@ -54,9 +61,10 @@ Page({
       }
     })
     wx.request({
-      url: config.service.getBookDetailsUrl,
+      url: config.service.getBorrowDetailsUrl,
       method: 'get',
       data: {
+        uid: uid,
         bid: this.data.bid
       },
       success: res => {
@@ -71,6 +79,8 @@ Page({
           }
           data.rate = rateArray
         }
+        data.borrow_date = util.formatTime(new Date(data.borrow_date), 1)
+        data.return_date = util.formatTime(new Date(data.return_date), 1)
         this.setData({
           book_details: data
         })

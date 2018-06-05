@@ -24,7 +24,7 @@
 }
 
 .scroll-view{
-  height: 400rpx;
+  height: 440rpx;
   /* background: #999; */
   width: 100%;
   white-space: nowrap; 
@@ -37,8 +37,10 @@
 }
 
 .scroll-view view image{
-  width: 100%;
+  width: 90%;
   height: 78%;
+  margin: 0 auto;
+  display: block;
 }
 
 .scroll-view view text{
@@ -59,4 +61,7 @@
 
 .cancel{
   color: #000;
+}
+.books{
+  margin: 10rpx 0 30rpx 0;
 }

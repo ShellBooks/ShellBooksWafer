@@ -100,7 +100,7 @@
 
 .bottom_btn{
   position: relative;
-  top: 350rpx;
+  top: 50rpx;
   width: 650rpx;
   height: 100rpx;
   margin: 0 auto;
@@ -112,4 +112,10 @@
   color: #fff;
   font-size: 36rpx;
   line-height: 100rpx;
+}
+.btn_wrap{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 200rpx;
 }

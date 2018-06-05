@@ -42,7 +42,7 @@
     </scroll-view>  
   </view>
   <view class="books">
-    <item title="好书推荐" url="../bookList/bookList" type="5" bindmyevent="navigateTo"></item>
+    <item title="猜你喜欢" url="../bookList/bookList" type="5" bindmyevent="navigateTo"></item>
     <scroll-view class="scroll-view" scroll-x>
       <block wx:for="{{recommendation}}" wx:key="index" wx:for-index="i">
         <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < recommendation.length}}">

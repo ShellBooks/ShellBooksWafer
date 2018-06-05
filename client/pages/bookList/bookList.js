@@ -50,7 +50,8 @@ Page({
         method: 'get',
         //这里定义传递的参数
         data: {
-          uid: uid
+          uid: uid,
+          type: this.data.type
         },
         success: res => {
           //console.log(res)
@@ -93,7 +94,8 @@ Page({
         method: 'get',
         //这里定义传递的参数
         data: {
-          uid: uid
+          uid: uid,
+          type: this.data.type
         },
         success: res => {
           //console.log(res)
@@ -148,9 +150,9 @@ Page({
         }
       })
     } else if (this.data.type == 5) {
-      // 好书推荐
+      // 猜你喜欢
       wx.setNavigationBarTitle({
-        title: '好书推荐'
+        title: '猜你喜欢'
       })
       wx.request({
         url: config.service.recommendUrl,

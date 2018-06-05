@@ -1,7 +1,5 @@
 // pages/library/library.js
 var config = require('../../config')
-var qcloud = require('../../vendor/wafer2-client-sdk/index')
-var util = require('../../utils/util.js')
 
 var app = getApp()    
 

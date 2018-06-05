@@ -1,7 +1,7 @@
 /* item/item.wxss */
 .item{
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   background: #fff;
 }
 .arrow{
@@ -12,6 +12,9 @@
   /* position: absolute; */
   float: right;
   margin-right: 30rpx; 
-  margin-top: 20rpx;
+  margin-top: 25rpx;
   transform: rotate(45deg);
+}
+.item text{
+  margin-left: 20rpx;
 }

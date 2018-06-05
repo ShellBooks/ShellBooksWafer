@@ -1,5 +1,5 @@
 <!--pages/verifyBook/verifyBook.wxml-->
-<view>
+<view wx:if="{{realBooks.length || booksInfo.length}}">
   <view class='verifyRealBook' wx:if="{{realBooks.length}}">
     <text class='listTitle'>实体图书审核</text>
     <block wx:for="{{realBooks}}" wx:key="index">
@@ -43,3 +43,4 @@
     </block>
   </view>
 </view>
+<view class='no_data' wx:else>暂无待审核图书</view>

@@ -7,7 +7,7 @@ page{
   width: 35%;
   float: left;
   padding-left: 20rpx;
-  padding-top: 58rpx;
+  /* padding-top: 58rpx; */
 }
 .book_details_img image{
   width: 100%;
@@ -39,20 +39,23 @@ page{
 .book_name{
   font-size: 30rpx;
   font-weight: bold;
+  width: 80%;
 }
 .comments_number{
   margin: 20rpx 0;
 }
 .borrow_book_btn{
   width: 100%;
-   position: fixed;  
-    bottom: 0;   
+  position: fixed;  
+  bottom: 0;   
 }
 .book_detail_favourite{
   width: 52rpx;
   height: 48rpx;
-  float: right;
-  padding-right: 20rpx;
+  /* float: right; */
+  /* padding-right: 20rpx; */
+  position: absolute;
+  right: 20rpx;
 }
 .nocomment{
   text-align: center;

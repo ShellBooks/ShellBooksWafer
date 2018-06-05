@@ -105,6 +105,9 @@ var config = {
 
         // 获取活动
         getBannerUrl: `${host}/weapp/getBanner`,
+
+        // 获取借阅详情
+        getBorrowDetailsUrl: `${host}/weapp/getBorrowDetails`,
     }
 };
 

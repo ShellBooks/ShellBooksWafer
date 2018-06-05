@@ -1,5 +1,5 @@
 <!--pages/bookList/bookList.wxml-->
-<view wx:if="{{booklist.length}} || {{type == 0}}">
+<view wx:if="{{booklist.length || type == 0}}">
   <view class='view_content'>
     <block wx:for="{{booklist}}" wx:key="index">
       <view class='bookitem' style="background: url('../../images/book_bg.png') no-repeat; background-size:100%;" bindtap="toProcess" data-bid="{{item.bid}}">
