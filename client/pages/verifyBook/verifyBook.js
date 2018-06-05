@@ -9,7 +9,7 @@ Page({
    */
   data: {
     shell: 0,
-    realBooks: [],
+    // realBooks: [],
     booksInfo: []
   },
 
@@ -17,18 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: config.service.booksReadyForVerifyUrl,
-      method: 'get',
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        this.setData({
-          realBooks: data.realBooks,
-          booksInfo: data.booksInfo
-        })
-      }
-    })
+    
   },
 
   /**
@@ -42,7 +31,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: config.service.booksReadyForVerifyUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          booksInfo: data.booksInfo
+        })
+      }
+    })
   },
 
   /**
@@ -86,20 +85,10 @@ Page({
     data.uid = e.currentTarget.dataset.uid
     data.bid = e.currentTarget.dataset.bid
     data.status = e.currentTarget.dataset.status
-    // type = 0 图书分享
-    data.type = 0
+    data.type = 0 // type = 0 图书分享
     data.date = util.formatTime(new Date())
-    if(data.status == 1){
-      // 提交实体书期限 
-      // 259200000 为三天的毫秒数
-      const threeDays = 259200000
-      let ms = (new Date()).getTime() + threeDays
-      let limit = util.formatTime(new Date(ms))
-      data.info = "图书信息审核成功，请于" + limit + "前将图书提交给管理员"
-    } else if (data.status == 2){
-      data.info = "图书审核成功并上架,你将获取" + this.data.shell + "个贝壳，请查收"
-      data.shell = this.data.shell
-    }
+    data.info = "图书审核成功并上架,你将获取" + this.data.shell + "个贝壳，请查收"
+    data.shell = this.data.shell
     wx.request({
       url: config.service.passBookVerifyUrl,
       method: 'post',

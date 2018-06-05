@@ -16,21 +16,15 @@ module.exports = async ctx => {
     date: date,
     info: info
   }
-
-  let bres
+  
   let pres = await mysql("process").insert(process)
   
-  if(status == 2){
-    // 图书上架 发放贝壳
-    let oldMoney = await mysql("user").where({ uid }).select('money').first()
-    let newMoney = parseInt(shell) + oldMoney.money
+  // 图书上架 发放贝壳
+  let oldMoney = await mysql("user").where({ uid }).select('money').first()
+  let newMoney = parseInt(shell) + oldMoney.money
 
-    let ures = await mysql("user").where({ uid }).update({ money: newMoney })
-    bres = await mysql("book").where({ bid }).update({ status, shell })
-    
-  } else {
-    bres = await mysql("book").where({ bid }).update({ status })
-  }
+  let ures = await mysql("user").where({ uid }).update({ money: newMoney })
+  let bres = await mysql("book").where({ bid }).update({ status, shell })
   
   if (bres && pres) {
     ctx.state.data = "审核成功"

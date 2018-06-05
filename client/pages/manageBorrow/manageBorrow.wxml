@@ -1,5 +1,5 @@
 <!--pages/manageBorrow/manageBorrow.wxml-->
-<view>
+<view wx:if="{{borrowBook.length || returnBook.length}}">
   <view wx:if="{{borrowBook.length}}">
     <text class='listTitle'>图书借阅</text>
     <block wx:for="{{borrowBook}}" wx:key="index">
@@ -41,3 +41,4 @@
     </block>
   </view>
 </view>
+<view class='no_data' wx:else>暂无借阅信息</view>

@@ -10,7 +10,6 @@ module.exports = async ctx => {
   let type = ctx.request.body.type
   let date = ctx.request.body.date
   let info = ctx.request.body.info
-  let shell = ctx.request.body.shell
 
   // 更新 borrow 
   let bres = await mysql("borrow").where({uid, bid}).update({borrow_date, return_date, status})
@@ -18,12 +17,7 @@ module.exports = async ctx => {
   // 插入 process
   let pres = await mysql("process").insert({uid, bid, type, date, info})
 
-  // 扣除贝壳
-  let oldMoney = await mysql("user").where({ uid }).select('money').first()
-  let newMoney = oldMoney.money - parseInt(shell)
-  let ures = await mysql("user").where({ uid }).update({money: newMoney})
-
-  if(bres && pres && ures){
+  if(bres && pres){
     ctx.state.data = "借阅成功"
   } else {
     ctx.state.code = -1,

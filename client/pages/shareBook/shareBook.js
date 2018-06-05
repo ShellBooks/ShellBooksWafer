@@ -186,7 +186,11 @@ Page({
       uid = app.globalData.userInfo.uid
     }
     let date = util.formatTime(new Date())
-    console.log(date)
+    // 提交实体书期限 
+    // 259200000 为三天的毫秒数
+    const threeDays = 259200000
+    let ms = (new Date()).getTime() + threeDays
+    let limit = util.formatTime(new Date(ms))
     wx.request({
       url: config.service.uploadBookInfoUrl,
       method: 'post',
@@ -200,7 +204,8 @@ Page({
         rate: 0,
         status: 0,
         date: date,
-        uid: uid
+        uid: uid,
+        info: '图书信息已提交，请于' + limit + '前将图书提交给管理员'
       },
       success: res => {
         console.log(res)

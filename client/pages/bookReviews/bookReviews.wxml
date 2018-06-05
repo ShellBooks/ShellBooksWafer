@@ -10,35 +10,35 @@
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
       </view>
-       <view class='review_rate' wx:if="{{rate == 1}}" bindtap='clickStar'>
+       <view class='review_rate' wx:if="{{rate == 1}}">
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarTwo'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarThree'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
       </view>
-      <view class='review_rate' wx:if="{{rate == 2}}" bindtap='clickStar'>
+      <view class='review_rate' wx:if="{{rate == 2}}">
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarThree'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
       </view>
-      <view class='review_rate' wx:if="{{rate == 3}}" bindtap='clickStar'>
+      <view class='review_rate' wx:if="{{rate == 3}}">
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFour'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
       </view>
-      <view class='review_rate' wx:if="{{rate == 4}}" bindtap='clickStar'>
+      <view class='review_rate' wx:if="{{rate == 4}}">
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarFour'></image>
         <image class='review_star_img' src='../../images/star-n.png' bindtap='clickStarFive'></image>
       </view>
-      <view class='review_rate' wx:if="{{rate == 5}}" bindtap='clickStar'>
+      <view class='review_rate' wx:if="{{rate == 5}}">
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarOne'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarTwo'></image>
         <image class='review_star_img' src='../../images/star-full.png' bindtap='clickStarThree'></image>

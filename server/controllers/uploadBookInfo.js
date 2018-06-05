@@ -2,7 +2,19 @@ const { mysql } = require('../qcloud')
 
 module.exports = async ctx => {
   // POST 请求 获取 data
-  let book = ctx.request.body
+  let book = {
+    bname: ctx.request.body.bname,
+    author: ctx.request.body.author,
+    publish: ctx.request.body.publish,
+    price: ctx.request.body.price,
+    ISBN: ctx.request.body.ISBN,
+    image: ctx.request.body.image,
+    rate: ctx.request.body.rate,
+    status: ctx.request.body.status,
+    date: ctx.request.body.date,
+    uid: ctx.request.body.uid,
+  }
+  let info = ctx.request.body.info
 
   // 返回 bid
   let bres = await mysql("book").insert(book)
@@ -14,7 +26,7 @@ module.exports = async ctx => {
     // type = 0 分享
     type: 0,
     date: book.date,
-    info: '图书分享请求已提交，等待审核'
+    info: info
   }
 
   let pres = await mysql("process").insert(process)
@@ -26,6 +38,5 @@ module.exports = async ctx => {
     ctx.state.data = "share error"
   }
   
-
 }
 

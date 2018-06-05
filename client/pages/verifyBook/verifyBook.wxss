@@ -25,12 +25,6 @@
   font-weight: bold;
   font-size: 40rpx;
 }
-.listTitle{
-  margin: 20rpx;
-  display: block;
-  width: 100%;
-  text-align: center;
-}
 .shell{
   width: 100%;
 }

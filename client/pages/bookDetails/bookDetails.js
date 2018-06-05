@@ -169,15 +169,15 @@ Page({
       data: {
         uid: uid,        
         bid: this.data.bid,
-        // type = 1 借书 type = 0 分享
-        type: 1, 
+        type: 1, // type = 1 借书 type = 0 分享
         date: date,
-        info: '借书请求已提交'
+        info: '借书请求已提交',
+        shell: this.data.book_details.shell
       },
       success: res => {
         console.log(res)
         let data = res.data.data
-        if(data.status == 0){
+        if(data.status == -1){
           util.showModel("", data.msg)
         } else {
           wx.navigateTo({

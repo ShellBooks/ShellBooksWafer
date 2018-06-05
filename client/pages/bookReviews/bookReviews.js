@@ -88,7 +88,6 @@ Page({
 
     //获取当前时间
     let date = util.formatTime(new Date())
-    console.log(this.data.content)
   
     wx.request({
       //获取评论后台路径
@@ -103,14 +102,14 @@ Page({
       },
       success: res => {
         console.log(res)
-        if (res.data.code == 0) {
-          util.showSuccess('上传信息成功')
-          //let bid = res.data.data
-          // wx.redirectTo({
-          //   url: '../process/process?bid=' + bid + '&type=' + 2,
-          // })
+        let data = res.data.data
+        if (data.status == 0) {
+          util.showSuccess('评论成功')
+          wx.navigateBack({
+            delta:1
+          })
         } else {
-          util.showModel('上传信息失败', res.data.error)
+          util.showModel('', data.msg)
         }
       }
     })

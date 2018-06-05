@@ -102,8 +102,7 @@ Page({
         status: 1,
         type: 1,
         date: date,
-        info: '借书成功，贝壳已扣除。请在规定日期前将图书归还',
-        shell: shell
+        info: '借书成功，请在规定日期前将图书归还'
       },
       success: res => {
         console.log(res)
