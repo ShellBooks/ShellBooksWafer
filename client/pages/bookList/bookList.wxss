@@ -13,6 +13,9 @@
   margin-right: 5rpx;
   margin-top: 20rpx;
   vertical-align: top;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 
 .bookitem_bname{
