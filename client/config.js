@@ -108,6 +108,9 @@ var config = {
 
         // 获取借阅详情
         getBorrowDetailsUrl: `${host}/weapp/getBorrowDetails`,
+
+        // 回收图书请求
+        getBackBookUrl: `${host}/weapp/getBackBook`,
     }
 };
 

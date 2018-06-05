@@ -8,8 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    shell: 0,
-    // realBooks: [],
+    shell: null,
     booksInfo: []
   },
 
@@ -81,6 +80,10 @@ Page({
 
   // 审核图书 
   passVerify: function(e){
+    if(this.data.shell == null){
+      util.showModel("", "请输入贝壳数")
+      return
+    }
     let data = {}
     data.uid = e.currentTarget.dataset.uid
     data.bid = e.currentTarget.dataset.bid

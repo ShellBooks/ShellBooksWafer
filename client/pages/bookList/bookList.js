@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: '',
+    type: null,
     //返回的图书信息
     booklist: {}
   },
@@ -210,6 +210,13 @@ Page({
     let bid = e.currentTarget.dataset.bid
     wx.navigateTo({
       url: '../process/process?bid=' + bid + '&type=' + this.data.type,
+    })
+  },
+
+  toDetails: function(e){
+    let bid = e.currentTarget.dataset.bid
+    wx.navigateTo({
+      url: '../bookDetails/bookDetails?bid=' + bid
     })
   }
 })

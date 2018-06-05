@@ -1,7 +1,6 @@
 const { mysql } = require('../qcloud')
 
 module.exports = async ctx => {
-  ctx.request.body
   let process = {
     uid: ctx.request.body.uid,
     bid: ctx.request.body.bid,

@@ -60,32 +60,66 @@ Page({
         })
       }
     })
-    wx.request({
-      url: config.service.getBorrowDetailsUrl,
-      method: 'get',
-      data: {
-        uid: uid,
-        bid: this.data.bid
-      },
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        let rate = data.rate
-        if (rate > 0) {
-          let rateArray = []
-          for (let i = 0; i < 5; ++i) {
-            if (i < rate) rateArray.push(true)
-            else rateArray.push(false)
+    if(this.data.type == 1 || this.data.type == 2){
+      wx.request({
+        url: config.service.getBorrowDetailsUrl,
+        method: 'get',
+        data: {
+          uid: uid,
+          bid: this.data.bid,
+          type: this.data.type
+        },
+        success: res => {
+          console.log(res)
+          let data = res.data.data
+          let rate = data.rate
+          if (rate > 0) {
+            let rateArray = []
+            for (let i = 0; i < 5; ++i) {
+              if (i < rate) rateArray.push(true)
+              else rateArray.push(false)
+            }
+            data.rate = rateArray
           }
-          data.rate = rateArray
+          if (data.borrow_date == null && data.return_date == null){
+            data.borrow_date = '暂无信息'
+            data.return_date = '暂无信息'
+          } else {
+            data.borrow_date = util.formatTime(new Date(data.borrow_date), 1)
+            data.return_date = util.formatTime(new Date(data.return_date), 1)
+          }
+          this.setData({
+            book_details: data
+          })
         }
-        data.borrow_date = util.formatTime(new Date(data.borrow_date), 1)
-        data.return_date = util.formatTime(new Date(data.return_date), 1)
-        this.setData({
-          book_details: data
-        })
-      }
-    })
+      })
+    } else if(this.data.type == 0){
+      // 我的分享
+      wx.request({
+        url: config.service.getBookDetailsUrl,
+        method: 'get',
+        data: {
+          bid: this.data.bid
+        },
+        success: res => {
+          console.log(res)
+          let data = res.data.data
+          let rate = data.rate
+          if (rate > 0) {
+            let rateArray = []
+            for (let i = 0; i < 5; ++i) {
+              if (i < rate) rateArray.push(true)
+              else rateArray.push(false)
+            }
+            data.rate = rateArray
+          }
+          this.setData({
+            book_details: data
+          })
+        }
+      })
+    }
+    
   },
 
   /**
@@ -143,6 +177,30 @@ Page({
     let uid = app.globalData.userInfo.uid
     wx.navigateTo({
       url: '../bookReviews/bookReviews?bid=' +bid
+    })
+  },
+  getBackBook: function(){
+    let date = util.formatTime(new Date())
+    wx.request({
+      url: config.service.getBackBookUrl,
+      method: 'get',
+      data: {
+        bid: this.data.bid,
+        uid: app.globalData.userInfo.uid,
+        type: 0,
+        date: date,
+        info: '收回图书请求已提交，请待图书闲置后到管理员处取回图书',
+        status: 2
+      },
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        if(data.status == 0){
+          util.showSuccess(data.msg)
+        } else {
+          util.showModel("", data.msg)
+        }
+      }
     })
   }
 })

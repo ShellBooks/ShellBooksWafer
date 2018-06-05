@@ -2,7 +2,12 @@
 <view wx:if="{{booklist.length || type == 0}}">
   <view class='view_content'>
     <block wx:for="{{booklist}}" wx:key="index">
-      <view class='bookitem' bindtap="toProcess" data-bid="{{item.bid}}">
+      <view class='bookitem' bindtap="toProcess" data-bid="{{item.bid}}" wx:if="{{type == 0 || type == 1 || type == 2}}">
+        <image class='bookitem_image' src="{{item.image}}"> </image>
+        <view class='bookitem_bname'> {{item.bname}} </view>
+        <view class='bookitem_author'> {{item.author}} </view>
+      </view>
+      <view class='bookitem' bindtap="toDetails" data-bid="{{item.bid}}" wx:else>
         <image class='bookitem_image' src="{{item.image}}"> </image>
         <view class='bookitem_bname'> {{item.bname}} </view>
         <view class='bookitem_author'> {{item.author}} </view>

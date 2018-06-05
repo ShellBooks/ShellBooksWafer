@@ -118,4 +118,8 @@ router.get('/getBanner', controllers.getBanner)
 // GET 获取借阅详情
 router.get('/getBorrowDetails', controllers.getBorrowDetails)
 
+// GET 回收图书请求
+router.get('/getBackBook', controllers.getBackBook)
+
+
 module.exports = router
