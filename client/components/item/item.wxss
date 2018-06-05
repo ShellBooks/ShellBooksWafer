@@ -16,5 +16,6 @@
   transform: rotate(45deg);
 }
 .item text{
-  margin-left: 20rpx;
+  margin-left: 30rpx;
+  font-size: 34rpx;
 }
