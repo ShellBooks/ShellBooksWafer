@@ -26,8 +26,8 @@
       <view class='sign'></view>
     </view>
     <block wx:for="{{comments}}" wx:key="index">
-      <line wx:if="{{comments.length>1}}"></line>
       <comment comment="{{item}}"></comment>
+      <line wx:if="{{comments.length>1}}"></line>
     </block>
   </view>
   <text class="nocomment" wx:else>暂无评论</text>

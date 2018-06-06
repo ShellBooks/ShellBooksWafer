@@ -1,11 +1,11 @@
 /* pages/process/process.wxss */
 .book_details_img{
-  height: 450rpx;
-  width: 50%;
+  height: 430rpx;
+  width: 35%;
   float: left;
 }
 .book_details_img image{
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   display: block;
@@ -17,14 +17,15 @@
   display: inline-block;
   width: 100%;
   background: #fff;
-  padding: 40rpx 10rpx;
+  padding: 30rpx 30rpx;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
 }
 .book_details_info{
   height: 400rpx;
-  width: 50%;
+  width: 45%;
   float: right;
+  margin-right: 100rpx;
 }
 .book_details_text{
   display: block;
@@ -37,7 +38,7 @@
   text-overflow: ellipsis;    /**表示省略*/
 }
 .book_name{
-  font-size: 40rpx;
+  font-size: 36rpx;
   font-weight: bold;
 }
 .tag{
@@ -48,6 +49,7 @@
   background: #fff;
 }
 .process_info{
+  width: 100%;
   background: #fff;
   padding-top: 20rpx;
   padding-bottom: 40rpx;
@@ -70,12 +72,14 @@
   position: relative;
   height: 150rpx;
   padding-top: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
   
 .operation_info{  
   position: absolute;   
   left: 250rpx;   
-  font-size: 28rpx;  
+  font-size: 28rpx;
   color: #666;
 }  
 .icon{  
@@ -140,4 +144,9 @@
   height: 4rpx;
   border: 1px solid #1a7bae;
   border-radius: 999px;
+}
+.process_author{
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
 }

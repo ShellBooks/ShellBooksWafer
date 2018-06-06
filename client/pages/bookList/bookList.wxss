@@ -8,7 +8,7 @@
 .bookitem{
   display: inline-block;
   width: 32%;
-  height: 450rpx;
+  height: 440rpx;
   margin-left: 5rpx;
   margin-right: 5rpx;
   margin-top: 20rpx;
