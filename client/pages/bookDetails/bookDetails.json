@@ -2,6 +2,7 @@
   "navigationBarTitleText": "图书详情",
   "usingComponents": {
     "comment": "../../components/comment/comment",
-    "rate": "../../components/rate/rate"
+    "rate": "../../components/rate/rate",
+    "line": "../../components/line/line"
   }
 }

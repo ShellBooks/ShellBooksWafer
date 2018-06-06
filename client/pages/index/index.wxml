@@ -10,8 +10,8 @@
 
   <!--WEUI SearchBar-->
   <view class="page__bd">
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
+        <view class="weui-search-bar" id='weui_search_bg'>
+            <view class="weui-search-bar__form" id='weui_search_kuang'>
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
                     <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchBook"/>
@@ -19,7 +19,7 @@
                         <icon type="clear" size="14"></icon>
                     </view>
                 </view>
-                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <label class="weui-search-bar__label" id='weui_search_label' hidden="{{inputShowed}}" bindtap="showInput">
                     <icon class="weui-icon-search" type="search" size="14"></icon>
                     <view class="weui-search-bar__text">搜索</view>
                 </label>
@@ -34,9 +34,9 @@
     <scroll-view class="scroll-view" scroll-x>
       <block wx:for="{{new_books}}" wx:key="index" wx:for-index="i">
         <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < new_books.length}}">
-          <image src='{{item.image}}'></image>
-          <text>{{item.bname}}</text>
-          <text class='author'>{{item.author}}</text>
+          <image class='index_img' src='{{item.image}}'></image>
+          <text class='index_text'id='bookname'>{{item.bname}}</text>
+          <text class='index_text' id='author'>{{item.author}}</text>
         </view>
       </block>
     </scroll-view>  
@@ -46,9 +46,9 @@
     <scroll-view class="scroll-view" scroll-x>
       <block wx:for="{{recommendation}}" wx:key="index" wx:for-index="i">
         <view bindtap="toDetails" data-bid="{{item.bid}}" wx:if="{{i < 7 && i < recommendation.length}}">
-          <image src='{{item.image}}'></image>
-          <text>{{item.bname}}</text>
-          <text class='author'>{{item.author}}</text>
+          <image class='index_img' src='{{item.image}}'></image>
+          <text class='index_text' id='bookname'>{{item.bname}}</text>
+          <text class='index_text' id='author'>{{item.author}}</text>
         </view>
       </block>
     </scroll-view>   

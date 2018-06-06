@@ -43,11 +43,12 @@ page{
   color: #808080;
 }
 .me_list{
-  width: 96%;
+  width: 92%;
   margin: 20rpx auto;
   background: #fff;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
+  border: 1px solid #fff;
   border-radius: 8rpx;
 }
 .gender{

@@ -6,8 +6,9 @@
   </view>
   <view class='userinfo_'>
     <view class="userinfo-nickname">
-      <image class='verify' src='../../images/verify.png' wx:if="{{userMoreInfo.isVerified == 1}}"></image>
-      <image  class='verify' src='../../images/verify.png' wx:else></image>
+      <image class='verify' src='../../images/verify.png' wx:if="{{userMoreInfo.isVerified == 1 && userInfo.gender == 1}}"></image>
+      <image class='verify' src='../../images/verify_f.png' wx:if="{{userMoreInfo.isVerified == 1 && userInfo.gender == 0}}"></image>
+      <image  class='verify' src='../../images/verify_none.png' wx:if="{{userMoreInfo.isVerified == 0}}"></image>
       <text class='username'>{{userInfo.nickname}}</text>
       <!-- <image class='gender' src='../../images/boy.png' wx:if="{{userInfo.gender}}"></image>  
       <image class='gender' src='../../images/girl.png' wx:else></image> -->

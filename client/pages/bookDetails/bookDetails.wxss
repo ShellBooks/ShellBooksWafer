@@ -1,6 +1,6 @@
 /* pages/book_detailsy/book_details.wxss */
 page{
-  background: #eee;
+  background: #fff;
 }
 .book_details_img{
   height: 430rpx;
@@ -11,7 +11,7 @@ page{
 }
 .book_details_img image{
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: block;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
@@ -21,13 +21,15 @@ page{
   display: inline-block;
   width: 100%;
   background: #fff;
-  padding: 30rpx 0;
+  padding: 20rpx 10rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
 }
 .book_details_info{
   height: 400rpx;
   width: 45%;
   float: right;
-  padding-top: 25rpx;
+  padding-top: 30rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
@@ -53,8 +55,9 @@ page{
   width: 52rpx;
   height: 48rpx;
   float: right;
-  padding-top: 30rpx;
-  padding-right: 20rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  
 }
 .nocomment{
   text-align: center;
@@ -66,4 +69,16 @@ page{
   overflow: hidden;   
   white-space: nowrap;  /**表示文本不换行*/
   text-overflow: ellipsis;    /**表示省略*/
+}
+.tag{
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  padding-bottom: 8rpx;
+  background: #fff;
+}
+.comments{
+  padding: 20rpx 10rpx 40rpx 10rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
 }

@@ -20,8 +20,9 @@
       <text class='book_details_text' wx:else>暂无评分</text>
     </view>
   </view>
-  <text class="tag">流程详情</text>
   <view class='process_info'>
+    <text class="tag">流程详情</text>
+    <view class='sign'></view>
     <block wx:for="{{process}}" wx:key="index">
       <view class='item_info'>
         <view class='time_info'>

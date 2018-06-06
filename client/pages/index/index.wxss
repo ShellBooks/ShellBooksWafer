@@ -24,7 +24,7 @@
 }
 
 .scroll-view{
-  height: 440rpx;
+  height: 500rpx;
   /* background: #999; */
   width: 100%;
   white-space: nowrap; 
@@ -63,10 +63,48 @@
   color: #000;
 }
 .books{
-  margin: 10rpx 0 30rpx 0;
+  margin: 20rpx 0 20rpx 0;
+  padding: 0 20rpx 30rpx 20rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
 }
-.author{
+.index_text{
+  display: block;
   overflow: hidden;   
+  font-weight: 600;
   white-space: nowrap;  /**表示文本不换行*/
   text-overflow: ellipsis;    /**表示省略*/
 }
+.index_img{
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
+}
+#author{
+  color: #444444;
+  font-weight: normal;
+}
+#weui_search_bg{
+  background: #fff;
+  padding: 8px 20px;
+  border: none;
+  font-size: 34rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+#weui_search_kuang{
+  border-radius: 999px;
+  /* box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; */
+  background: #ebebeb;
+  border: none;
+}
+#bookname{
+  margin-top: 20rpx;
+}
+#weui_search_label{
+  border-radius: 999px;
+  background: #eee;
+  font-size: 34rpx;
+}
+
