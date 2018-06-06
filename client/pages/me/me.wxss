@@ -34,12 +34,12 @@ page{
 }
 
 .info{
-  width: 400rpx;
+  width: 500rpx;
   margin: 0 auto;
 }
 .info text{
   font-size: 32rpx;
-  margin: 0 20rpx;
+  margin: 0 30rpx;
   color: #808080;
 }
 .me_list{

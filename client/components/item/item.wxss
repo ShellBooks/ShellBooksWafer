@@ -5,17 +5,17 @@
   background: #fff;
 }
 .arrow{
-  width: 30rpx;
-  height: 30rpx;
+  width: 16rpx;
+  height: 16rpx;
   border-top: 4rpx solid #999; 
   border-right: 4rpx solid #999; 
   /* position: absolute; */
   float: right;
   margin-right: 30rpx; 
-  margin-top: 25rpx;
+  margin-top: 30rpx;
   transform: rotate(45deg);
 }
 .item text{
   margin-left: 30rpx;
-  font-size: 34rpx;
+  font-size: 36rpx;
 }
