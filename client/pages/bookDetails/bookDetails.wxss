@@ -82,3 +82,13 @@ page{
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
 }
+.sign{
+  margin: 0 auto;
+  width: 50rpx;
+  background: #1a7bae;
+  height: 4rpx;
+  border: 1px solid #1a7bae;
+  border-radius: 999px;
+}
+
+
