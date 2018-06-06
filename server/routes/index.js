@@ -119,7 +119,13 @@ router.get('/getBanner', controllers.getBanner)
 router.get('/getBorrowDetails', controllers.getBorrowDetails)
 
 // GET 回收图书请求
+router.get('/backBook', controllers.backBook)
+
+// GET 获取回收图书请求
 router.get('/getBackBook', controllers.getBackBook)
+
+// POST 通过图书回收
+router.post('/passBackBook', controllers.passBackBook)
 
 
 module.exports = router

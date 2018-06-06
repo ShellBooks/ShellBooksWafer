@@ -2,6 +2,8 @@
 var config = require('../../config')
 var util = require('../../utils/util.js')
 
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+
 Page({
 
   /**
@@ -9,25 +11,26 @@ Page({
    */
   data: {
     borrowBook: [],
-    returnBook: []
+    returnBook: [],
+    tabs: ["图书借阅", "图书归还"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: config.service.manageBorrowUrl,
-      method: 'get',
-      success: res => {
-        console.log(res)
-        let data = res.data.data
-        this.setData({
-          borrowBook: data.borrowBook,
-          returnBook: data.returnBook
-        })
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
       }
-    })
+    });
   },
 
   /**
@@ -41,7 +44,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: config.service.manageBorrowUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          borrowBook: data.borrowBook,
+          returnBook: data.returnBook
+        })
+      }
+    })
   },
 
   /**
@@ -102,7 +116,7 @@ Page({
         status: 1,
         type: 1,
         date: date,
-        info: '借书成功，请在规定日期前将图书归还'
+        info: '借书成功并扣除相应贝壳，请在规定日期前将图书归还'
       },
       success: res => {
         console.log(res)
@@ -148,5 +162,11 @@ Page({
       }
     })
     
+  },
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   }
 })

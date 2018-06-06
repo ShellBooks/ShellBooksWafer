@@ -66,12 +66,6 @@ page{
 .userInfo_up{
   height: 320rpx;
 }
-#me_list_1{
-  height: 250rpx;
-}
-#me_list_2{
-  height: 160rpx;
-}
 .me_admin{
   display: block;
   margin-top: 20rpx;

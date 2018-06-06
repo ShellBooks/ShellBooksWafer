@@ -1,44 +1,61 @@
 <!--pages/manageBorrow/manageBorrow.wxml-->
-<view wx:if="{{borrowBook.length || returnBook.length}}">
-  <view wx:if="{{borrowBook.length}}">
-    <text class='listTitle'>图书借阅</text>
-    <block wx:for="{{borrowBook}}" wx:key="index">
-      <view class='manageBorrow'>
-        <view class='borrowImg'>
-          <image src='{{item.image}}'></image>
+<view>
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on shell-bar_item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider shell-navbar_slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view wx:if="{{borrowBook.length}}">
+            <block wx:for="{{borrowBook}}" wx:key="index">
+              <view class='manageBorrow'>
+                <view class='borrowImg'>
+                  <image src='{{item.image}}'></image>
+                </view>
+                <view class='borrowInfo' bindtap='toDetailsInfo'>
+                  <text class='bookname'>{{item.bname}}</text>
+                  <text>图书编号：{{item.bid}}</text>
+                  <text>借阅人：{{item.name}}</text>
+                  <text>学号：{{item.schid}}</text>
+                  <text>手机：{{item.phone}}</text>
+                </view>
+                <view class='pass_btn'>
+                  <button bindtap='passBorrow' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>借阅通过</button>
+                </view>
+              </view>
+            </block>
+          </view>
+          <view class='no_data' wx:else>暂无借阅信息</view>
         </view>
-        <view class='borrowInfo' bindtap='toDetailsInfo'>
-          <text class='bookname'>{{item.bname}}</text>
-          <text>图书编号：{{item.bid}}</text>
-          <text>借阅人：{{item.name}}</text>
-          <text>学号：{{item.schid}}</text>
-          <text>手机：{{item.phone}}</text>
-        </view>
-        <view class='pass_btn'>
-          <button bindtap='passBorrow' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>借阅通过</button>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view wx:if="{{returnBook.length}}">
+            <block wx:for="{{returnBook}}" wx:key="index">
+              <view class='manageBorrow'>
+                <view class='borrowImg'>
+                  <image src='{{item.image}}'></image>
+                </view>
+                <view class='borrowInfo' bindtap='toDetailsInfo'>
+                  <text class='bookname'>{{item.bname}}</text>
+                  <text>图书编号：{{item.bid}}</text>
+                  <text>借阅人：{{item.name}}</text>
+                  <text>学号：{{item.schid}}</text>
+                  <text>手机：{{item.phone}}</text>
+                </view>
+                <view class='pass_btn'>
+                  <button bindtap='returnBook' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>归还图书</button>
+                </view>
+              </view>
+            </block>
+          </view>
+          <view class='no_data' wx:else>暂无归还信息</view>
         </view>
       </view>
-    </block>
-  </view>
-  <view wx:if="{{returnBook.length}}">
-    <text class='listTitle'>图书归还</text>
-    <block wx:for="{{returnBook}}" wx:key="index">
-      <view class='manageBorrow'>
-        <view class='borrowImg'>
-          <image src='{{item.image}}'></image>
-        </view>
-        <view class='borrowInfo' bindtap='toDetailsInfo'>
-          <text class='bookname'>{{item.bname}}</text>
-          <text>图书编号：{{item.bid}}</text>
-          <text>借阅人：{{item.name}}</text>
-          <text>学号：{{item.schid}}</text>
-          <text>手机：{{item.phone}}</text>
-        </view>
-        <view class='pass_btn'>
-          <button bindtap='returnBook' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>归还图书</button>
-        </view>
-      </view>
-    </block>
+    </view>
   </view>
 </view>
-<view class='no_data' wx:else>暂无借阅信息</view>

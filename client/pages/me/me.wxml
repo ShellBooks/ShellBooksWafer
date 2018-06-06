@@ -20,19 +20,19 @@
       <text>分享 {{userMoreInfo.share}}</text>
     </view>
   </view>
-  <view class="me_list" id='me_list_1'>
+  <view class="me_list">
     <item title="当前借书" url="../bookList/bookList" type="1" bindmyevent="navigateTo"></item>
     <line></line>
-    <item title="我的收藏" url="../bookList/bookList" type="3" bindmyevent="navigateTo"></item>
-    <line></line>
-    <item title="实名认证" bindtap="toVerifyPage"></item>
+    <item title="借阅记录" url="../bookList/bookList" type="2" bindmyevent="navigateTo"></item>
   </view>
   <view class="me_list" id='me_list_2'>
-    <item title="借阅记录" url="../bookList/bookList" type="2" bindmyevent="navigateTo"></item>
+    <item title="我的收藏" url="../bookList/bookList" type="3" bindmyevent="navigateTo"></item>
     <line></line>
     <item title="我的分享" url="../bookList/bookList" type="0" bindmyevent="navigateTo"></item>
   </view>
   <view class="me_list" id='me_list_3'>
+    <item title="实名认证" bindtap="toVerifyPage"></item>
+    <line></line>  
     <item title="关于我们"></item>
   </view>
   <view wx:if="{{isAdmin}}">
@@ -40,7 +40,7 @@
     <view class='me_list' id='me_list_4'>
       <item title="用户审核" url="../verifyUser/verifyUser" bindmyevent="navigateTo"></item>
       <line></line>
-      <item title="图书审核" url="../verifyBook/verifyBook" bindmyevent="navigateTo"></item>
+      <item title="图书管理" url="../verifyBook/verifyBook" bindmyevent="navigateTo"></item>
       <line></line>
       <item title="借阅管理" url="../manageBorrow/manageBorrow" bindmyevent="navigateTo"></item>
       <line></line>

@@ -80,11 +80,9 @@ Page({
           // 处理时间格式
           data[item].date = util.formatTime(new Date(data[item].date))
         }
-        
         this.setData({
           comments: data
         })
-        console.log(data)
       }
     })
 

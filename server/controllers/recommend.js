@@ -11,6 +11,7 @@ module.exports = async ctx => {
   
   // 推荐列表
   let recommendation = []  
+  let recommBid = []
   if(uid != -1){
     // 获取用户评论数据集
     // 格式：[{uid, bid, rate}, {uid, bid, rate}, ...]
@@ -84,25 +85,33 @@ module.exports = async ctx => {
     // 最终推荐列表
     // 格式 [bid, bid, bid, ...]
     let m = arr.length > num ? num : arr.length
-    recomm = []
     for (let i = 0; i < m; ++i) {
-      recomm.push(arr[i][0])
+      recommBid.push(arr[i][0])
     }
-    for (let i in recomm) {
-      let book = await mysql("book").where({ bid: recomm[i] }).first()
-      recommendation.push(book)
+    for (let i in recommBid) {
+      let book = await mysql("book").where({ bid: recommBid[i], status: 1 }).first()
+      if(book){
+        recommendation.push(book)
+      }
     }
 
   } 
   if (recommendation.length < num){
     // 推荐列表过少 根据热度推荐图书
-    let res = await mysql.raw('SELECT bid FROM borrow GROUP BY bid ORDER BY COUNT(bid) DESC')
+    let res = await mysql.raw('SELECT bid FROM borrow GROUP BY bid ORDER BY COUNT(bid) DESC, bid')
     let hotBooks = res[0]
     let n = num - recommendation.lenth
     let m = hotBooks.length > n ? n : hotBooks.length
     for(let i = 0; i < m; ++i){
-      let book = await mysql("book").where({ bid: hotBooks[i].bid }).first()
-      recommendation.push(book)
+      if (recommBid.indexOf(hotBooks[i].bid) != -1){
+        // 该书已被推荐
+        if (m + 1 < hotBooks.length) ++m
+        continue
+      }
+      let book = await mysql("book").where({ bid: hotBooks[i].bid, status: 1 }).first()
+      if (book) {
+        recommendation.push(book)
+      }
     }
   }
   

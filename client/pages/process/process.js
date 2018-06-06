@@ -26,12 +26,25 @@ Page({
       bid: options.bid,
       type: options.type
     })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     let uid
     if (app.globalData.userInfo) {
       uid = app.globalData.userInfo.uid
     }
     let type
-    if(this.data.type == 1 || this.data.type == 2){
+    if (this.data.type == 1 || this.data.type == 2) {
       type = 1
     } else {
       type = 0
@@ -39,7 +52,7 @@ Page({
     wx.request({
       url: config.service.getProcessUrl,
       method: 'get',
-      data:{
+      data: {
         bid: this.data.bid,
         uid: uid,
         type: type
@@ -47,9 +60,9 @@ Page({
       success: res => {
         console.log(res)
         let data = res.data.data
-        for(let i in data){
+        for (let i in data) {
           // 处理 data 拆分成 day + time
-          let date = data[i].date.replace("T", " ").replace(".000Z","")
+          let date = data[i].date.replace("T", " ").replace(".000Z", "")
           let arr = date.split(" ")
           data[i].day = arr[0]
           data[i].time = arr[1]
@@ -60,7 +73,7 @@ Page({
         })
       }
     })
-    if(this.data.type == 1 || this.data.type == 2){
+    if (this.data.type == 1 || this.data.type == 2) {
       wx.request({
         url: config.service.getBorrowDetailsUrl,
         method: 'get',
@@ -81,7 +94,7 @@ Page({
             }
             data.rate = rateArray
           }
-          if (data.borrow_date == null && data.return_date == null){
+          if (data.borrow_date == null && data.return_date == null) {
             data.borrow_date = '暂无信息'
             data.return_date = '暂无信息'
           } else {
@@ -93,7 +106,7 @@ Page({
           })
         }
       })
-    } else if(this.data.type == 0){
+    } else if (this.data.type == 0) {
       // 我的分享
       wx.request({
         url: config.service.getBookDetailsUrl,
@@ -119,56 +132,41 @@ Page({
         }
       })
     }
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   //跳转到评论页面
@@ -176,26 +174,26 @@ Page({
     let bid = this.data.bid
     let uid = app.globalData.userInfo.uid
     wx.navigateTo({
-      url: '../bookReviews/bookReviews?bid=' +bid
+      url: '../bookReviews/bookReviews?bid=' + bid
     })
   },
-  getBackBook: function(){
+  getBackBook: function () {
     let date = util.formatTime(new Date())
     wx.request({
-      url: config.service.getBackBookUrl,
+      url: config.service.backBookUrl,
       method: 'get',
       data: {
         bid: this.data.bid,
         uid: app.globalData.userInfo.uid,
         type: 0,
         date: date,
-        info: '收回图书请求已提交，请待图书闲置后到管理员处取回图书',
+        info: '回收图书请求已提交，请待图书闲置后到管理员处取回图书',
         status: 2
       },
       success: res => {
         console.log(res)
         let data = res.data.data
-        if(data.status == 0){
+        if (data.status == 0) {
           util.showSuccess(data.msg)
         } else {
           util.showModel("", data.msg)
