@@ -59,7 +59,7 @@
   display: inline-block;
 }
 
-.cancel{
+.shell-cancel{
   color: #000;
 }
 .books{

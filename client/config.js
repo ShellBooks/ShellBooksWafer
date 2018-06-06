@@ -110,7 +110,13 @@ var config = {
         getBorrowDetailsUrl: `${host}/weapp/getBorrowDetails`,
 
         // 回收图书请求
+        backBookUrl: `${host}/weapp/backBook`,
+
+        // 获取回收图书请求
         getBackBookUrl: `${host}/weapp/getBackBook`,
+
+        // 通过图书回收
+        passBackBookUrl: `${host}/weapp/passBackBook`,
     }
 };
 

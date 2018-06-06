@@ -20,7 +20,7 @@ module.exports = async ctx => {
     let rates = await mysql("comment").avg('rate as rateAvg').where({ bid }).first()
     // 计算图书新的评分
     let newRate = Math.round(rates.rateAvg)
-    let bres = await mysql("book").update({ rate: newRate })
+    let bres = await mysql("book").where({ bid }).update({ rate: newRate })
 
     if (cres && bres) {
       ctx.state.data = {

@@ -39,7 +39,7 @@
   </view>
   <view class='btn_wrap' wx:if="{{type == 0}}">
     <view class='bottom_btn' bindtap="getBackBook">
-      <text class='btn_text'>收回图书</text>
+      <text class='btn_text'>回收图书</text>
     </view>
   </view>
   <view class='btn_wrap' wx:if="{{type == 2}}">

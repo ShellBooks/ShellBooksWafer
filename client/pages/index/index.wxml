@@ -25,7 +25,7 @@
                 </label>
             </view>
 
-            <view class="weui-search-bar__cancel-btn .cancel" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+            <view class="weui-search-bar__cancel-btn .shell-cancel" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
     </view>
 <!--WEUI SearchBar-->
