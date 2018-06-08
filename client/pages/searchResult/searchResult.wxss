@@ -1,16 +1,24 @@
 /* pages/searchResult/searchResult.wxss */
 .searchItem{
-  margin: 40rpx 20rpx;
+  margin: 20rpx auto;
+  width: 94%;
+  height: 180rpx;
+  padding: 10rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 .bookimg{
-  width: 30%;
+  width: 20%;
+  height: 180rpx;
   display: inline-block;
   vertical-align: top;
-  margin-right: 20rpx;
+  margin-right: 40rpx;
 }
 .bookimg image{
+  display: block;
   width: 100%;
-  height: 300rpx;
+  height: 100%;
 }
 .bookinfo{
   display: inline-block;
@@ -18,9 +26,14 @@
 }
 .bookinfo text{
   display: block;
-  font-size: 36rpx;
+  font-size: 28rpx;
+  color: #444;
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
 }
 .bookinfo .bookname{
   font-weight: bold;
-  font-size: 40rpx;
+  font-size: 34rpx;
+  color: #000;
 }

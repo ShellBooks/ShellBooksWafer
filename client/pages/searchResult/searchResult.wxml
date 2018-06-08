@@ -8,6 +8,7 @@
       <view class='bookinfo'>
         <text class='bookname'>{{item.bname}}</text>
         <text>{{item.author}}</text>
+        <text>{{item.publish}}</text>
       </view>
     </view>
   </block>

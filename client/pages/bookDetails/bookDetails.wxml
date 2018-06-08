@@ -19,18 +19,20 @@
       <text class='book_details_text' wx:else>暂无评分</text>
     </view>
   </view>
-  
-  <view class="comments" wx:if="{{comments.length}}">
+  <view class='comments_main'>
     <view class='comments_number'>
       <text class='tag'>用户评论({{comments.length}})</text>
       <view class='sign'></view>
     </view>
-    <block wx:for="{{comments}}" wx:key="index">
-      <comment comment="{{item}}"></comment>
-      <line wx:if="{{comments.length>1}}"></line>
-    </block>
+    <view class='lineTag' wx:if="{{lineTag}}"></view>
+    <scroll-view class="comments" scroll-y="true" bindscroll="scrollEvent" wx:if="{{comments.length}}">
+      <block wx:for="{{comments}}" wx:key="index">
+        <comment comment="{{item}}"></comment>
+        <view class="comment_line" wx:if="{{comments.length>1}}"></view>
+      </block>
+    </scroll-view>
+    <text class="nocomment" wx:else>暂无评论</text>
   </view>
-  <text class="nocomment" wx:else>暂无评论</text>
   <button class='borrow_book_btn' bindtap='borrowBook'>立即借书</button>
 </view>
 

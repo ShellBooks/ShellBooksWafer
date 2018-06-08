@@ -74,9 +74,8 @@ page{
 }
 .comments{
   width: 100%;
-  padding: 20rpx 20rpx 40rpx 20rpx;
-  box-shadow: 0 0 0 1px #eee,
-    0 1px 2px 1px #efefef;
+  height: 450rpx;
+  
 }
 .sign{
   margin: 0 auto;
@@ -86,5 +85,25 @@ page{
   border: 1px solid #1a7bae;
   border-radius: 999px;
 }
+.comments_number{
+  height: 80rpx;
+  padding: 10rpx 0;
+}
+.comments_main{
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+}
+.lineTag{
+  height: 1px;
+  background: #eee;
+  width: 100%;
+}
+.comment_line{
+  width: 88%;
+  background: #eee;
+  height: 1px;
+  margin: 0 auto;
+}
+
 
 
