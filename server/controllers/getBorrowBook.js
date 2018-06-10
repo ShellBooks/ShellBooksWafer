@@ -7,10 +7,10 @@ module.exports = async ctx => {
   let borrowlist
   if(type == 2){
     // 借阅记录
-    borrowlist = await mysql.raw('SELECT borrow.bid, bname, author, image FROM borrow, book WHERE borrow.uid = ? AND borrow.bid = book.bid AND borrow.status = 2', [uid])
+    borrowlist = await mysql.raw('SELECT brid, borrow.bid, bname, author, image FROM borrow, book WHERE borrow.uid = ? AND borrow.bid = book.bid AND borrow.status = 2', [uid])
   } else {
     // 当前借书
-    borrowlist = await mysql.raw('SELECT borrow.bid, bname, author, image FROM borrow, book WHERE borrow.uid = ? AND borrow.bid = book.bid AND borrow.status <> 2', [uid])
+    borrowlist = await mysql.raw('SELECT brid, borrow.bid, bname, author, image FROM borrow, book WHERE borrow.uid = ? AND borrow.bid = book.bid AND borrow.status <> 2', [uid])
   }
 
   ctx.state.data = {

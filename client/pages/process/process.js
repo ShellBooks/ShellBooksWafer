@@ -26,6 +26,11 @@ Page({
       bid: options.bid,
       type: options.type
     })
+    if(options.brid){
+      this.setData({
+        brid: options.brid,
+      })
+    }
   },
 
   /**
@@ -55,6 +60,7 @@ Page({
       data: {
         bid: this.data.bid,
         uid: uid,
+        brid: this.data.brid, // 借书 id
         type: type
       },
       success: res => {
