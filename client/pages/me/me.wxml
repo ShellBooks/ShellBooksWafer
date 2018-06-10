@@ -16,9 +16,9 @@
       <image  class='verify' src='../../images/unverified.png' wx:else></image> -->
     </view>
     <view class="info">
-      <text>贝壳 {{userMoreInfo.money}}</text>
-      <text>借书 {{userMoreInfo.borrow}}</text>
-      <text>分享 {{userMoreInfo.share}}</text>
+      <text>贝壳 {{userMoreInfo.money ? userMoreInfo.money : 0}}</text>
+      <text>借书 {{userMoreInfo.borrow ? userMoreInfo.borrow : 0}}</text>
+      <text>分享 {{userMoreInfo.share ? userMoreInfo.share : 0}}</text>
     </view>
   </view>
   <view class="me_list">

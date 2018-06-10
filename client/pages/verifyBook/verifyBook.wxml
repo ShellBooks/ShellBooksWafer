@@ -52,7 +52,7 @@
                   <text>ISBN：{{item.ISBN}}</text>
                 </view>
                 <view class='pass_btn'>
-                  <button bindtap='passBack' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="4" data-shell="{{item.shell}}">回收通过</button>
+                  <button bindtap='passBack' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="3" data-shell="{{item.shell}}">回收通过</button>
                 </view>
               </view>
             </block>

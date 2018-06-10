@@ -22,7 +22,7 @@ module.exports = async ctx => {
   // 0 默认 借书请求
   // 1 借书
   // 2 还书
-  let isBorrowed = await mysql("borrow").where({ bid }).select('status').orderBy('borrow_date', 'desc').first()
+  let isBorrowed = await mysql("borrow").where({ bid }).select('status').orderBy('brid', 'desc').first()
 
   if(isBorrowed && isBorrowed.status != 2){
     // 该书被借出
@@ -43,14 +43,21 @@ module.exports = async ctx => {
       }
     } else {
       let ures = await mysql("user").where({ uid }).update({ money: newMoney })
-      let pres = await mysql("process").insert(process)
       let bres = await mysql("borrow").insert(borrow)
+      process.brid = bres
+      let pres = await mysql("process").insert(process)
 
       if (pres && bres && ures) {
-        ctx.state.data = "borrow success"
+        ctx.state.data = {
+          status: 0,
+          brid: bres,
+          msg: '借书成功'
+        }
       } else {
-        ctx.state.code = -1
-        ctx.state.data = "borrow error"
+        ctx.state.data = {
+          status: -1,
+          msg: '借书失败'
+        }
       }
 
     }
