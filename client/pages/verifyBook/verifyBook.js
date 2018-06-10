@@ -155,8 +155,11 @@ Page({
       success: res => {
         console.log(res)
         let data = res.data.data
-        if(data.status == 1){
+        if(data.status == 0){
           util.showSuccess(data.msg)
+          wx.redirectTo({
+            url: 'verifyBook',
+          })
         } else {
           util.showModel("", data.msg)
         }
