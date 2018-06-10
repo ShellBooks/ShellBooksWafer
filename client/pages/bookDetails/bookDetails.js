@@ -181,7 +181,7 @@ Page({
           util.showModel("", data.msg)
         } else {
           wx.navigateTo({
-            url: '../process/process?bid=' + this.data.bid + '&type=' + 1,
+            url: '../process/process?bid=' + this.data.bid + '&type=' + 1 + '&brid=' + data.brid,
           })
         }
       }
