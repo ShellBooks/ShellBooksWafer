@@ -20,17 +20,15 @@
                 </view>
                 <view class='bookinfo'>
                   <text class='bookname'>{{item.bname}}</text>
-                  <text>作者：{{item.author}}</text>
-                  <text>出版社：{{item.publish}}</text>
+                  <text class='author'>作者：{{item.author}}</text>
+                  <text class='publish'>出版社：{{item.publish}}</text>
                   <text>定价：{{item.price}}元</text>
                   <text>ISBN：{{item.ISBN}}</text>
-                  <view class='shell'>
+                  <view class='verify_info'>
                     <text>贝壳：</text>
                     <input bindinput='inputShell'></input>
-                  </view>
+                    <button class='pass_btn' bindtap='passVerify' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="1">审核通过</button> 
                 </view>
-                <view class='pass_btn'>
-                   <button bindtap='passVerify' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="1">审核通过</button> 
                 </view>
               </view>
             </block>
