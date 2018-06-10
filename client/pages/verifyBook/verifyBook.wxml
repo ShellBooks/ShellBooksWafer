@@ -2,10 +2,10 @@
 <view>
   <view class="page__bd">
     <view class="weui-tab">
-      <view class="weui-navbar">
+      <view class="weui-navbar" id='weui_navbar_design'>
         <block wx:for="{{tabs}}" wx:key="*this">
           <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on shell-bar_item_on' : ''}}" bindtap="tabClick">
-            <view class="weui-navbar__title">{{item}}</view>
+            <view class="weui-navbar__title" id='weui_navbar_title_design'>{{item}}</view>
           </view>
         </block>
         <view class="weui-navbar__slider shell-navbar_slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
@@ -30,7 +30,7 @@
                   </view>
                 </view>
                 <view class='pass_btn'>
-                  <button bindtap='passVerify' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="1">审核通过</button>
+                   <button bindtap='passVerify' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="1">审核通过</button> 
                 </view>
               </view>
             </block>
