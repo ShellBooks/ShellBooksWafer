@@ -34,10 +34,9 @@
         <view class='operation_info'>
           <text>{{item.info}}</text>
         </view>
-        <view class='on'></view>
+        <view class='on' wx:if="{{index != process.length-1}}"></view>
       </view>
     </block>
-    <view class='icon no_in'></view>
   </view>
   <view class='btn_wrap' wx:if="{{type == 0}}">
     <view class='bottom_btn' bindtap="getBackBook">

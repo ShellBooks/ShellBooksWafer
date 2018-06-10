@@ -51,8 +51,7 @@
 .process_info{
   width: 100%;
   background: #fff;
-  padding-top: 20rpx;
-  padding-bottom: 40rpx;
+  padding: 20rpx 20rpx 20rpx 20rpx;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
 }
@@ -72,13 +71,12 @@
   position: relative;
   height: 150rpx;
   padding-top: 30rpx;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
 }
   
-.operation_info{  
+.operation_info{   
   position: absolute;   
-  left: 250rpx;   
+  width: 55%;
+  left: 270rpx;   
   font-size: 28rpx;
   color: #666;
 }  
@@ -88,7 +86,8 @@
   background: white;  
   border-radius: 50%;  
   position: absolute;
-  left: 200rpx;
+  left: 220rpx;
+  top: 40rpx;
 }  
 .in{  
   border: 1rpx solid #66ccff;  
@@ -107,9 +106,9 @@
   background: #d0d0d0;  
   height: 100rpx;  
   width: 1px;  
-  margin-left: 210rpx; 
+  margin-left: 230rpx; 
   position: relative;
-  top: 40rpx;
+  top: 60rpx;
 } 
 
 .review_btn::after{
@@ -144,6 +143,7 @@
   height: 4rpx;
   border: 1px solid #1a7bae;
   border-radius: 999px;
+  margin-bottom: 10rpx;
 }
 .process_author{
   overflow: hidden;   

@@ -17,7 +17,9 @@ Page({
     // 图书评论
     comments: {},
     //收藏
-    favourite: 0
+    favourite: 0,
+    //滚动条拖动显示线
+    lineTag: 0
   },
 
   /**
@@ -216,5 +218,11 @@ Page({
       }
     })
     
+  },
+
+  scrollEvent: function(){
+    this.setData({
+      lineTag: 1
+    })
   }
 })

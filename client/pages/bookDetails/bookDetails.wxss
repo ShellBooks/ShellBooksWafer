@@ -33,6 +33,9 @@ page{
   display: block;
   width: 100%;
   font-size: 30rpx;
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
 }
 .book_name{
   font-size: 36rpx;
@@ -41,9 +44,17 @@ page{
 }
 
 .borrow_book_btn{
-  width: 100%;
+  /* width: 100%;
   position: fixed;  
-  bottom: 0;   
+  bottom: 0;    */
+  width: 280rpx;
+  height: 70rpx;
+  border-radius: 999px;
+  background: #1a7bae;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 16rpx 0;
 }
 .book_detail_favourite{
   width: 52rpx;
@@ -60,11 +71,6 @@ page{
   width: 100%;
   margin: 100rpx 0;
 }
-#book_detail_author{
-  overflow: hidden;   
-  white-space: nowrap;  /**表示文本不换行*/
-  text-overflow: ellipsis;    /**表示省略*/
-}
 .tag{
   display: block;
   text-align: center;
@@ -74,9 +80,7 @@ page{
 }
 .comments{
   width: 100%;
-  padding: 20rpx 20rpx 40rpx 20rpx;
-  box-shadow: 0 0 0 1px #eee,
-    0 1px 2px 1px #efefef;
+  
 }
 .sign{
   margin: 0 auto;
@@ -86,5 +90,27 @@ page{
   border: 1px solid #1a7bae;
   border-radius: 999px;
 }
+.comments_number{
+  height: 80rpx;
+  padding: 10rpx 0;
+}
+.comments_main{
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  height: 50%;
+  width: 100%;
+}
+.lineTag{
+  height: 1px;
+  background: #eee;
+  width: 100%;
+}
+.comment_line{
+  width: 88%;
+  background: #eee;
+  height: 1px;
+  margin: 0 auto;
+}
+
 
 
