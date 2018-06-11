@@ -15,7 +15,8 @@ Page({
     bid: -1,
     // 图书详情
     book_details: {},
-    process: []
+    process: [],
+    lineTag: 0
   },
 
   /**
@@ -205,6 +206,11 @@ Page({
           util.showModel("", data.msg)
         }
       }
+    })
+  },
+  scrollEvent: function () {
+    this.setData({
+      lineTag: 1
     })
   }
 })

@@ -24,7 +24,10 @@
   <view class='process_info'>
     <text class="tag">流程详情</text>
     <view class='sign'></view>
-    <block wx:for="{{process}}" wx:key="index">
+    <view class='lineTag' wx:if="{{lineTag}}"></view>
+    <!-- <scroll-view class="comments" scroll-y="true" bindscroll="scrollEvent" wx:if="{{comments.length}}"> -->
+    <scroll-view class='scroll_process' scroll-y="true" bindscroll="scrollEvent">
+      <block wx:for="{{process}}" wx:key="index">
       <view class='item_info'>
         <view class='time_info'>
           <text>{{item.day}}</text>
@@ -37,6 +40,7 @@
         <view class='on' wx:if="{{index != process.length-1}}"></view>
       </view>
     </block>
+    </scroll-view>
   </view>
   <view class='btn_wrap' wx:if="{{type == 0}}">
     <view class='bottom_btn' bindtap="getBackBook">

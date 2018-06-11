@@ -3,8 +3,6 @@
     <view class='book_details_img'>
       <image src='{{book_details.image}}'></image>
     </view>
-    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon.png' wx:if="{{favourite == 0}}"></image>
-    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon_click.png' wx:if="{{favourite == 1}}"></image>
     <view class='book_details_info'>
       <text class='book_details_text book_name'>{{book_details.bname}}</text>
       <text class='book_details_text'>作者：{{book_details.author}}</text>
@@ -19,6 +17,8 @@
       <text class='book_details_text' wx:else>暂无评分</text>
       <button class='borrow_book_btn' bindtap='borrowBook'>立即借书</button>
     </view>
+    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon.png' wx:if="{{favourite == 0}}"></image>
+    <image class='book_detail_favourite' bindtap='clickLike' src='../../images/likeIcon_click.png' wx:if="{{favourite == 1}}"></image>  
   </view>
   <view class='comments_main'>
     <view class='comments_number'>
