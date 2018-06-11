@@ -7,7 +7,7 @@
       </swiper-item>    
     </block>    
   </swiper> 
-
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> 
   <!--WEUI SearchBar-->
   <view class="page__bd">
         <view class="weui-search-bar" id='weui_search_bg'>
