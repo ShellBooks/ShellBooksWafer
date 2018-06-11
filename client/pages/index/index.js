@@ -59,11 +59,8 @@ Page({
       }
     })
     // 推荐列表
-    
-    // while (!app.globalData.userInfo.uid){
-    //   console.log(1)
-    // }
     let uid = app.globalData.userInfo.uid
+    console.log(uid)
     wx.request({
       url: config.service.recommendUrl,
       method: 'get',
@@ -161,5 +158,10 @@ Page({
     this.setData({
       inputVal: e.detail.value
     });
-  }
+  },
+  onGotUserInfo: function (e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
+  },
 })
