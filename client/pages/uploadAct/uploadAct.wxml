@@ -1,30 +1,32 @@
 <!--pages/uploadAct/uploadAct.wxml-->
 <view>
-  <view class='active_item'>
+  <view class='=active_title'>
     <text>活动标题</text>
     <input bindblur='inputTitle'></input>
   </view>
-  <line></line>
-  <view class='active_item'>
+
+  <view class='active_intro'>
     <text>活动介绍</text>
     <textarea bindblur='inputIntro'></textarea>
   </view>
-  <line></line>
-  <view class='active_item' bindtap='doUpload'>
+  <view class='active_photo' bindtap='doUpload'>
+    <view class='active_upload'>
       <text>上传活动图片</text>
-      <view class='arrow'></view>
+      <!-- <view class='arrow'></view> -->
       <view class='isUpload'>
         <text wx:if="{{image}}">已上传</text>
         <text wx:else>未上传</text>
       </view>
-  </view>
-  <view class='preview_img' wx:if="{{image}}">
+    </view>
+    <view class='preview_img' wx:if="{{image}}">
       <image
           src="{{image}}"
           mode="aspectFit"
           bindtap="previewImg">
       </image>
+    </view>
   </view>
+  
   <view class='btn_wrap'>
     <view class='bottom_btn' bindtap='uploadAct'>
       <text class='btn_text'>上传活动</text>

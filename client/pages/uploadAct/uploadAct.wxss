@@ -1,30 +1,82 @@
 /* pages/uploadAct/uploadAct.wxss */
-.active_item{
+/* .active_item{
   width: 100%;
-  height: 80rpx;
+  height: 120rpx;
   padding: 20rpx 0;
   font-size: 40rpx;
 }
 
-.active_item input{
+ .active_item input{
   width: 70%;
   height: 96%;
-  float: right;
-  margin-right: 30rpx;
   border: 1px solid #aaa;
   display: block;
 }
 .active_item textarea{
-  float: right;
-  margin-right: 30rpx;
   border: 1px solid #aaa;
 }
 .active_item text{
   width: 20%;
   height: 100%;
   line-height: 80rpx;
+}  */
+.active_title{
+  width: 92%;
+  background: #fff;
   text-align: center;
-  margin-left: 30rpx; 
+  padding: 10rpx;
+  margin: 20rpx auto;
+  border-radius: 8rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+.active_title text{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.active_title input{
+  height: 60rpx;
+  /* border: 1px solid #009ed8; */
+}
+.active_intro{
+  width: 92%;
+  background: #fff;
+  text-align: center;
+  padding: 10rpx;
+  margin: 20rpx auto;
+  border-radius: 8rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+.active_intro text{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.active_intro textarea{
+  width: 92%;
+  margin: 0 auto;
+  height: 300rpx;
+  /* border: 1px solid #aaa; */
+}
+.active_photo{
+  width: 92%;
+  height: 420rpx;
+  background: #fff;
+  text-align: center;
+  padding: 10rpx;
+  margin: 20rpx auto;
+  border-radius: 8rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+.active_upload text{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.isUpload text{
+  font-size: 26rpx;
+  color: #444;
+  font-weight: 300;
 }
 .arrow{
   width: 30rpx;
@@ -36,19 +88,14 @@
   margin-right: 30rpx; 
   margin-top: 25rpx;
   transform: rotate(45deg);
-}
+} 
 .preview_img{
-  width: 200rpx;
+  width: 100%;
   height: 300rpx;
 }
 .preview_img image{
   width: 100%;
   height: 100%;
-}
-.isUpload{
-  float: right;
-  font-size: 30rpx;
-  margin-right: 20rpx;
 }
 .upload_book_btn::after{
   border: none;

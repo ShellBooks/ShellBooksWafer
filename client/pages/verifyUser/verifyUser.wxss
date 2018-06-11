@@ -1,33 +1,59 @@
 /* pages/verifyUser/verifyUser.wxss */
-.realUser{
+.verify_main{
   width: 100%;
+
+}
+.realUser{
+  width: 92%;
   /* height: 400rpx; */
-  margin-bottom: 40rpx;
+  padding: 10rpx 10rpx;
+  margin: 20rpx auto;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 .cardimg{
-  width: 40%;
-  height: 100%;
+  width: 35%;
+  height: 330rpx;
   display: inline-block;
   vertical-align: top;
 }
 .cardimg image{
-  width: 90%;
-  height: 400rpx;
-  margin: 20rpx;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 .realInfo{
   display: inline-block;
   vertical-align: top;
   width: 50%;
+  height: 100%;
+  margin-left: 50rpx; 
 }
 .realInfo text{
   display: block;
-  font-size: 34rpx; 
-  margin-left: 40rpx;  
-  margin-bottom: 20rpx;
+  font-size: 26rpx; 
 }
 .realInfo .realname{
-  font-size: 50rpx;  
+  font-size: 30rpx;  
   font-weight: bold;
-  margin: 40rpx;
+}
+.pass_btn{
+  width: 170rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-top: 130rpx;
+  border-radius: 999px;
+  background: #1a7bae;
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.btn_close{
+  position: relative;
+  height: 24rpx;
+  width: 24rpx;
+  float: right;
 }

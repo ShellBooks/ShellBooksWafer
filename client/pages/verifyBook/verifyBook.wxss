@@ -74,6 +74,9 @@
 }
 /* navbar */
 #weui_navbar_design{
+  position: fixed;
+  top: 0;
+  background: #fff;
   border-bottom: 0px;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef; 

@@ -1,25 +1,41 @@
 /* pages/manageBorrow/manageBorrow.wxss */
 .manageBorrow{
-  margin: 40rpx 20rpx;
+  margin: 20rpx 20rpx;
+  padding: 10rpx 10rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
+
 }
 .borrowImg{
   width: 30%;
+  height: 300rpx;
   display: inline-block;
   vertical-align: top;
-  margin-right: 20rpx;
 }
 .borrowImg image{
   width: 100%;
-  height: 300rpx;
+  height: 100%;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+  border-radius: 8rpx;
 }
 .borrowInfo{
   display: inline-block;
   vertical-align: top;
-  width: 65%;
+  width: 55%;
+  margin-left: 50rpx;
 }
 .borrowInfo text{
   display: block;
-  font-size: 36rpx;
+  font-size: 26rpx;
+  overflow: hidden;   
+  white-space: nowrap;  /**表示文本不换行*/
+  text-overflow: ellipsis;    /**表示省略*/
+}
+.borrowInfo .bookname{
+  font-weight: bold;
+  font-size: 30rpx;
 }
 /* .listTitle{
   margin: 20rpx;
@@ -28,19 +44,42 @@
   text-align: center;
 } */
 
-.borrowInfo .bookname{
-  font-size: 40rpx;  
-  font-weight: bold;
-}
-/* navbar 文字 */
-.shell-navbar_title{
 
-}
 /* navbar 下方滑块 */
 .shell-navbar_slider{
-  background: #66ccff;
+  background: #1a7bae;
+  width: 50rpx; 
+  height: 2px;
+  bottom: 10rpx;
+  border: 0.5px solid #1a7bae;
+  border-radius: 999px; 
 }
 /* navbar 选中 item  */
 .shell-bar_item_on{
-   color: #66ccff !important; 
+   color: #1a7bae !important; 
+}
+/* navbar */
+#weui_navbar_design{
+  position: fixed;
+  top: 0;
+  background: #fff;
+  border-bottom: 0px;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+/* navbar 文字 */
+#weui_navbar_title_design{
+  font-weight: bold;
+  font-size: 30rpx; 
+}
+.pass_btn{
+  width: 170rpx;
+  height: 60rpx;
+  display: inline-block;
+  border-radius: 999px;
+  background: #1a7bae;
+  color: #fff;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  font-weight: bold;
 }
