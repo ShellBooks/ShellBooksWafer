@@ -52,7 +52,8 @@
   line-height: 60rpx;
 }
 .verify_info input{
-  width: 30%;
+  width: 140rpx;
+  /* width: 30%; */
   height: 56rpx;
   display: inline-block;
   vertical-align: top;  

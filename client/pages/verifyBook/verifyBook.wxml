@@ -27,6 +27,7 @@
                   <view class='verify_info'>
                     <text>贝壳：</text>
                     <input bindinput='inputShell' type='number'></input>
+                    
                     <button class='pass_btn' bindtap='passVerify' data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-status="1">审核通过</button> 
                   </view>
                 </view>
