@@ -12,7 +12,7 @@
           <text>手机：{{item.phone}}</text>
           <button class='pass_btn' bindtap='passInfoVerify' data-uid="{{item.uid}}">审核通过</button>
         </view>
-        <image class='btn_close' src='../../images/delete.png'></image>
+        <image class='btn_close' src='../../images/delete.png' bindtap='notPassUser' data-uid="{{item.uid}}"></image>
       </view>
     </block>
   </view>

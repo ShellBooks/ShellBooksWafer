@@ -175,5 +175,23 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+  },
+  // 图书审核不通过
+  notPassBook: function(e){
+    let bid = e.currentTarget.dataset.bid
+    wx.request({
+      url: config.service.notPassBookUrl,
+      method: 'get',
+      data: {
+        bid: bid
+      },
+      success: res => {
+        console.log(res)
+        wx.redirectTo({
+          url: 'verifyBook',
+        })
+      }
+
+    })
   }
 })

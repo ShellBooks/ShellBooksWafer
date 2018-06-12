@@ -117,6 +117,12 @@ var config = {
 
         // 通过图书回收
         passBackBookUrl: `${host}/weapp/passBackBook`,
+
+        // 用户审核不通过
+        notPassUserUrl: `${host}/weapp/notPassUser`,
+
+        // 图书审核不通过
+        notPassBookUrl: `${host}/weapp/notPassBook`,
     }
 };
 

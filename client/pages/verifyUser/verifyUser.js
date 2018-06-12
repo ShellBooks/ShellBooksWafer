@@ -99,5 +99,22 @@ Page({
         }
       }
     })
+  },
+  // 用户审核不通过
+  notPassUser: function(e){
+    let uid = e.currentTarget.dataset.uid
+    wx.request({
+      url: config.service.notPassUserUrl,
+      method: 'get',
+      data:{
+        uid: uid
+      },
+      success: res => {
+        console.log(res)
+        wx.redirectTo({
+          url: 'verifyUser',
+        })
+      }
+    })
   }
 })

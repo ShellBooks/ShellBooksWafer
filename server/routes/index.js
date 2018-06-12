@@ -127,5 +127,12 @@ router.get('/getBackBook', controllers.getBackBook)
 // POST 通过图书回收
 router.post('/passBackBook', controllers.passBackBook)
 
+// GET 用户审核不通过
+router.get('/notPassUser', controllers.notPassUser)
+
+// GET 图书审核不通过
+router.get('/notPassBook', controllers.notPassBook)
+
+
 
 module.exports = router
