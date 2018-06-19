@@ -1,35 +1,59 @@
 <!--pages/uploadAct/uploadAct.wxml-->
 <view>
-  <view class='=active_title'>
-    <text>活动标题</text>
-    <input bindblur='inputTitle'></input>
-  </view>
-
-  <view class='active_intro'>
-    <text>活动介绍</text>
-    <textarea bindblur='inputIntro'></textarea>
-  </view>
-  <view class='active_photo' bindtap='doUpload'>
-    <view class='active_upload'>
-      <text>上传活动图片</text>
-      <!-- <view class='arrow'></view> -->
-      <view class='isUpload'>
-        <text wx:if="{{image}}">已上传</text>
-        <text wx:else>未上传</text>
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar" id='weui_navbar_design'>
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
-    </view>
-    <view class='preview_img' wx:if="{{image}}">
-      <image
-          src="{{image}}"
-          mode="aspectFit"
-          bindtap="previewImg">
-      </image>
-    </view>
-  </view>
-  
-  <view class='btn_wrap'>
-    <view class='bottom_btn' bindtap='uploadAct'>
-      <text class='btn_text'>上传活动</text>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class='=active_title'>
+            <text>活动标题</text>
+            <input bindblur='inputTitle'></input>
+          </view>
+
+          <view class='active_intro'>
+            <text>活动介绍</text>
+            <textarea bindblur='inputIntro'></textarea>
+          </view>
+          <view class='active_photo' bindtap='doUpload'>
+            <view class='active_upload'>
+              <text>上传活动图片</text>
+              <!-- <view class='arrow'></view> -->
+              <view class='isUpload'>
+                <text wx:if="{{image}}">已上传</text>
+                <text wx:else>未上传</text>
+              </view>
+            </view>
+            <view class='preview_img' wx:if="{{image}}">
+              <image src="{{image}}" mode="aspectFit" bindtap="previewImg">
+              </image>
+            </view>
+          </view>
+          <view class='btn_wrap'>
+            <view class='bottom_btn' bindtap='uploadAct'>
+              <text class='btn_text'>上传活动</text>
+            </view>
+          </view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class='del_activities'>
+            <block wx:for="{{activities}}" wx:key="index">
+              <view class='act_item'>
+                <image class='act_image' src='{{item.image}}'></image>
+                <text  class='act_title'>{{item.title}}</text>
+                <text class='act_intro'>{{item.intro}}</text>
+                <image class='btn_close' src='../../images/delete.png' bindtap='deleteAct' data-bnid="{{item.bnid}}"></image>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

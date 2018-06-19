@@ -170,14 +170,19 @@ Page({
     });
   },
   notPassBorrow: function(e){
-    let brid = e.currentTarget.dataset.brid
-    console.log(brid)
+    let date = util.formatTime(new Date)
+    let data = {
+      brid: e.currentTarget.dataset.brid,
+      bid: e.currentTarget.dataset.bid,
+      uid: e.currentTarget.dataset.uid,
+      type: 1,
+      date: date,
+      info: '您的借书请求被拒绝'
+    }
     wx.request({
       url: config.service.notPassBorrowUrl,
-      method: 'get',
-      data: {
-        brid: brid
-      },
+      method: 'post',
+      data: data,
       success: res => {
         console.log(res)
         wx.redirectTo({

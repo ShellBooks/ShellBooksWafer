@@ -126,6 +126,9 @@ var config = {
 
         // 借阅审核不通过
         notPassBorrowUrl: `${host}/weapp/notPassBorrow`,
+
+        // 删除活动
+        deleteActUrl: `${host}/weapp/deleteAct`,
     }
 };
 

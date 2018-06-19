@@ -45,7 +45,7 @@
       <line></line>
       <item title="借阅管理" url="../manageBorrow/manageBorrow" bindmyevent="navigateTo"></item>
       <line></line>
-      <item title="活动上传" url="../uploadAct/uploadAct" bindmyevent="navigateTo"></item>
+      <item title="活动管理" url="../uploadAct/uploadAct" bindmyevent="navigateTo"></item>
     </view>
   </view>
 </view>
