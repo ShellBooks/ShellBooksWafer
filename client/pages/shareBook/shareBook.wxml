@@ -1,46 +1,47 @@
 <!--pages/shareBook/shareBook.wxml-->
 <view>
   <view class="book_info">
-    <view class='info_item'>
+    <view class='book_info_text'>
+      <view class='info_item'>
       <text>书名</text>
       <input bindblur="inputName" value="{{bname}}"></input>
+      </view>
+      <view class='info_item'>
+        <text>作者</text>
+        <input bindblur="inputAuthor" value="{{author}}"></input>
+      </view>
+      <view class='info_item'>
+        <text>出版社</text>
+        <input bindblur="inputPublish" value="{{publish}}"></input>
+      </view>
+      <view class='info_item'>
+        <text>定价</text>
+        <input bindblur="inputPrice" value="{{price}}" type='digit'></input>
+      </view>
+      <view class='info_item'>
+        <text>ISBN</text>
+        <input bindblur="inputISBN" value="{{ISBN}}" type='digit'></input>
+      </view>
     </view>
-    <line></line>
-    <view class='info_item'>
-      <text>作者</text>
-      <input bindblur="inputAuthor" value="{{author}}"></input>
-    </view>
-    <line></line>
-    <view class='info_item'>
-      <text>出版社</text>
-      <input bindblur="inputPublish" value="{{publish}}"></input>
-    </view>
-    <line></line>
-    <view class='info_item'>
-      <text>定价</text>
-      <input bindblur="inputPrice" value="{{price}}" type='digit'></input>
-    </view>
-    <line></line>
-    <view class='info_item'>
-      <text>ISBN</text>
-      <input bindblur="inputISBN" value="{{ISBN}}" type='digit'></input>
-    </view>
-    <button bindtap='doubanBookInfo'>扫描二维码填充信息</button> 
-    <view class='info_item' bindtap="doUpload">
-      <text>封面</text>
-      <view class='arrow'></view>
+
+    <view class='book_info_img' bindtap="doUpload">
+      <text class='cover'>封面</text>
       <view class='isUpload'>
         <text wx:if="{{image}}">已上传</text>
         <text wx:else>未上传</text>
       </view>
-    </view>
-    <view class='preview_img' wx:if="{{image}}">
-      <image
+      <view class='preview_img' wx:if="{{image}}">
+        <image
           src="{{image}}"
           mode="aspectFit"
           bindtap="previewImg"
-      ></image>
+        ></image>
+      </view>
     </view>
+    
   </view>
-  <button class="upload_book_btn" bindtap='uploadBookInfo'>上传图书信息</button>
+  <view class='upload_book_btn_view'>
+    <button class="upload_book_btn" bindtap='doubanBookInfo'>扫描二维码填充信息</button> 
+    <button class="upload_book_btn" bindtap='uploadBookInfo'>上传图书信息</button>
+  </view>
 </view>
