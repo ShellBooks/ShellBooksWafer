@@ -59,6 +59,7 @@
   vertical-align: top;  
   border: 1px solid #aaa;
   border-radius: 999px;
+  padding: 10rpx;
 }
 /* navbar 下方滑块 */
 .shell-navbar_slider{
@@ -96,7 +97,7 @@
   width: 170rpx;
   height: 60rpx;
   display: inline-block;
-  margin-left: 50rpx;
+  margin-left: 40rpx;
   border-radius: 999px;
   background: #1a7bae;
   color: #fff;
