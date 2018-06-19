@@ -1,29 +1,46 @@
 /* pages/bookReviews/bookReviews.wxss */
 
 page{
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 .review_content{
   background: #fff;
   width: 100%;
-  padding:30rpx 0;
+  padding:10rpx 0;
+}
+.review_content_rate{
+  text-align: center;
+  margin: 20rpx 20rpx;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  font-weight: bold;
+  border-radius: 8rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+.review_content_text{
+  height: 500rpx;
+  margin: 40rpx 20rpx;
+  padding: 20rpx 20rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
 }
 .review_input{
-  margin: 20rpx 20rpx;
-  border: 1rpx solid #999999;
+  height: 100%;
+  width: 100%;
+  padding: 20rpx;
 }
 .review_btn::after{
   border: none;
 }
 .review_text{
-  display: inline-block;
-  color: #4d4d4d;
   margin-left: 20rpx;
   margin-right: 20rpx;
-  font-size: 30rpx;
+  font-size: 26rpx;
 }
 .review_rate{
-  display: inline-block;
+  margin-top: 20rpx;
 }
 .review_star_img{
   display: inline-block;
@@ -34,9 +51,9 @@ page{
 
 .bottom_btn{
   position: relative;
-  top: 530rpx;
   width: 650rpx;
   height: 100rpx;
+  top: 270rpx;
   margin: 0 auto;
   text-align: center;
   background: #009ed8;
@@ -46,4 +63,10 @@ page{
   color: #fff;
   font-size: 36rpx;
   line-height: 100rpx;
+}
+.input_text{
+  font-size: 26rpx;
+  font-weight: bold;
+  display: block;
+  text-align: center;
 }

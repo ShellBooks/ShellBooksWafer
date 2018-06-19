@@ -1,37 +1,36 @@
 <!--pages/verifyName/verifyName.wxml-->
 
 <view>
-  <view class='verify_item'>
-    <text>姓名</text>
-    <input bindblur='inputName' name='name'></input>
+  <view class='verify_info_text'>
+    <view class='verify_item'>
+      <text>姓名</text>
+      <input bindblur='inputName' name='name'></input>
+    </view>
+    <view class='verify_item'>
+      <text>学号</text>
+      <input bindblur="inputSchid" name='schid' type='number'></input>
+    </view>
+    <view class='verify_item'>
+      <text>手机</text>
+      <input bindblur='inputPhone' name='phone' type='number'></input>
+    </view>
   </view>
-  <line></line>
-  <view class='verify_item'>
-    <text>学号</text>
-    <input bindblur="inputSchid" name='schid' type='number'></input>
-  </view>
-  <line></line>
-  <view class='verify_item'>
-    <text>手机</text>
-    <input bindblur='inputPhone' name='phone' type='number'></input>
-  </view>
-  <line></line>
-  <view class='verify_item' bindtap='doUpload'>
-      <text>上传校园卡照片</text>
-      <view class='arrow'></view>
+
+  <view class='verify_info_img' bindtap='doUpload'>
+      <text class='pose_img'>上传校园卡照片</text>
       <view class='isUpload'>
         <text wx:if="{{cardimg}}">已上传</text>
         <text wx:else>未上传</text>
       </view>
+      <view class='preview_img' wx:if="{{cardimg}}">
+        <image
+            src="{{cardimg}}"
+            mode="aspectFit"
+            bindtap="previewImg">
+        </image>
+      </view>
   </view>
-  <view class='preview_img' wx:if="{{cardimg}}">
-      <image
-          src="{{cardimg}}"
-          mode="aspectFit"
-          bindtap="previewImg">
-      </image>
-  </view>
-  <!-- <button class="upload_book_btn" bindtap='uploadVerify' style="background: url('../../images/button.png') no-repeat; background-size:100% 100%; height: 120rpx; top: 550rpx;color: #fff; font-size: 34rpx; line-height: 100rpx">上传个人信息</button> -->
+
   <view class='btn_wrap'>
     <view class='bottom_btn' bindtap='uploadVerify'>
       <text class='btn_text'>上传个人信息</text>
