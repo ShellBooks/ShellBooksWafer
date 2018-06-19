@@ -168,5 +168,22 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+  },
+  notPassBorrow: function(e){
+    let brid = e.currentTarget.dataset.brid
+    console.log(brid)
+    wx.request({
+      url: config.service.notPassBorrowUrl,
+      method: 'get',
+      data: {
+        brid: brid
+      },
+      success: res => {
+        console.log(res)
+        wx.redirectTo({
+          url: 'manageBorrow',
+        })
+      }
+    })
   }
 })

@@ -123,6 +123,9 @@ var config = {
 
         // 图书审核不通过
         notPassBookUrl: `${host}/weapp/notPassBook`,
+
+        // 借阅审核不通过
+        notPassBorrowUrl: `${host}/weapp/notPassBorrow`,
     }
 };
 
