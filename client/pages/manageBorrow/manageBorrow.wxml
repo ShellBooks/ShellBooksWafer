@@ -26,6 +26,7 @@
                   <text>手机：{{item.phone}}</text>
                   <button class='pass_btn' bindtap='passBorrow' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>借阅通过</button>
                 </view>
+                <image class='btn_close' src='../../images/delete.png'></image>
               </view>
             </block>
           </view>

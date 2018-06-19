@@ -9,7 +9,7 @@
 }
 .borrowImg{
   width: 30%;
-  height: 300rpx;
+  height: 320rpx;
   display: inline-block;
   vertical-align: top;
 }
@@ -82,4 +82,10 @@
   margin-top: 30rpx;
   font-size: 26rpx;
   font-weight: bold;
+}
+.btn_close{
+  position: relative;
+  height: 24rpx;
+  width: 24rpx;
+  float: right;
 }
