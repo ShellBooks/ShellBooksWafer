@@ -94,6 +94,7 @@ page{
   padding: 10rpx 0;
 }
 .comments_main{
+  height: 670rpx;
   box-shadow: 0 0 0 1px #eee,
     0 1px 2px 1px #efefef;
   width: 100%;

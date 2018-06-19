@@ -9,7 +9,7 @@
 }
 .borrowImg{
   width: 30%;
-  height: 320rpx;
+  height: 300rpx;
   display: inline-block;
   vertical-align: top;
 }
