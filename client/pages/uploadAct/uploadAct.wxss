@@ -116,8 +116,26 @@
   line-height: 100rpx;
 }
 .btn_wrap{
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   height: 200rpx;
 }
+
+/* navbar */
+#weui_navbar_design{
+  position: fixed;
+  top: 0;
+  background: #fff;
+  border-bottom: 0px;
+  box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; 
+}
+.btn_close{
+  position: relative;
+  top: -310rpx;
+  height: 24rpx;
+  width: 24rpx;
+  float: right;
+}
+

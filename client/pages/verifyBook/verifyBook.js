@@ -5,7 +5,6 @@ var util = require('../../utils/util.js')
 var sliderWidth = 30; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -178,20 +177,24 @@ Page({
   },
   // 图书审核不通过
   notPassBook: function(e){
-    let bid = e.currentTarget.dataset.bid
+    let date = util.formatTime(new Date)
+    let data = {
+      uid: e.currentTarget.dataset.uid,
+      bid: e.currentTarget.dataset.bid,
+      type: 0,
+      date: date,
+      info: '图书审核未通过'
+    }
     wx.request({
       url: config.service.notPassBookUrl,
-      method: 'get',
-      data: {
-        bid: bid
-      },
+      method: 'post',
+      data: data,
       success: res => {
         console.log(res)
         wx.redirectTo({
           url: 'verifyBook',
         })
       }
-
     })
   }
 })

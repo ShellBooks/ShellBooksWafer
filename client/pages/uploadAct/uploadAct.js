@@ -2,22 +2,37 @@
 var config = require('../../config')
 var util = require('../../utils/util.js')
 
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    tabs: ["活动上传", "活动下架"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
     title: '',
     intro: '',
-    image: ''
+    image: '',
+    activities: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
   },
 
   /**
@@ -31,7 +46,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: config.service.getBannerUrl,
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let data = res.data.data
+        this.setData({
+          activities: data
+        })
+      }
+    })
   },
 
   /**
@@ -143,6 +168,27 @@ Page({
         } else {
           util.showModel("", data)
         }
+      }
+    })
+  },
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
+  },
+  // 删除活动
+  deleteAct: function(e){
+    let bnid = e.currentTarget.dataset.bnid
+    wx.request({
+      url: config.service.deleteActUrl,
+      method: 'get',
+      data: {
+        bnid: bnid
+      },
+      success: res => {
+        console.log(res)
+
       }
     })
   }

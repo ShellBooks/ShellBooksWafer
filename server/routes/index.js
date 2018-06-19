@@ -131,8 +131,13 @@ router.post('/passBackBook', controllers.passBackBook)
 router.get('/notPassUser', controllers.notPassUser)
 
 // GET 图书审核不通过
-router.get('/notPassBook', controllers.notPassBook)
+router.post('/notPassBook', controllers.notPassBook)
 
+// POST 借阅审核不通过
+router.post('/notPassBorrow', controllers.notPassBorrow)
+
+// GET 删除活动
+router.get('/deleteAct', controllers.deleteAct)
 
 
 module.exports = router

@@ -13,6 +13,7 @@ Page({
     type: '',
     // 图书 id
     bid: -1,
+    brid: null,
     // 图书详情
     book_details: {},
     process: [],
@@ -55,26 +56,30 @@ Page({
     } else {
       type = 0
     }
+    let data = {
+      bid: this.data.bid,
+      uid: uid,
+      type: type
+    }
+    if(this.data.brid){
+      data.brid = this.data.brid
+    }
+    console.log(data)
     wx.request({
       url: config.service.getProcessUrl,
       method: 'get',
-      data: {
-        bid: this.data.bid,
-        uid: uid,
-        brid: this.data.brid, // 借书 id
-        type: type
-      },
+      data: data,
       success: res => {
         console.log(res)
         let data = res.data.data
         for (let i in data) {
           // 处理 data 拆分成 day + time
-          let date = data[i].date.replace("T", " ").replace(".000Z", "")
+          let date = util.formatTime(new Date(data[i].date))
+          console.log(date)
           let arr = date.split(" ")
           data[i].day = arr[0]
           data[i].time = arr[1]
         }
-        console.log(data)
         this.setData({
           process: data
         })

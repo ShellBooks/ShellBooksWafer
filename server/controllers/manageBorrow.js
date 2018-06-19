@@ -9,7 +9,7 @@ module.exports = async ctx => {
   // 2 归还图书 归还相应贝壳数 
 
   // 发起借阅请求的图书
-  let borrowBook = await mysql.raw("SELECT user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 0")
+  let borrowBook = await mysql.raw("SELECT brid, user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 0")
 
   // 需要归还的图书
   let returnBook = await mysql.raw("SELECT user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 1")

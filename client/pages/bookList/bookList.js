@@ -209,8 +209,14 @@ Page({
   toProcess: function (e) {
     let bid = e.currentTarget.dataset.bid
     let brid = e.currentTarget.dataset.brid
+    let url
+    if(brid){
+      url = '../process/process?bid=' + bid + '&type=' + this.data.type + '&brid=' + brid
+    } else {
+      url = '../process/process?bid=' + bid + '&type=' + this.data.type
+    }
     wx.navigateTo({
-      url: '../process/process?bid=' + bid + '&type=' + this.data.type + '&brid=' + brid,
+      url: url,
     })
   },
 
