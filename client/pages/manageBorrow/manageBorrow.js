@@ -99,6 +99,7 @@ Page({
     const oneMonth = 2592000000
     let uid = e.currentTarget.dataset.uid
     let bid = e.currentTarget.dataset.bid
+    let brid = e.currentTarget.dataset.brid
     let status = e.currentTarget.dataset.status
     let shell = e.currentTarget.dataset.shell
     let borrow_date = util.formatTime(new Date(), 1)
@@ -111,6 +112,7 @@ Page({
       data:{
         uid: uid,
         bid: bid,
+        brid: brid,
         borrow_date: borrow_date,
         return_date: return_date,
         status: 1,
@@ -175,9 +177,10 @@ Page({
       brid: e.currentTarget.dataset.brid,
       bid: e.currentTarget.dataset.bid,
       uid: e.currentTarget.dataset.uid,
+      shell: e.currentTarget.dataset.shell,
       type: 1,
       date: date,
-      info: '您的借书请求被拒绝'
+      info: '您的借书请求被拒绝，贝壳已返还'
     }
     wx.request({
       url: config.service.notPassBorrowUrl,

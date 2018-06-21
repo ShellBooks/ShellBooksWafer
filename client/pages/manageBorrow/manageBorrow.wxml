@@ -18,15 +18,15 @@
                 <view class='borrowImg'>
                   <image src='{{item.image}}'></image>
                 </view>
-                <view class='borrowInfo' bindtap='toDetailsInfo'>
+                <view class='borrowInfo'>
                   <text class='bookname'>{{item.bname}}</text>
                   <text>图书编号：{{item.bid}}</text>
                   <text>借阅人：{{item.name}}</text>
                   <text>学号：{{item.schid}}</text>
                   <text>手机：{{item.phone}}</text>
-                  <button class='pass_btn' bindtap='passBorrow' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>借阅通过</button>
+                  <button class='pass_btn' bindtap='passBorrow' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}' data-brid='{{item.brid}}'>借阅通过</button>
                 </view>
-                <image class='btn_close' src='../../images/delete.png' bindtap='notPassBorrow' data-brid="{{item.brid}}" data-uid="{{item.uid}}" data-bid="{{item.bid}}"></image>
+                <image class='btn_close' src='../../images/delete.png' bindtap='notPassBorrow' data-brid="{{item.brid}}" data-uid="{{item.uid}}" data-bid="{{item.bid}}" data-shell="{{item.shell}}"></image>
               </view>
             </block>
           </view>

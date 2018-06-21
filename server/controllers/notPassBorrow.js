@@ -13,11 +13,18 @@ module.exports = async ctx => {
   }
 
   let brid = ctx.request.body.brid 
+  let uid = ctx.request.body.uid
+  let shell = ctx.request.body.shell
 
   let pres = await mysql("process").insert(process)
-  let bres = await mysql("borrow").where({ brid }).update({ status: -1 })
+  // status => 2 还书  未借出
+  let bres = await mysql("borrow").where({ brid }).update({ status: 2 })
 
-  if (bres && pres) {
+  let oldMoney = await mysql("user").where({uid}).select("money").first()
+  let newMoney = parseInt(shell) + oldMoney.money
+  let ures = await mysql("user").where({uid}).update({money: newMoney})
+
+  if (bres && pres && ures) {
     ctx.state.data = {
       status: 0,
       msg: 'success'
