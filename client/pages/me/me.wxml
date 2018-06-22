@@ -34,7 +34,7 @@
   <view class="me_list" id='me_list_3'>
     <item title="实名认证" bindtap="toVerifyPage"></item>
     <line></line>  
-    <item title="关于我们"></item>
+    <item title="关于我们" url="../aboutMe/aboutMe" bindmyevent="navigateTo"></item>
   </view>
   <view wx:if="{{isAdmin}}">
     <text class='me_admin'>管理员专区</text>

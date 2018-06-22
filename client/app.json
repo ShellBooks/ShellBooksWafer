@@ -12,7 +12,8 @@
     "pages/verifyUser/verifyUser",
     "pages/verifyBook/verifyBook",
     "pages/manageBorrow/manageBorrow",
-    "pages/uploadAct/uploadAct"
+    "pages/uploadAct/uploadAct",
+    "pages/aboutMe/aboutMe"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

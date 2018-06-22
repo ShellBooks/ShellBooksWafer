@@ -1,0 +1,20 @@
+<!--pages/aboutMe/aboutMe.wxml-->
+<view>
+  <view class='about_content'>
+    <view class='about_image'>
+      <image src='../../images/logo_1.png'></image>
+    </view>
+    <view class='about_info'>
+      <view class='about_intro'>我们是一个致力于创造的团队</view>
+      <view class='about_intro'>ShellBook</view>
+      <view class='about_intro'>的创造是为了提高用户阅读兴趣的小程序</view>
+      <view class='about_intro'>由于穷</view>
+      <view class='about_intro'>目前我们只可以支持调试版本</view>
+      <view class='about_image2'>
+        <image src='../../images/timg.jpg'></image>
+      </view>
+      <view class='about_intro' id='about_github'>github.com/ShellBooks/ShellBooksWafer</view>
+      <view class='about_intro' id='about_please'>求投食 求夸赞</view>
+    </view>   
+  </view>
+</view>
