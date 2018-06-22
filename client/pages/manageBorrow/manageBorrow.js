@@ -137,6 +137,7 @@ Page({
   returnBook: function(e){
     let uid = e.currentTarget.dataset.uid
     let bid = e.currentTarget.dataset.bid
+    let brid = e.currentTarget.dataset.brid
     let shell = e.currentTarget.dataset.shell
     let date = util.formatTime(new Date())
     wx.request({
@@ -145,6 +146,7 @@ Page({
       data: {
         bid: bid,
         uid: uid,
+        brid: brid,
         status: 2,
         type: 1,
         date: date,

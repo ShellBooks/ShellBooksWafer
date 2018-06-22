@@ -12,7 +12,7 @@ module.exports = async ctx => {
   let borrowBook = await mysql.raw("SELECT brid, user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 0")
 
   // 需要归还的图书
-  let returnBook = await mysql.raw("SELECT user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 1")
+  let returnBook = await mysql.raw("SELECT brid, user.uid, schid, phone, book.bid, name, bname, author, ISBN, image, shell FROM user, book, borrow WHERE user.uid = borrow.uid AND book.bid = borrow.bid AND borrow.status = 1")
 
   ctx.state.data = {
     borrowBook: borrowBook[0],

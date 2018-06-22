@@ -4,6 +4,7 @@ const { mysql } = require('../qcloud')
 module.exports = async ctx => {
   let uid = ctx.request.body.uid
   let bid = ctx.request.body.bid
+  let brid = ctx.request.body.brid
   let status = ctx.request.body.status
   let type = ctx.request.body.type
   let date = ctx.request.body.date
@@ -11,10 +12,10 @@ module.exports = async ctx => {
   let shell = ctx.request.body.shell
 
   // 更新 borrow 
-  let bres = await mysql("borrow").where({ uid, bid }).update({ status })
+  let bres = await mysql("borrow").where({ brid }).update({ status })
 
   // 插入 process
-  let pres = await mysql("process").insert({ uid, bid, type, date, info })
+  let pres = await mysql("process").insert({ uid, bid, brid, type, date, info })
 
   // 返还贝壳
   let oldMoney = await mysql("user").where({ uid }).select('money').first()

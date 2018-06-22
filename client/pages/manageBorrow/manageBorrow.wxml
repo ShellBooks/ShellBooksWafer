@@ -39,13 +39,13 @@
                 <view class='borrowImg'>
                   <image src='{{item.image}}'></image>
                 </view>
-                <view class='borrowInfo' bindtap='toDetailsInfo'>
+                <view class='borrowInfo'>
                   <text class='bookname'>{{item.bname}}</text>
                   <text>图书编号：{{item.bid}}</text>
                   <text>借阅人：{{item.name}}</text>
                   <text>学号：{{item.schid}}</text>
                   <text>手机：{{item.phone}}</text>
-                  <button class='pass_btn' bindtap='returnBook' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}'>归还图书</button>
+                  <button class='pass_btn' bindtap='returnBook' data-uid="{{item.uid}}" data-bid='{{item.bid}}' data-shell='{{item.shell}}' data-brid='{{item.brid}}'>归还图书</button>
                 </view>
               </view>
             </block>
