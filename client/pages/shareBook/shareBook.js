@@ -124,59 +124,59 @@ Page({
   },
   // 豆瓣API获取图书信息
   doubanBookInfo: function(e){
-    // let ISBN = this.data.ISBN
-    // wx.request({
-    //   url: 'https://douban.uieee.com/v2/book/isbn/' + ISBN,
-    //   header: {
-    //     "Content-Type": "json"
-    //   },
-    //   method: 'get',
-    //   success: res => {
-    //     console.log(res)
-    //     let author = res.data.author
-    //     let image = res.data.image
-    //     let price = res.data.price.replace("元", "").replace("CNY ", "")
-    //     let publish = res.data.publisher
-    //     let bname = res.data.title
-    //     this.setData({
-    //       bname: bname,
-    //       author: author,
-    //       publish: publish,
-    //       price: price,
-    //       image: image,
-    //       ISBN: ISBN
-    //     })
-    //   }
-    // })
-    wx.scanCode({
+    let ISBN = this.data.ISBN
+    wx.request({
+      url: 'https://douban.uieee.com/v2/book/isbn/' + ISBN,
+      header: {
+        "Content-Type": "json"
+      },
+      method: 'get',
       success: res => {
-        console.log(res.result)
-        let ISBN = res.result
-        wx.request({
-          url: 'https://douban.uieee.com/v2/book/isbn/' + ISBN,
-          header: {
-            "Content-Type": "json"
-          },
-          method: 'get',
-          success: res => {
-            console.log(res)
-            let author = res.data.author
-            let image = res.data.image
-            let price = res.data.price.replace("元", "").replace("CNY ","")
-            let publish = res.data.publisher
-            let bname = res.data.title
-            this.setData({
-              bname: bname,
-              author: author,
-              publish: publish,
-              price: price,
-              image: image,
-              ISBN: ISBN
-            })
-          }
+        console.log(res)
+        let author = res.data.author
+        let image = res.data.image
+        let price = res.data.price.replace("元", "").replace("CNY ", "")
+        let publish = res.data.publisher
+        let bname = res.data.title
+        this.setData({
+          bname: bname,
+          author: author,
+          publish: publish,
+          price: price,
+          image: image,
+          ISBN: ISBN
         })
       }
     })
+    // wx.scanCode({
+    //   success: res => {
+    //     console.log(res.result)
+    //     let ISBN = res.result
+    //     wx.request({
+    //       url: 'https://douban.uieee.com/v2/book/isbn/' + ISBN,
+    //       header: {
+    //         "Content-Type": "json"
+    //       },
+    //       method: 'get',
+    //       success: res => {
+    //         console.log(res)
+    //         let author = res.data.author
+    //         let image = res.data.image
+    //         let price = res.data.price.replace("元", "").replace("CNY ","")
+    //         let publish = res.data.publisher
+    //         let bname = res.data.title
+    //         this.setData({
+    //           bname: bname,
+    //           author: author,
+    //           publish: publish,
+    //           price: price,
+    //           image: image,
+    //           ISBN: ISBN
+    //         })
+    //       }
+    //     })
+    //   }
+    // })
     
   },
   uploadBookInfo: function(){
@@ -226,7 +226,7 @@ Page({
     this.data.bname = e.detail.value
   },
   inputAuthor: function(e){
-    this.data.author = e.detail.value
+    this.data.author = e.detail.value.replace(",", " ")
   },
   inputPublish: function (e) {
     this.data.publish = e.detail.value
