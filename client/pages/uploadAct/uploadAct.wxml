@@ -14,12 +14,12 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <view class='=active_title'>
             <text>活动标题</text>
-            <input bindblur='inputTitle'></input>
+            <input bindinput='inputTitle'></input>
           </view>
 
           <view class='active_intro'>
             <text>活动介绍</text>
-            <textarea bindblur='inputIntro'></textarea>
+            <textarea bindinput='inputIntro'></textarea>
           </view>
           <view class='active_photo' bindtap='doUpload'>
             <view class='active_upload'>
